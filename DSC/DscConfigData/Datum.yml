@@ -3,7 +3,7 @@ ResolutionPrecedence:
   - Environment\$($Node.Environment)
   - Locations\$($Node.Location)
   - Roles\$($Node.Role)
-  - Roles\ServerBaseline
+  - Roles\ORDBasicServer
   - Roles\DscBaseline
 
 DatumHandlers:
@@ -27,6 +27,14 @@ lookup_options:
   WindowsFeatures:
     merge_hash: deep
 
+  FirewallRules:
+    merge_hash: deep
+  FirewallRules\Rules:
+    merge_hash_array: UniqueKeyValTuples
+    merge_options:
+      tuple_keys:
+        - Name
+
   WindowsFeatures\Name:
     merge_basetype_array: Unique
 
@@ -41,8 +49,23 @@ lookup_options:
   NetworkIpConfiguration:
     merge_hash: deep
 
-  LcmConfig:
+  ChocolateyPackages: hash
+  ChocolateyPackages\Packages:
+    merge_hash_array: DeepTuple
+    merge_options:
+      Tuple_Keys:
+        - Name
+        - Ensure
+        - ChocolateyOptions
+
+  IpConfiguration:
     merge_hash: deep
+
+  ComputerSettings:
+    merge_hash: deep
+
+  LcmConfig:
+    merge_hash: hash
   LcmConfig\Settings:
     merge_hash: deep
   LcmConfig\ReportServerWeb: deep

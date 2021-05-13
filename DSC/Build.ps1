@@ -29,7 +29,7 @@ param (
 
     [uri]
     $GalleryProxy,
-    
+
     [Parameter(Position = 0)]
     $Tasks,
 
@@ -74,21 +74,21 @@ $env:Path = $pathElements -join ';'
 if (-not $ProjectPath) {
     $ProjectPath = $PSScriptRoot
 }
-
+write-verbose "ProjectPath $ProjectPath"
 if (-not ([System.IO.Path]::IsPathRooted($BuildOutput))) {
     $BuildOutput = Join-Path -Path $ProjectPath -ChildPath $BuildOutput
 }
-
+write-verbose "BuildOutput $BuildOutput"
 $buildModulesPath = Join-Path -Path $BuildOutput -ChildPath 'Modules'
 if (-not (Test-Path -Path $buildModulesPath)) {
     $null = mkdir -Path $buildModulesPath -Force
 }
-
+write-verbose "buildModulesPath $buildModulesPath"
 $configurationPath = Join-Path -Path $ProjectPath -ChildPath $ConfigurationsFolder
 $resourcePath = Join-Path -Path $ProjectPath -ChildPath $ResourcesFolder
 $configDataPath = Join-Path -Path $ProjectPath -ChildPath $ConfigDataFolder
 $testsPath = Join-Path -Path $ProjectPath -ChildPath $TestFolder
-
+write-verbose "resourcePath $resourcePath"
 $psModulePathElemets = $env:PSModulePath -split ';'
 if ($buildModulesPath -notin $psModulePathElemets) {
     $env:PSModulePath = $psModulePathElemets -join ';'
@@ -96,6 +96,7 @@ if ($buildModulesPath -notin $psModulePathElemets) {
 }
 
 #importing all resources from 'Build' directory
+write-verbose "importing all resources from build dir"
 Get-ChildItem -Path "$PSScriptRoot/Build" -Recurse -Include *.ps1 |
     ForEach-Object {
     Write-Verbose "Importing file $($_.BaseName)"
@@ -109,7 +110,7 @@ if (-not (Get-Module -Name InvokeBuild -ListAvailable) -and -not $ResolveDepende
     Write-Error "Requirements are missing. Please call the script again with the switch 'ResolveDependency'"
     return
 }
-
+#read-host "build pre rd"
 if ($ResolveDependency) {
     . $PSScriptRoot/Build/BuildHelpers/Resolve-Dependency.ps1
     Resolve-Dependency
@@ -128,7 +129,7 @@ if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
         $PSBoundParameters.Remove('Tasks') | Out-Null
         Invoke-Build -Tasks $Tasks -File $MyInvocation.MyCommand.Path @PSBoundParameters
     }
-
+#read-host " pre pb"
     if (($Tasks -contains 'CompileRootConfiguration' -or $Tasks -contains 'CompileRootMetaMof') -or -not $Tasks) {
         Invoke-Build -File "$ProjectPath\PostBuild.ps1" -BuildOutput $BuildOutput `
                                                         -ResourcesFolder $ResourcesFolder `
@@ -147,7 +148,7 @@ if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
     #Write-Host "Environment Variables" -ForegroundColor Magenta
     #dir env: | Out-String | Write-Host -ForegroundColor Magenta
     #Write-Host "------------------------------------" -ForegroundColor Magenta
-    
+
     return
 }
 

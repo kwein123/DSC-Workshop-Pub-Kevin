@@ -1,0 +1,32 @@
+NodeName: q26265mnay005
+Environment: Test
+# Role: SCCMServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq q26265mnay005).Description]'
+Location: DUL
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.192.192/24
+      GatewayAddress: 204.47.192.1
+      DnsServerAddress:
+        - 204.46.24.12
+        - 204.47.240.128
+        - 134.67.208.5
+    - NewName: 'Metasys Network'
+      AddressFamily: IPv4
+      IPAddress: 172.16.24.10/28
+      #GatewayAddress: 172.16.24.1
+      #DnsServerAddress:
+      #  - 204.46.24.12
+      #  - 204.47.240.128
+      #  - 134.67.208.5
+
+ComputerSettings:
+  Name: q26265mnay005

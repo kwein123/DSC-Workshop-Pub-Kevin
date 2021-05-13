@@ -1,0 +1,127 @@
+Configurations:
+  - ChocolateyPackages
+  - FirewallRules
+  - WindowsFeatures
+  - Scripts
+  - RegistryValues
+  - ORDRemoteDesktopAdmin
+  # - FilesAndFolders
+
+# FilesAndFolders:
+#   Items:
+#     - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\MSS-legacy.adml
+#       DestinationPath: 'C:\Windows\PolicyDefinitions\en-US\MSS-legacy.adml'
+#       Type: File
+#     - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\SecGuide.adml
+#       DestinationPath: C:\Windows\PolicyDefinitions\en-US\SecGuide.adml
+#       Type: File
+#     - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\MSS-legacy.admx
+#       DestinationPath: 'C:\Windows\PolicyDefinitions\MSS-legacy.admx'
+#       Type: File
+#     - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\SecGuide.admx
+#       DestinationPath: 'C:\Windows\PolicyDefinitions\SecGuide.admx'
+#       Type: File
+      # checksum: 'modifiedDate'
+      # matchsource: True
+
+FirewallRules:
+  Rules:
+    - Name: RemoteDesktop-UserMode-In-TCP
+      #DisplayName: Any-Any Test
+      Enabled: True
+      #Description: Allow All Inbound Trafic
+      Direction: Inbound
+      Profile: Any
+      Action: Allow
+      LocalPort: Any
+      RemotePort: Any
+      Protocol: Any
+    - Name: RemoteDesktop-UserMode-In-UDP
+      Enabled: True
+      Direction: Inbound
+      Profile: Any
+      Action: Allow
+    - Name: RemoteDesktop-Shadow-In-TCP
+      Enabled: True
+      Direction: Inbound
+      Profile: Any
+      Action: Allow
+
+ORDRemoteDesktopAdmin:
+  ORD_RDA:
+  - IsSingleInstance: 'Yes'
+    Ensure: 'Present'
+    UserAuthentication: 'Secure'
+
+WindowsFeatures:
+  Name:
+    - RDC
+    # Remove BranchCache, that I had installed by mistake because it was on other servers
+    #- -BranchCache
+
+ChocolateyPackages:
+  Software:
+    Ensure: Present
+  Features:
+    Name: useFipsCompliantChecksums
+    Ensure: Present
+  Sources:
+    Name: ORDChoco
+    Ensure: Present
+    Source: '\\V26267NCSP502\ORDChoco'
+    #Source: '\\V26265NCHH500\ORDChoco'
+  Packages:
+    - Name: laps
+      Ensure: Present
+      ChocolateyOptions:
+        Source: ORDChoco
+    - Name: sccm
+      Ensure: Present
+      ChocolateyOptions:
+        Source: ORDChoco
+    - Name: encase
+      Ensure: Present
+      ChocolateyOptions:
+        Source: ORDChoco
+    - Name: bigfix
+      Ensure: Present
+      ChocolateyOptions:
+        Source: ORDChoco
+
+#        $Clients = @(Get-NetIPConfiguration | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Get-DNSClient)
+# Disconnected NICs must be excluded from below tests, or it blows up.
+Scripts:
+  Items:
+    - Name: FixIPv6DHCP
+      GetScript: |
+        $Found = @(Get-NetIPInterface -AddressFamily 'IPv6' | Where-Object {$_.DHCP -ne 'disabled'})
+        Return @{ Result = $Found.count}
+      TestScript: |
+        $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+        $ReturnHash.Result -eq 0
+      SetScript: |
+        Set-NetIPInterface -AddressFamily IPv6 -Dhcp Disabled
+        Set-NetIPInterface -AddressFamily IPv6 -RouterDiscovery Disabled
+    - Name: DisableDynamicDNSRegistration
+      GetScript: |
+        $Clients = @(Get-NetIPConfiguration | Where-Object {$_.NetAdapter.Status -ne "Disconnected"} | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Get-DNSClient)
+        $Found = @($Clients | Where-Object {$_.RegisterThisConnectionsAddress})
+        Return @{ Result = $Found.count}
+      TestScript: |
+        $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+        $ReturnHash.Result -eq 0
+      SetScript: |
+        $Clients = @(Get-NetIPConfiguration | Where-Object {$_.NetAdapter.Status -ne "Disconnected"} | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Get-DNSClient)
+        Get-NetIPConfiguration | Where-Object {$_.NetAdapter.Status -ne "Disconnected"} | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Set-DNSClient -RegisterThisConnectionsAddress:$false
+
+RegistryValues:
+  Values:
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
+      ValueName: NtpServer
+      ValueData: time.windows.com,0x9
+      ValueType: String
+      Ensure: Present
+      Force: true
+
+PSDscAllowPlainTextPassword: True
+PSDscAllowDomainUser: True

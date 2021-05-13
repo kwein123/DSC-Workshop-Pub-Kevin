@@ -50,13 +50,17 @@ $testsPath = Join-Path -Path $ProjectPath -ChildPath $TestFolder
 Get-ChildItem -Path "$PSScriptRoot/Build/" -Recurse -Include *.ps1 |
     ForEach-Object {
     Write-Verbose "Importing file $($_.BaseName)"
+    #read-host "pb press enter"
     try {
         . $_.FullName
     }
     catch { }
 }
 
+#read-host "postbuild tasks press enter"
+
+# Comment out the below for Push configurations
 task . NewMofChecksums,
-CompressModulesWithChecksum,
+#CompressModulesWithChecksum,
 Deploy,
 TestBuildAcceptance

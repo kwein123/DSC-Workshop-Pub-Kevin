@@ -1,0 +1,16 @@
+# This "Configurations" line must stay here so that ComputerSettings gets included
+Configurations:
+  - ComputerSettings
+  #- IpConfiguration
+
+ComputerSettings:
+  TimeZone: 'Eastern Standard Time'
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      DNSServerAddress:
+        - '134.67.208.5'
+        - '161.80.76.28'
+        - '204.47.79.12'

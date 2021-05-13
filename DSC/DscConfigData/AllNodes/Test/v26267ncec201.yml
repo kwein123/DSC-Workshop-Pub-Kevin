@@ -1,0 +1,36 @@
+NodeName: v26267ncec201
+Environment: Test
+Role: NetBackupServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncec201).Description]'
+Location: RTP
+
+Configurations:
+  - IpConfiguration
+
+# This sets up the 2nd NIC
+#Ord:
+  #IPAddress: 172.16.2.141
+  #InterfaceAlias: Ethernet1
+
+
+IpConfiguration:
+  #Ensure that LAPS gets installed early
+  #DependsOn: ChocolateyPackages/LAPS
+  #DependsOn: Chocolatey_laps
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.216.198/24
+      GatewayAddress: 134.67.216.1
+      DnsServerAddress:
+       - 134.67.208.5
+       - 161.80.76.28
+       - 204.47.79.12
+#     - NewName: LabLAN
+#       AddressFamily: IPv4
+#       IPAddress: 172.16.2.140/24
+#       GatewayAddress: 172.16.2.1
+
+ComputerSettings:
+  Name: v26267ncec201

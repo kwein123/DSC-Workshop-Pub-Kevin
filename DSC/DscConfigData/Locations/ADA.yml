@@ -1,0 +1,7 @@
+# This "Configurations" line must stay here so that ComputerSettings gets included
+Configurations:
+  - ComputerSettings
+  #- IpConfiguration
+
+ComputerSettings:
+  TimeZone: 'Central Standard Time'

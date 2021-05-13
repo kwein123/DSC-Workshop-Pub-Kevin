@@ -1,0 +1,33 @@
+Configurations:
+  - WindowsFeatures
+  - FilesAndFolders
+#  - ChocolateyPackages
+
+FilesAndFolders:
+  Items:
+    - DestinationPath: C:\no_sms_on_drive.sms
+      Type: File
+      Contents: ''
+
+# ChocolateyPackages:
+# # I think mdt was above the useFips when this compiled. So I'm trying to ensure that doesn't happen again. Could this go away with DependsOn?
+#   Features:
+#     Name: useFipsCompliantChecksums
+#     Ensure: Present
+#   Packages:
+#   - Name: mdt
+#     Ensure: Present
+#     DependsOn: ixnay
+#     ChocolateyOptions:
+#       Source: ORDChoco
+
+WindowsFeatures:
+  Name:
+    - FS-DFS-Namespace
+    - FS-DFS-Replication
+    - FS-FileServer
+    - Storage-Services
+    - WDS
+    - WDS-AdminPack
+    - WDS-Deployment
+    - WDS-Transport

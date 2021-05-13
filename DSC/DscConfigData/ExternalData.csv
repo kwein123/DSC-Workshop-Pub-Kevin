@@ -1,7 +1,27 @@
 ComputerName;Role;Description
-DSCFile01;FileServer;FileServer in Dev
-DSCFile02;FileServer;FileServer in Test
-DSCFile03;FileServer;FileServer in Prod
-DSCWeb01;WebServer;WebServer in Dev
-DSCWeb02;WebServer;WebServer in Test
-DSCWeb03;WebServer;WebServer in Prod
+n26265gams500;SCCMServer;SCCM Server
+a26267rims500;SCCMServer;SCCM Server
+h26267ohms500;SCCMServer;SCCM Server
+l26267orms500;SCCMServer;SCCM Server
+n26267gams500;SCCMServer;SCCM Server
+p26267orms500;SCCMServer;SCCM Server
+q26267mnms500;SCCMServer;SCCM Server
+v26267mcms501;SCCMServer;SCCM Server
+v26267ncay511;WebServer;Web Server
+v26267ncec201;DSCTestServer;DSC Test Server
+v26267ncec202;DSCTestServer;DSC Test Server
+v26267ncpk514;AppServer;STICS App Server
+n26267ncpk515;AppServer;STICS App Server
+n26267gams500;SCCMServer;SCCM Server
+v26267ncsp502;DevAutomationServer;Dev Automation Server
+v26267ncsp503;ProdAutomationServer;Prod Automation Server
+v26267ncxg005;VMwareServer;VMware View Connection Broker Server
+v26267ncxg006;VMwareServer;VMware View Connection Manager Server
+v26267ncxg007;VMwareServer;VMware View Connection Manager Server
+v26267ncxg008;VMwareServer;VMware View Connection Broker Linux non-PIV Server
+DSCFile01;FileServer;File Server in Dev
+DSCFile02;FileServer;File Server in Test
+DSCFile03;FileServer;File Server
+DSCWeb01;WebServer;Web Server in Dev
+DSCWeb02;WebServer;Web Server in Test
+DSCWeb03;WebServer;Web Server

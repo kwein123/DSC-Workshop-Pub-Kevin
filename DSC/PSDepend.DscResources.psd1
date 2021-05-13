@@ -4,10 +4,12 @@
         Target         = 'DscResources'
         DependencyType = 'PSGalleryModule'
         Parameters     = @{
+            #Repository = 'ORDPSGallery'
             Repository = 'PSGallery'
         }
     }
 
+    # If these are commented out, it could cause Build.ps1 to fail with a mismatch in number of resources
     xPSDesiredStateConfiguration = '9.1.0'
     ComputerManagementDsc        = '8.4.0'
     NetworkingDsc                = '8.2.0'
