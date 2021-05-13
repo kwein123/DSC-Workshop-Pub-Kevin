@@ -8,6 +8,7 @@ Location: NEW
 Configurations:
   - IpConfiguration
 
+# From NewBuild01
 IpConfiguration:
   DependsOn: ChocolateyPackages
   Adapter:
