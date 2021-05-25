@@ -1,11 +1,28 @@
 NodeName: v26267ncec201
 Environment: Test
-Role: NetBackupServer
+Role: HardwareServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncec201).Description]'
 Location: RTP
 
 Configurations:
   - IpConfiguration
+  - WindowsFeatures
+  #- PrintManagementDSC
+
+# PrintManagementDSC:
+#   Items:
+#     - Name: TempTestDSC
+#       PortType: TCPIP
+#       PortName: ExampleTCPIPPort
+#       Address: 'tcpip.local'
+#       DriverName: 'Generic / Text Only'
+#       Shared: true
+
+WindowsFeatures:
+  Name:
+    - Print-Services
+    - Print-Server
+    - RSAT-Print-Services
 
 # This sets up the 2nd NIC
 #Ord:

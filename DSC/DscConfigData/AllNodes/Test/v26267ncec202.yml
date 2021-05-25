@@ -6,6 +6,13 @@ Location: RTP
 
 Configurations:
   - IpConfiguration
+  - WindowsFeatures
+
+WindowsFeatures:
+  Name:
+    - Print-Services
+    - Print-Server
+    - RSAT-Print-Services
 
 IpConfiguration:
   #Ensure that LAPS gets installed early

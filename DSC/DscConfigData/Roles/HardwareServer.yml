@@ -1,8 +1,4 @@
 Configurations:
-  - FirewallRules
-  #- Roles
-  #- Roles\HardwareServer
-  # Below is from HardwareServer
   - FilesAndFolders
   - Scripts
 
@@ -26,28 +22,3 @@ Scripts:
       SetScript: |
         Chdir \BootHole
         C:\BootHole\_BootHole.cmd
-
-#Roles: HardwareServer
-
-FirewallRules:
-  Rules:
-    - Name: CustomRemoteConsoleAccessFromAnotherServer
-      DisplayName: Remote console access from another server
-      Enabled: True
-      #Description: Allow All Inbound Trafic
-      Direction: Inbound
-      Profile: Any
-      Action: Allow
-      LocalPort: 6547
-      RemotePort: 6547
-      Protocol: TCP
-    - Name: CustomUPSToCommunicateToPCNS
-      DisplayName: UPS to communicate to PCNS
-      Enabled: True
-      #Description: Allow All Inbound Trafic
-      Direction: Inbound
-      Profile: Any
-      Action: Allow
-      LocalPort: 3052
-      RemotePort: 3052
-      Protocol: UDP
