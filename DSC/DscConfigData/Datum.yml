@@ -38,6 +38,14 @@ lookup_options:
   WindowsFeatures\Name:
     merge_basetype_array: Unique
 
+  Scripts:
+    merge_hash: deep
+  Scripts\Items:
+    merge_hash_array: UniqueKeyValTuples
+    merge_options:
+      tuple_keys:
+        - Name
+
   FilesAndFolders:
     merge_hash: deep
   FilesAndFolders\Items:

@@ -4,8 +4,8 @@ Configurations:
 
 FilesAndFolders:
   Items:
-    - DestinationPath: C:\BootHole
-      SourcePath: \\v26267ncsp502\ORDchoco\FilesToCopy\BootHole
+    - SourcePath: \\v26267ncsp502\ORDchoco\FilesToCopy\BootHole
+      DestinationPath: C:\BootHole
       Type: Directory
       # Recurse has to be specified as true, not $true or Enabled, or it will blow up
       Recurse: true

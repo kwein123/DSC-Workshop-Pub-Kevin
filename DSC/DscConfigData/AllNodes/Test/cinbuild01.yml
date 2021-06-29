@@ -1,0 +1,24 @@
+NodeName: CinBuild01
+Environment: Test
+Role: HardwareServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq CinBuild01).Description]'
+Location: CIN
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.64.73/24
+      GatewayAddress: 204.47.64.1
+      DnsServerAddress:
+        - 204.47.176.10
+        - 204.46.24.12
+        - 204.47.79.12
+
+ComputerSettings:
+  Name: CinBuild01

@@ -2,13 +2,20 @@ Configurations:
   - ChocolateyPackages
   - FirewallRules
   - WindowsFeatures
+  - FilesAndFolders
   - Scripts
   - RegistryValues
   - ORDRemoteDesktopAdmin
-  # - FilesAndFolders
 
-# FilesAndFolders:
-#   Items:
+FilesAndFolders:
+  Items:
+    - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\accesschk64.exe
+      DestinationPath: 'C:\Temp\accesschk64.exe'
+      Type: File
+    - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\NTRights.exe
+      DestinationPath: 'C:\Temp\NTRights.exe'
+      Type: File
+
 #     - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\MSS-legacy.adml
 #       DestinationPath: 'C:\Windows\PolicyDefinitions\en-US\MSS-legacy.adml'
 #       Type: File
@@ -90,8 +97,21 @@ ChocolateyPackages:
 
 #        $Clients = @(Get-NetIPConfiguration | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Get-DNSClient)
 # Disconnected NICs must be excluded from below tests, or it blows up.
+# If TestScript is false, then SetScript will be run
+# From GetScript:        Write-Verbose "In GetScript, found: $Found"
+# From TestScript:        Write-Verbose "Hash.Result $($ReturnHash.Result)"
+
 Scripts:
   Items:
+    - Name: GiveSCOMLogonRights
+      GetScript: |
+        $Found = @(c:\temp\AccessChk64.exe /accepteula -q -a SeServiceLogonRight | Where-Object {$_ -match 'sv-ord-eoc-scomact'})
+        Return @{ Result = $Found.count}
+      TestScript: |
+        $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+        $ReturnHash.Result -eq 1
+      SetScript: |
+        c:\temp\ntrights.exe -u sv-ord-eoc-scomact +r SeServiceLogonRight
     - Name: FixIPv6DHCP
       GetScript: |
         $Found = @(Get-NetIPInterface -AddressFamily 'IPv6' | Where-Object {$_.DHCP -ne 'disabled'})
