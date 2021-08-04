@@ -1,7 +1,5 @@
 Configurations:
   - FirewallRules
-  #- Roles
-  #- Roles\HardwareServer
   # Below is from HardwareServer
   - FilesAndFolders
   - Scripts
@@ -26,8 +24,6 @@ Scripts:
       SetScript: |
         Chdir \BootHole
         C:\BootHole\_BootHole.cmd
-
-#Roles: HardwareServer
 
 FirewallRules:
   Rules:

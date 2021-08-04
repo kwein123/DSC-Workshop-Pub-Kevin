@@ -3,6 +3,7 @@ ResolutionPrecedence:
   - Environment\$($Node.Environment)
   - Locations\$($Node.Location)
   - Roles\$($Node.Role)
+  # Copy out ORDBasicServer to do "mini DSC configs using Role: JustSmallFix.yml"
   - Roles\ORDBasicServer
   - Roles\DscBaseline
 
@@ -63,8 +64,8 @@ lookup_options:
     merge_options:
       Tuple_Keys:
         - Name
-        - Ensure
-        - ChocolateyOptions
+      #  - Ensure - Commented out 7/27/21 to see if this makes ncec202 RSOP look right
+      #  - ChocolateyOptions
 
   IpConfiguration:
     merge_hash: deep

@@ -1,0 +1,8 @@
+NodeName: v26265ncay504
+Environment: Test
+Role: JustSmallFix
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26265ncay504).Description]'
+Location: RTP
+
+ComputerSettings:
+  Name: v26265ncay504

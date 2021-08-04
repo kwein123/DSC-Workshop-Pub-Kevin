@@ -1,7 +1,7 @@
-NodeName: cinbuild01
+NodeName: h26267ohay000
 Environment: Test
-Role: FileServer
-Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq cinbuild01).Description]'
+Role: HardwareServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq h26267ohay000).Description]'
 Location: CIN
 
 # This is only to create an adapter where it doesn't already exist
@@ -13,7 +13,7 @@ IpConfiguration:
   Adapter:
     - NewName: Production
       AddressFamily: IPv4
-      IPAddress: 204.47.64.73/24
+      IPAddress: 204.47.64.49/24
       GatewayAddress: 204.47.64.1
       DnsServerAddress:
         - 204.47.176.10
@@ -21,4 +21,4 @@ IpConfiguration:
         - 204.47.79.12
 
 ComputerSettings:
-  Name: cinbuild01
+  Name: h26267ohay000

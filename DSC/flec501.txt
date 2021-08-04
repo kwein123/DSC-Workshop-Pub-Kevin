@@ -1,0 +1,1566 @@
+PS D:\DSC\try16\DscWorkshop\DSC> .\Push-DscTo.ps1 -Computer z2626xflec501
+
+
+ActionAfterReboot              : ContinueConfiguration
+AgentId                        : 759F8B74-DA82-11EB-9EBC-0050569E4609
+AllowModuleOverWrite           : True
+CertificateID                  :
+ConfigurationDownloadManagers  : {}
+ConfigurationID                :
+ConfigurationMode              : ApplyAndMonitor
+ConfigurationModeFrequencyMins : 30
+Credential                     :
+DebugMode                      : {All}
+DownloadManagerCustomData      :
+DownloadManagerName            :
+LCMCompatibleVersions          : {1.0, 2.0}
+LCMState                       : Idle
+LCMStateDetail                 :
+LCMVersion                     : 2.0
+StatusRetentionTimeInDays      : 10
+SignatureValidationPolicy      : NONE
+SignatureValidations           : {}
+MaximumDownloadSizeMB          : 500
+PartialConfigurations          :
+RebootNodeIfNeeded             : True
+RefreshFrequencyMins           : 30
+RefreshMode                    : Push
+ReportManagers                 : {}
+ResourceModuleManagers         : {}
+PSComputerName                 : z2626xflec501
+PSComputerName                 : z2626xflec501
+
+SourceRoot .
+VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target
+"MSFT_DSCLocalConfigurationManager".
+VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' =
+SendMetaConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' =
+root/Microsoft/Windows/DesiredStateConfiguration'.
+VERBOSE: An LCM method call arrived from computer Z2626XFLEC501 with user sid
+S-1-5-21-1339303556-449845944-1601390327-20111.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Set      ]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [MSFT_DSCMetaConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Set      ]  [MSFT_DSCMetaConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Set      ]  [MSFT_DSCMetaConfiguration]  in 0.0310 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [MSFT_DSCMetaConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Set      ]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Set      ]    in  0.1250 seconds.
+VERBOSE: Operation 'Invoke CimMethod' complete.
+VERBOSE: Set-DscLocalConfigurationManager finished in 0.261 seconds.
+ActionAfterReboot              : ContinueConfiguration
+AgentId                        : 759F8B74-DA82-11EB-9EBC-0050569E4609
+AllowModuleOverWrite           : True
+CertificateID                  :
+ConfigurationDownloadManagers  : {}
+ConfigurationID                :
+ConfigurationMode              : ApplyAndMonitor
+ConfigurationModeFrequencyMins : 30
+Credential                     :
+DebugMode                      : {All}
+DownloadManagerCustomData      :
+DownloadManagerName            :
+LCMCompatibleVersions          : {1.0, 2.0}
+LCMState                       : Idle
+LCMStateDetail                 :
+LCMVersion                     : 2.0
+StatusRetentionTimeInDays      : 10
+SignatureValidationPolicy      : NONE
+SignatureValidations           : {}
+MaximumDownloadSizeMB          : 500
+PartialConfigurations          :
+RebootNodeIfNeeded             : True
+RefreshFrequencyMins           : 30
+RefreshMode                    : Push
+ReportManagers                 : {}
+ResourceModuleManagers         : {}
+PSComputerName                 : z2626xflec501
+PSComputerName                 : z2626xflec501
+
+VERBOSE: Performing the operation "Applying MOF .\BuildOutput\MOF\z2626xflec501.mof" on target "z2626xflec501".
+VERBOSE: Module match: ActiveDirectoryCSDsc
+VERBOSE: Module match: ActiveDirectoryDsc
+VERBOSE: Module match: AuditPolicyDsc
+VERBOSE: Module match: chocolatey
+VERBOSE: Module match: ComputerManagementDsc
+VERBOSE: Module match: DFSDsc
+VERBOSE: Module match: GPRegistryPolicyDsc
+VERBOSE: Module match: JeaDsc
+VERBOSE: Module match: NetworkingDsc
+VERBOSE: Module match: OfficeOnlineServerDsc
+VERBOSE: Module match: ORDDSCModule
+VERBOSE: Module match: ReverseDSC
+VERBOSE: Module match: SecurityPolicyDsc
+VERBOSE: Module match: SharePointDSC
+VERBOSE: Module match: SqlServerDsc
+VERBOSE: Module match: StorageDsc
+VERBOSE: Module match: UpdateServicesDsc
+VERBOSE: Module match: WdsDsc
+VERBOSE: Module match: xBitlocker
+VERBOSE: Module match: xDhcpServer
+VERBOSE: Module match: xDnsServer
+VERBOSE: Module match: xDscDiagnostics
+VERBOSE: Module match: xExchange
+VERBOSE: Module match: xFailOverCluster
+VERBOSE: Module match: XmlContentDsc
+VERBOSE: Module match: xPSDesiredStateConfiguration
+VERBOSE: Module match: xWebAdministration
+VERBOSE: Module match: xWindowsEventForwarding
+VERBOSE: The Missing modules are
+VERBOSE: looking for missing zip modules in .\BuildOutput\Modules
+VERBOSE: Expanding C:\temp/*.zip to C:\Program Files\Common Files\WindowsPowerShell\Modules\ActiveDirectoryCSDsc
+ActiveDirectoryDsc AuditPolicyDsc chocolatey ComputerManagementDsc DFSDsc GPRegistryPolicyDsc JeaDsc NetworkingDsc
+OfficeOnlineServerDsc ORDDSCModule ReverseDSC SecurityPolicyDsc SharePointDSC SqlServerDsc StorageDsc UpdateServicesDsc
+ WdsDsc xBitlocker xDhcpServer xDnsServer xDscDiagnostics xExchange xFailOverCluster XmlContentDsc
+xPSDesiredStateConfiguration xWebAdministration xWindowsEventForwarding\5.0.0 6.0.1 1.4.0.0 0.0.79 8.4.0 4.4.0.0 1.2.0
+0.7.2 8.2.0 1.5.0 1.0 2.0.0.7 2.10.0.0 4.5.1 15.1.1 5.0.1 1.2.1 0.11.0 1.4.0.0 3.0.0 2.0.0 2.8.0 1.32.0 1.16.0 0.0.1
+9.1.0 3.2.0 1.0.0.0
+VERBOSE: Removing previously pushed configuration documents
+VERBOSE: Attempting to apply C:\temp\localhost.mof on z2626xflec501
+VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' =
+SendConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' =
+root/Microsoft/Windows/DesiredStateConfiguration'.
+VERBOSE: An LCM method call arrived from computer Z2626XFLEC501 with user sid
+S-1-5-21-1339303556-449845944-1601390327-20111.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Set      ]
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\NetworkingDsc\8.2.0\DscResources\DSC_NetAdapterName\DSC_NetAdapterName.psm1 in force
+mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\NetworkingDsc\8.2.0\DscResources\DSC_NetAdapterState\DSC_NetAdapterState.psm1 in force
+mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\NetworkingDsc\8.2.0\DscResources\DSC_IPAddress\DSC_IPAddress.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\NetworkingDsc\8.2.0\DscResources\DSC_DefaultGatewayAddress\DSC_DefaultGatewayAddress.ps
+m1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\NetworkingDsc\8.2.0\DscResources\DSC_DnsServerAddress\DSC_DnsServerAddress.psm1 in
+force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\ComputerManagementDsc\8.4.0\DscResources\DSC_Computer\DSC_Computer.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\ComputerManagementDsc\8.4.0\DscResources\DSC_TimeZone\DSC_TimeZone.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\xPSDesiredStateConfiguration\9.1.0\DscResources\DSC_xWindowsFeature\DSC_xWindowsFeature
+.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\ComputerManagementDsc\8.4.0\DscResources\DSC_PowerShellExecutionPolicy\DSC_PowerShellEx
+ecutionPolicy.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\SecurityPolicyDsc\2.10.0.0\DscResources\MSFT_UserRightsAssignment\MSFT_UserRightsAssign
+ment.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\SecurityPolicyDsc\2.10.0.0\DscResources\MSFT_SecurityOption\MSFT_SecurityOption.psm1 in
+ force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\DscResources\MSFT_RoleResource\MSFT_Role
+Resource.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\chocolatey\0.0.79\DscResources\ChocolateySoftware\ChocolateySoftware.psm1 in force
+mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\chocolatey\0.0.79\DscResources\ChocolateySource\ChocolateySource.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\chocolatey\0.0.79\DscResources\ChocolateyPackage\ChocolateyPackage.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\chocolatey\0.0.79\DscResources\ChocolateyFeature\ChocolateyFeature.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\NetworkingDsc\8.2.0\DscResources\DSC_Firewall\DSC_Firewall.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\xPSDesiredStateConfiguration\9.1.0\DscResources\DSC_xScriptResource\DSC_xScriptResource
+.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\xPSDesiredStateConfiguration\9.1.0\DscResources\DSC_xRegistryResource\DSC_xRegistryReso
+urce.psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\ComputerManagementDsc\8.4.0\DscResources\DSC_RemoteDesktopAdmin\DSC_RemoteDesktopAdmin.
+psm1 in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [DSCEngine] Importing the module C:\Program
+Files\WindowsPowerShell\Modules\ComputerManagementDsc\8.4.0\DscResources\DSC_ScheduledTask\DSC_ScheduledTask.psm1 in
+force mode.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[ChocolateySoftware]Choco_Software::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[ChocolateySoftware]Choco_Software::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateySoftware]Choco_Software::[ChocolateyPackages]ChocolateyPackages] Importing the module ChocolateySoftware in
+ force mode.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[ChocolateySoftware]Choco_Software::[ChocolateyPackages]ChocolateyPackages]  in 0.1100 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[ChocolateySoftware]Choco_Software::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[ChocolateySoftware]Choco_Software::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[ChocolateySource]Choco_Source_ORDChoco::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[ChocolateySource]Choco_Source_ORDChoco::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateySource]Choco_Source_ORDChoco::[ChocolateyPackages]ChocolateyPackages] Importing the module ChocolateySource
+ in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateySource]Choco_Source_ORDChoco::[ChocolateyPackages]ChocolateyPackages] The sources match exactly with the
+provided parameters.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[ChocolateySource]Choco_Source_ORDChoco::[ChocolateyPackages]ChocolateyPackages]  in 0.1880 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[ChocolateySource]Choco_Source_ORDChoco::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[ChocolateySource]Choco_Source_ORDChoco::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[ChocolateyPackage]Chocolatey_laps::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[ChocolateyPackage]Chocolatey_laps::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_laps::[ChocolateyPackages]ChocolateyPackages] Importing the module ChocolateyPackage in
+force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_laps::[ChocolateyPackages]ChocolateyPackages] Converting CIMInstance[] to hashtable
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_laps::[ChocolateyPackages]ChocolateyPackages] >> Converting CIM Pairs
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_laps::[ChocolateyPackages]ChocolateyPackages] Testing whether we need to refresh the PS
+environment so chocolatey doesn't fail
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_laps::[ChocolateyPackages]ChocolateyPackages] Testing whether the Package laps is
+Installed
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[ChocolateyPackage]Chocolatey_laps::[ChocolateyPackages]ChocolateyPackages]  in 1.5620 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[ChocolateyPackage]Chocolatey_laps::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[ChocolateyPackage]Chocolatey_laps::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[ChocolateyPackage]Chocolatey_sccm::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[ChocolateyPackage]Chocolatey_sccm::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_sccm::[ChocolateyPackages]ChocolateyPackages] Importing the module ChocolateyPackage in
+force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_sccm::[ChocolateyPackages]ChocolateyPackages] Converting CIMInstance[] to hashtable
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_sccm::[ChocolateyPackages]ChocolateyPackages] >> Converting CIM Pairs
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_sccm::[ChocolateyPackages]ChocolateyPackages] Testing whether we need to refresh the PS
+environment so chocolatey doesn't fail
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_sccm::[ChocolateyPackages]ChocolateyPackages] Testing whether the Package sccm is
+Installed
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[ChocolateyPackage]Chocolatey_sccm::[ChocolateyPackages]ChocolateyPackages]  in 0.0470 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[ChocolateyPackage]Chocolatey_sccm::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[ChocolateyPackage]Chocolatey_sccm::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[ChocolateyPackage]Chocolatey_encase::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[ChocolateyPackage]Chocolatey_encase::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_encase::[ChocolateyPackages]ChocolateyPackages] Importing the module ChocolateyPackage
+in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_encase::[ChocolateyPackages]ChocolateyPackages] Converting CIMInstance[] to hashtable
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_encase::[ChocolateyPackages]ChocolateyPackages] >> Converting CIM Pairs
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_encase::[ChocolateyPackages]ChocolateyPackages] Testing whether we need to refresh the
+PS environment so chocolatey doesn't fail
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_encase::[ChocolateyPackages]ChocolateyPackages] Testing whether the Package encase is
+Installed
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[ChocolateyPackage]Chocolatey_encase::[ChocolateyPackages]ChocolateyPackages]  in 0.0160 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[ChocolateyPackage]Chocolatey_encase::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[ChocolateyPackage]Chocolatey_encase::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[ChocolateyPackage]Chocolatey_bigfix::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[ChocolateyPackage]Chocolatey_bigfix::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_bigfix::[ChocolateyPackages]ChocolateyPackages] Importing the module ChocolateyPackage
+in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_bigfix::[ChocolateyPackages]ChocolateyPackages] Converting CIMInstance[] to hashtable
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_bigfix::[ChocolateyPackages]ChocolateyPackages] >> Converting CIM Pairs
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_bigfix::[ChocolateyPackages]ChocolateyPackages] Testing whether we need to refresh the
+PS environment so chocolatey doesn't fail
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyPackage]Chocolatey_bigfix::[ChocolateyPackages]ChocolateyPackages] Testing whether the Package bigfix is
+Installed
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[ChocolateyPackage]Chocolatey_bigfix::[ChocolateyPackages]ChocolateyPackages]  in 0.0160 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[ChocolateyPackage]Chocolatey_bigfix::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[ChocolateyPackage]Chocolatey_bigfix::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[ChocolateyFeature]ChocolateyFeature_useFipsCompliantChecksums::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[ChocolateyFeature]ChocolateyFeature_useFipsCompliantChecksums::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]:
+[[ChocolateyFeature]ChocolateyFeature_useFipsCompliantChecksums::[ChocolateyPackages]ChocolateyPackages] Importing the
+module ChocolateyFeature in force mode.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[ChocolateyFeature]ChocolateyFeature_useFipsCompliantChecksums::[ChocolateyPackages]ChocolateyPackages]  in 0.0780
+seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[ChocolateyFeature]ChocolateyFeature_useFipsCompliantChecksums::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[ChocolateyFeature]ChocolateyFeature_useFipsCompliantChecksums::[ChocolateyPackages]ChocolateyPackages]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[NetAdapterName]NetAdapterProductionda953d8f-1362-4d1a-81f5-0f3eaed333b5::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[NetAdapterName]NetAdapterProductionda953d8f-1362-4d1a-81f5-0f3eaed333b5::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]:
+[[NetAdapterName]NetAdapterProductionda953d8f-1362-4d1a-81f5-0f3eaed333b5::[IpConfiguration]IpConfiguration] Importing
+the module DSC_NetAdapterName in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[NetAdapterName]NetAdapterProductionda953d8f-1362-4d1a-81f5-0f3eaed333b5::[IpConfiguration]IpConfiguration]
+Test-TargetResource: Testing the network adapter Name 'Production'.
+VERBOSE: [Z2626XFLEC501]:
+[[NetAdapterName]NetAdapterProductionda953d8f-1362-4d1a-81f5-0f3eaed333b5::[IpConfiguration]IpConfiguration]
+Find-NetworkAdapter: Finding network adapters matching the parameters.
+VERBOSE: [Z2626XFLEC501]:
+[[NetAdapterName]NetAdapterProductionda953d8f-1362-4d1a-81f5-0f3eaed333b5::[IpConfiguration]IpConfiguration]
+Find-NetworkAdapter: 1 network adapters were found matching the parameters.
+VERBOSE: [Z2626XFLEC501]:
+[[NetAdapterName]NetAdapterProductionda953d8f-1362-4d1a-81f5-0f3eaed333b5::[IpConfiguration]IpConfiguration]
+Test-TargetResource: A network adapter was found with the intended new name 'Production' of the Adapter. No rename
+required.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[NetAdapterName]NetAdapterProductionda953d8f-1362-4d1a-81f5-0f3eaed333b5::[IpConfiguration]IpConfiguration]  in 2.2660
+ seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[NetAdapterName]NetAdapterProductionda953d8f-1362-4d1a-81f5-0f3eaed333b5::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[NetAdapterName]NetAdapterProductionda953d8f-1362-4d1a-81f5-0f3eaed333b5::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[NetAdapterState]NetAdapterStateProductionb2563f5e-2786-4fc6-baf0-395fe4e02682::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[NetAdapterState]NetAdapterStateProductionb2563f5e-2786-4fc6-baf0-395fe4e02682::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]:
+[[NetAdapterState]NetAdapterStateProductionb2563f5e-2786-4fc6-baf0-395fe4e02682::[IpConfiguration]IpConfiguration]
+Importing the module DSC_NetAdapterState in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[NetAdapterState]NetAdapterStateProductionb2563f5e-2786-4fc6-baf0-395fe4e02682::[IpConfiguration]IpConfiguration]
+Test-TargetResource: Checking if adapter 'Production' is in desired state.
+VERBOSE: [Z2626XFLEC501]:
+[[NetAdapterState]NetAdapterStateProductionb2563f5e-2786-4fc6-baf0-395fe4e02682::[IpConfiguration]IpConfiguration]
+Get-TargetResource: Checking if network adapter exists or not.
+VERBOSE: [Z2626XFLEC501]:
+[[NetAdapterState]NetAdapterStateProductionb2563f5e-2786-4fc6-baf0-395fe4e02682::[IpConfiguration]IpConfiguration]
+Get-TargetResource: Checking if adapter 'Production' is in desired state.
+VERBOSE: [Z2626XFLEC501]:
+[[NetAdapterState]NetAdapterStateProductionb2563f5e-2786-4fc6-baf0-395fe4e02682::[IpConfiguration]IpConfiguration]
+Test-TargetResource: Network adapter 'Production' returned state 'Enabled'.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[NetAdapterState]NetAdapterStateProductionb2563f5e-2786-4fc6-baf0-395fe4e02682::[IpConfiguration]IpConfiguration]  in
+0.1400 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[NetAdapterState]NetAdapterStateProductionb2563f5e-2786-4fc6-baf0-395fe4e02682::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[NetAdapterState]NetAdapterStateProductionb2563f5e-2786-4fc6-baf0-395fe4e02682::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[IPAddress]IpAddressProduction72291173-2f51-44dc-9865-9b22f1d057d4::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[IPAddress]IpAddressProduction72291173-2f51-44dc-9865-9b22f1d057d4::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]:
+[[IPAddress]IpAddressProduction72291173-2f51-44dc-9865-9b22f1d057d4::[IpConfiguration]IpConfiguration] Importing the
+module DSC_IPAddress in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[IPAddress]IpAddressProduction72291173-2f51-44dc-9865-9b22f1d057d4::[IpConfiguration]IpConfiguration]
+Test-TargetResource: Checking the IP Address.
+VERBOSE: [Z2626XFLEC501]:
+[[IPAddress]IpAddressProduction72291173-2f51-44dc-9865-9b22f1d057d4::[IpConfiguration]IpConfiguration]
+Test-TargetResource: IP Address is in desired state.
+VERBOSE: [Z2626XFLEC501]:
+[[IPAddress]IpAddressProduction72291173-2f51-44dc-9865-9b22f1d057d4::[IpConfiguration]IpConfiguration]
+Test-TargetResource: Prefix Length is in desired state.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[IPAddress]IpAddressProduction72291173-2f51-44dc-9865-9b22f1d057d4::[IpConfiguration]IpConfiguration]  in 1.8130
+seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[IPAddress]IpAddressProduction72291173-2f51-44dc-9865-9b22f1d057d4::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[IPAddress]IpAddressProduction72291173-2f51-44dc-9865-9b22f1d057d4::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[DefaultGatewayAddress]GatewayProduction6589976f-9182-4841-a15e-46b64481a968::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[DefaultGatewayAddress]GatewayProduction6589976f-9182-4841-a15e-46b64481a968::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]:
+[[DefaultGatewayAddress]GatewayProduction6589976f-9182-4841-a15e-46b64481a968::[IpConfiguration]IpConfiguration]
+Importing the module DSC_DefaultGatewayAddress in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[DefaultGatewayAddress]GatewayProduction6589976f-9182-4841-a15e-46b64481a968::[IpConfiguration]IpConfiguration]
+Test-TargetResource: Checking the Default Gateway Address.
+VERBOSE: [Z2626XFLEC501]:
+[[DefaultGatewayAddress]GatewayProduction6589976f-9182-4841-a15e-46b64481a968::[IpConfiguration]IpConfiguration]
+Test-TargetResource: Default gateway is correct.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[DefaultGatewayAddress]GatewayProduction6589976f-9182-4841-a15e-46b64481a968::[IpConfiguration]IpConfiguration]  in
+0.1870 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[DefaultGatewayAddress]GatewayProduction6589976f-9182-4841-a15e-46b64481a968::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[DefaultGatewayAddress]GatewayProduction6589976f-9182-4841-a15e-46b64481a968::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[DnsServerAddress]DnsProduction1c6c2726-dbfe-4b55-b484-f960e450ed5b::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[DnsServerAddress]DnsProduction1c6c2726-dbfe-4b55-b484-f960e450ed5b::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]:
+[[DnsServerAddress]DnsProduction1c6c2726-dbfe-4b55-b484-f960e450ed5b::[IpConfiguration]IpConfiguration] Importing the
+module DSC_DnsServerAddress in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[DnsServerAddress]DnsProduction1c6c2726-dbfe-4b55-b484-f960e450ed5b::[IpConfiguration]IpConfiguration]
+Test-TargetResource: Checking the DNS server addresses.
+VERBOSE: [Z2626XFLEC501]:
+[[DnsServerAddress]DnsProduction1c6c2726-dbfe-4b55-b484-f960e450ed5b::[IpConfiguration]IpConfiguration]
+Get-DnsClientServerStaticAddress: Getting staticly assigned DNS server IPv4 address for interface alias 'Production'.
+VERBOSE: [Z2626XFLEC501]:
+[[DnsServerAddress]DnsProduction1c6c2726-dbfe-4b55-b484-f960e450ed5b::[IpConfiguration]IpConfiguration]
+Get-DnsClientServerStaticAddress: Statically assigned DNS server IPv4 address for interface alias 'Production' is
+'204.46.144.61,134.67.208.10,204.47.79.12'.
+VERBOSE: [Z2626XFLEC501]:
+[[DnsServerAddress]DnsProduction1c6c2726-dbfe-4b55-b484-f960e450ed5b::[IpConfiguration]IpConfiguration]
+Test-TargetResource: DNS server addresses are set correctly.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[DnsServerAddress]DnsProduction1c6c2726-dbfe-4b55-b484-f960e450ed5b::[IpConfiguration]IpConfiguration]  in 0.2030
+seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[DnsServerAddress]DnsProduction1c6c2726-dbfe-4b55-b484-f960e450ed5b::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[DnsServerAddress]DnsProduction1c6c2726-dbfe-4b55-b484-f960e450ed5b::[IpConfiguration]IpConfiguration]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[Computer]Computerz2626xflec501::[ComputerSettings]ComputerSettings]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[Computer]Computerz2626xflec501::[ComputerSettings]ComputerSettings]
+VERBOSE: [Z2626XFLEC501]:
+[[Computer]Computerz2626xflec501::[ComputerSettings]ComputerSettings] Importing the module DSC_Computer in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[Computer]Computerz2626xflec501::[ComputerSettings]ComputerSettings] Testing computer state for 'z2626xflec501'.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[Computer]Computerz2626xflec501::[ComputerSettings]ComputerSettings]  in 0.0790 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[Computer]Computerz2626xflec501::[ComputerSettings]ComputerSettings]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[Computer]Computerz2626xflec501::[ComputerSettings]ComputerSettings]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[TimeZone]TimeZone::[ComputerSettings]ComputerSettings]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[TimeZone]TimeZone::[ComputerSettings]ComputerSettings]
+VERBOSE: [Z2626XFLEC501]:                            [[TimeZone]TimeZone::[ComputerSettings]ComputerSettings] Importing
+ the module DSC_TimeZone in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[TimeZone]TimeZone::[ComputerSettings]ComputerSettings] Testing
+the time zone.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[TimeZone]TimeZone::[ComputerSettings]ComputerSettings]  in
+0.4840 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[TimeZone]TimeZone::[ComputerSettings]ComputerSettings]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[TimeZone]TimeZone::[ComputerSettings]ComputerSettings]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Importing the module DSC_xWindowsFeature in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase] Begin
+executing Test functionality on the FS-SMB1 feature.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Perform operation 'Enumerate CimInstances' with following parameters, ''namespaceName' = root\cimv2,'className' =
+Win32_OperatingSystem'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Operation 'Enumerate CimInstances' complete.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Loading module from path 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ServerManager\ServerManager.psd1'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Loading 'FormatsToProcess' from path
+'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ServerManager\Feature.format.ps1xml'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Loading module from path 'C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ServerManager\ServerManager.psm1'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Importing cmdlet 'Get-WindowsFeature'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Importing cmdlet 'Install-WindowsFeature'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Importing cmdlet 'Uninstall-WindowsFeature'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Importing function 'Disable-ServerManagerStandardUserRemoting'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Importing function 'Enable-ServerManagerStandardUserRemoting'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Importing alias 'Add-WindowsFeature'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Importing alias 'Remove-WindowsFeature'.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+Querying for feature FS-SMB1 using Server Manager cmdlet Get-WindowsFeature.
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase] The
+operation 'Get-WindowsFeature' started: FS-SMB1
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase] The
+operation 'Get-WindowsFeature' succeeded: FS-SMB1
+VERBOSE: [Z2626XFLEC501]:                            [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase] End
+executing Test functionality on the FS-SMB1 feature.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]  in
+1.6720 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[xWindowsFeature]DisableSmbV1::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[PowerShellExecutionPolicy]ExecutionPolicyAllSigned::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[PowerShellExecutionPolicy]ExecutionPolicyAllSigned::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]:
+[[PowerShellExecutionPolicy]ExecutionPolicyAllSigned::[SecurityBase]SecurityBase] Importing the module
+DSC_PowerShellExecutionPolicy in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[PowerShellExecutionPolicy]ExecutionPolicyAllSigned::[SecurityBase]SecurityBase] Testing the current execution policy
+for 'LocalMachine' is 'RemoteSigned'.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[PowerShellExecutionPolicy]ExecutionPolicyAllSigned::[SecurityBase]SecurityBase]  in 0.1250 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[PowerShellExecutionPolicy]ExecutionPolicyAllSigned::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[PowerShellExecutionPolicy]ExecutionPolicyAllSigned::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[UserRightsAssignment]DenyLogonLocallyForAdministrator::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[UserRightsAssignment]DenyLogonLocallyForAdministrator::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]DenyLogonLocallyForAdministrator::[SecurityBase]SecurityBase] Importing the module
+MSFT_UserRightsAssignment in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]DenyLogonLocallyForAdministrator::[SecurityBase]SecurityBase] Testing contoso\Administrator is
+present on policy Deny_log_on_locally
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[UserRightsAssignment]DenyLogonLocallyForAdministrator::[SecurityBase]SecurityBase]  in 0.5620 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[UserRightsAssignment]DenyLogonLocallyForAdministrator::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[UserRightsAssignment]DenyLogonLocallyForAdministrator::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase] Importing the module MSFT_UserRightsAssignment in
+ force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase] Testing Administrators,Backup Operators is
+present on policy Allow_log_on_locally
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase] BUILTIN\Backup Operators does not have Privilege
+Allow_log_on_locally
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase]  in 0.5470 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Set      ]
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase] Importing the module MSFT_UserRightsAssignment in
+ force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase] Policy: Allow_log_on_locally. Identity:
+BUILTIN\Administrators
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase] Granting Allow_log_on_locally rights to
+BUILTIN\Administrators,BUILTIN\Backup Operators
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase] Attempting to Set
+BUILTIN\Administrators,BUILTIN\Backup Operators for policy Allow_log_on_locally
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase] Testing Administrators,Backup Operators is
+present on policy Allow_log_on_locally
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase] Task successfully completed
+VERBOSE: [Z2626XFLEC501]:
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase] BUILTIN\Administrators,BUILTIN\Backup Operators
+successfully given rights to Allow_log_on_locally policy
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Set      ]
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase]  in 1.7650 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[UserRightsAssignment]AllowLogonLocally::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]:                            [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+ Importing the module MSFT_SecurityOption in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+ Testing SecurityOption: Accounts_Rename_administrator_account
+VERBOSE: [Z2626XFLEC501]:                            [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+ Current policy: a Desired policy: a
+VERBOSE: [Z2626XFLEC501]:                            [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+ Testing SecurityOption: Interactive_logon_Message_text_for_users_attempting_to_log_on
+VERBOSE: [Z2626XFLEC501]:                            [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+ Current policy: Your are logging on to a secure file server Desired policy: Your are logging on to a secure file
+server
+VERBOSE: [Z2626XFLEC501]:                            [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+ Testing SecurityOption: Interactive_logon_Message_title_for_users_attempting_to_log_on
+VERBOSE: [Z2626XFLEC501]:                            [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+ Current policy: Secure File Server Desired policy: Secure File Server
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+  in 1.1100 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[SecurityOption]SecOptionsFileServer::[SecurityBase]SecurityBase]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+Importing the module MSFT_RoleResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: File-Services
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: File-Services
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: FS-FileServer
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: FS-FileServer
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: FS-BranchCache
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: FS-BranchCache
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: FS-Data-Deduplication
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: FS-Data-Deduplication
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: FS-DFS-Namespace
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: FS-DFS-Namespace
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: FS-DFS-Replication
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: FS-DFS-Replication
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: FS-Resource-Manager
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: FS-Resource-Manager
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: FS-VSS-Agent
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: FS-VSS-Agent
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: FS-iSCSITarget-Server
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: FS-iSCSITarget-Server
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: iSCSITarget-VSS-VDS
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: iSCSITarget-VSS-VDS
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: FS-NFS-Service
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: FS-NFS-Service
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' started: FS-SyncShareService
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+The operation 'Get-WindowsFeature' succeeded: FS-SyncShareService
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+ in 4.2030 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[WindowsFeature]File-Services::[WindowsFeatures]WindowsFeatures]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[WindowsFeature]RDC::[WindowsFeatures]WindowsFeatures]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[WindowsFeature]RDC::[WindowsFeatures]WindowsFeatures]
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]RDC::[WindowsFeatures]WindowsFeatures] Importing
+the module MSFT_RoleResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]RDC::[WindowsFeatures]WindowsFeatures] The
+operation 'Get-WindowsFeature' started: RDC
+VERBOSE: [Z2626XFLEC501]:                            [[WindowsFeature]RDC::[WindowsFeatures]WindowsFeatures] The
+operation 'Get-WindowsFeature' succeeded: RDC
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[WindowsFeature]RDC::[WindowsFeatures]WindowsFeatures]  in 1.5160
+ seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[WindowsFeature]RDC::[WindowsFeatures]WindowsFeatures]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[WindowsFeature]RDC::[WindowsFeatures]WindowsFeatures]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules] Importing the module DSC_Firewall in
+force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules] Test-TargetResource: Checking settings
+ for firewall rule with Name 'RemoteDesktop-UserMode-In-TCP'.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules] Test-TargetResource: Find firewall
+rule with Name 'RemoteDesktop-UserMode-In-TCP'.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules] Test-TargetResource: Check each
+defined parameter against the existing firewall rule with Name 'RemoteDesktop-UserMode-In-TCP'.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules] Get-FirewallRuleProperty: Get all the
+properties and add filter info to rule map.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules] Test-RuleProperties: Test Firewall
+rule with Name 'RemoteDesktop-UserMode-In-TCP' returning True.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules] Test-TargetResource: Check Firewall
+rule with Name 'RemoteDesktop-UserMode-In-TCP' returning True.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules]  in 9.1400 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-TCP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules] Importing the module DSC_Firewall in
+force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules] Test-TargetResource: Checking settings
+ for firewall rule with Name 'RemoteDesktop-UserMode-In-UDP'.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules] Test-TargetResource: Find firewall
+rule with Name 'RemoteDesktop-UserMode-In-UDP'.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules] Test-TargetResource: Check each
+defined parameter against the existing firewall rule with Name 'RemoteDesktop-UserMode-In-UDP'.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules] Get-FirewallRuleProperty: Get all the
+properties and add filter info to rule map.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules] Test-RuleProperties: Test Firewall
+rule with Name 'RemoteDesktop-UserMode-In-UDP' returning True.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules] Test-TargetResource: Check Firewall
+rule with Name 'RemoteDesktop-UserMode-In-UDP' returning True.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules]  in 6.0000 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[Firewall]Firewall_RemoteDesktop-UserMode-In-UDP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules] Importing the module DSC_Firewall in
+force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules] Test-TargetResource: Checking settings
+for firewall rule with Name 'RemoteDesktop-Shadow-In-TCP'.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules] Test-TargetResource: Find firewall rule
+with Name 'RemoteDesktop-Shadow-In-TCP'.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules] Test-TargetResource: Check each defined
+parameter against the existing firewall rule with Name 'RemoteDesktop-Shadow-In-TCP'.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules] Get-FirewallRuleProperty: Get all the
+properties and add filter info to rule map.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules] Test-RuleProperties: Test Firewall rule
+with Name 'RemoteDesktop-Shadow-In-TCP' returning True.
+VERBOSE: [Z2626XFLEC501]:
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules] Test-TargetResource: Check Firewall rule
+ with Name 'RemoteDesktop-Shadow-In-TCP' returning True.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules]  in 4.3120 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[Firewall]Firewall_RemoteDesktop-Shadow-In-TCP::[FirewallRules]FirewallRules]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[File]C\Temp\accesschk64.exe::[FilesAndFolders]FilesAndFolders]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[File]C\Temp\accesschk64.exe::[FilesAndFolders]FilesAndFolders]
+VERBOSE: [Z2626XFLEC501]:                            [[File]C\Temp\accesschk64.exe::[FilesAndFolders]FilesAndFolders]
+Building file list from cache.
+VERBOSE: [Z2626XFLEC501]:                            [[File]C\Temp\accesschk64.exe::[FilesAndFolders]FilesAndFolders]
+The destination object was found and no action is required.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[File]C\Temp\accesschk64.exe::[FilesAndFolders]FilesAndFolders]
+in 0.4380 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[File]C\Temp\accesschk64.exe::[FilesAndFolders]FilesAndFolders]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[File]C\Temp\accesschk64.exe::[FilesAndFolders]FilesAndFolders]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[File]C\Temp\NTRights.exe::[FilesAndFolders]FilesAndFolders]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[File]C\Temp\NTRights.exe::[FilesAndFolders]FilesAndFolders]
+VERBOSE: [Z2626XFLEC501]:                            [[File]C\Temp\NTRights.exe::[FilesAndFolders]FilesAndFolders]
+Building file list from cache.
+VERBOSE: [Z2626XFLEC501]:                            [[File]C\Temp\NTRights.exe::[FilesAndFolders]FilesAndFolders] The
+destination object was found and no action is required.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[File]C\Temp\NTRights.exe::[FilesAndFolders]FilesAndFolders]  in
+0.1720 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[File]C\Temp\NTRights.exe::[FilesAndFolders]FilesAndFolders]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[File]C\Temp\NTRights.exe::[FilesAndFolders]FilesAndFolders]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[xScript]Script_GiveSCOMLogonRights::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[xScript]Script_GiveSCOMLogonRights::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_GiveSCOMLogonRights::[Scripts]Scripts] Importing
+the module DSC_xScriptResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_GiveSCOMLogonRights::[Scripts]Scripts] Begin
+executing test script.
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_GiveSCOMLogonRights::[Scripts]Scripts] Executing
+script: $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+$ReturnHash.Result -eq 1
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_GiveSCOMLogonRights::[Scripts]Scripts] End
+executing test script.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[xScript]Script_GiveSCOMLogonRights::[Scripts]Scripts]  in 0.1880
+ seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[xScript]Script_GiveSCOMLogonRights::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[xScript]Script_GiveSCOMLogonRights::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[xScript]Script_FixIPv6DHCP::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[xScript]Script_FixIPv6DHCP::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_FixIPv6DHCP::[Scripts]Scripts] Importing the
+module DSC_xScriptResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_FixIPv6DHCP::[Scripts]Scripts] Begin executing
+test script.
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_FixIPv6DHCP::[Scripts]Scripts] Executing script:
+$ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+$ReturnHash.Result -eq 0
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_FixIPv6DHCP::[Scripts]Scripts] End executing test
+ script.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[xScript]Script_FixIPv6DHCP::[Scripts]Scripts]  in 0.2040
+seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[xScript]Script_FixIPv6DHCP::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[xScript]Script_FixIPv6DHCP::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[xScript]Script_DisableDynamicDNSRegistration::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[xScript]Script_DisableDynamicDNSRegistration::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_DisableDynamicDNSRegistration::[Scripts]Scripts]
+Importing the module DSC_xScriptResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_DisableDynamicDNSRegistration::[Scripts]Scripts]
+Begin executing test script.
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_DisableDynamicDNSRegistration::[Scripts]Scripts]
+Executing script: $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+$ReturnHash.Result -eq 0
+VERBOSE: [Z2626XFLEC501]:                            [[xScript]Script_DisableDynamicDNSRegistration::[Scripts]Scripts]
+End executing test script.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[xScript]Script_DisableDynamicDNSRegistration::[Scripts]Scripts]
+ in 2.9840 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[xScript]Script_DisableDynamicDNSRegistration::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[xScript]Script_DisableDynamicDNSRegistration::[Scripts]Scripts]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values] Importing the module DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values] Test-TargetResource is starting for Registry resource with Key
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values] Get-TargetResource is starting for Registry resource with Key
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values] The registry key at path HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values] The registry key at path HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters has a value
+named NtpServer.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values] Get-TargetResource has finished for Registry resource with Key
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values] The registry key at path HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters has a value
+named NtpServer.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values] Test-TargetResource has finished for Registry resource with Key
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values]  in 0.8910 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer::[RegistryValues]Registry
+Values]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[RemoteDesktopAdmin]RDA::[ORDRemoteDesktopAdmin]ORDRemoteDesktopAdmin]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[RemoteDesktopAdmin]RDA::[ORDRemoteDesktopAdmin]ORDRemoteDesktopAdmin]
+VERBOSE: [Z2626XFLEC501]:
+[[RemoteDesktopAdmin]RDA::[ORDRemoteDesktopAdmin]ORDRemoteDesktopAdmin] Importing the module DSC_RemoteDesktopAdmin in
+force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[RemoteDesktopAdmin]RDA::[ORDRemoteDesktopAdmin]ORDRemoteDesktopAdmin] Getting Remote Desktop Admin settings.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[RemoteDesktopAdmin]RDA::[ORDRemoteDesktopAdmin]ORDRemoteDesktopAdmin]  in 0.0620 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[RemoteDesktopAdmin]RDA::[ORDRemoteDesktopAdmin]ORDRemoteDesktopAdmin]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[RemoteDesktopAdmin]RDA::[ORDRemoteDesktopAdmin]ORDRemoteDesktopAdmin]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController] Test-TargetResource is starting
+ for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController] Get-TargetResource is starting
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named MaintenanceWindowMode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController] Get-TargetResource has finished
+ for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named MaintenanceWindowMode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController] Test-TargetResource has
+finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController]  in 0.0940 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_MaintenanceWindowMode::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController] Test-TargetResource is starting for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController] Get-TargetResource is starting for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named MonitorInterval.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController] Get-TargetResource has finished for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named MonitorInterval.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController] Test-TargetResource has finished for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController]  in 0.0940 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_MonitorInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController] Test-TargetResource is starting
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController] Get-TargetResource is starting
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named AutoCorrectInterval.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController] Get-TargetResource has finished
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named AutoCorrectInterval.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController] Test-TargetResource has finished
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController]  in 0.0930 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_AutoCorrectInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController] Test-TargetResource is
+starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController] Get-TargetResource is
+starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named AutoCorrectIntervalOverride.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController] Get-TargetResource has
+finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named AutoCorrectIntervalOverride.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController] Test-TargetResource has
+finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController]  in 0.1250 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_AutoCorrectIntervalOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController] Test-TargetResource is starting for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController] Get-TargetResource is starting for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named RefreshInterval.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController] Get-TargetResource has finished for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named RefreshInterval.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController] Test-TargetResource has finished for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController]  in 0.0940 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_RefreshInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController] Test-TargetResource is
+starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController] Get-TargetResource is
+starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named RefreshIntervalOverride.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController] Get-TargetResource has
+finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named RefreshIntervalOverride.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController] Test-TargetResource has
+finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController]  in 0.1090 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_RefreshIntervalOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController] Test-TargetResource is starting
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController] Get-TargetResource is starting for
+ Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named ControllerInterval.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController] Get-TargetResource has finished
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named ControllerInterval.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController] Test-TargetResource has finished
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController]  in 0.0940 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_ControllerInterval::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController] Test-TargetResource is
+starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController] Get-TargetResource is
+starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named MaintenanceWindowOverride.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController] Get-TargetResource has
+finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named MaintenanceWindowOverride.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController] Test-TargetResource has
+finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController]  in 0.1100 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_MaintenanceWindowOverride::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController] Test-TargetResource is starting for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController] Get-TargetResource is starting for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named WriteTranscripts.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController] Get-TargetResource has finished for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named WriteTranscripts.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController] Test-TargetResource has finished for
+ Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController]  in 0.1090 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_WriteTranscripts::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController] Test-TargetResource is starting for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController] Get-TargetResource is starting for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named MaxLcmRuntime.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController] Get-TargetResource has finished for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named MaxLcmRuntime.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController] Test-TargetResource has finished for
+Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController]  in 0.1250 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_MaxLcmRuntime::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController] Test-TargetResource is starting
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController] Get-TargetResource is starting for
+ Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named LogHistoryTimeSpan.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController] Get-TargetResource has finished
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named LogHistoryTimeSpan.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController] Test-TargetResource has finished
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController]  in 0.1090 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_LogHistoryTimeSpan::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController] Importing the module
+DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController] Test-TargetResource is starting
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController] Get-TargetResource is starting for
+ Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController exists.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named SendDscTaggingData.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController] Get-TargetResource has finished
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController] The registry key at path
+HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController has a value named SendDscTaggingData.
+VERBOSE: [Z2626XFLEC501]:
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController] Test-TargetResource has finished
+for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscLcmController
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController]  in 0.1100 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[xRegistry]DscLcmController_SendDscTaggingData::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[File]DscLcmControllerScript::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[File]DscLcmControllerScript::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:                            [[File]DscLcmControllerScript::[DscLcmController]DscLcmController]
+ The destination object was found and no action is required.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[File]DscLcmControllerScript::[DscLcmController]DscLcmController]
+  in 0.0150 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[File]DscLcmControllerScript::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[File]DscLcmControllerScript::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Importing the module DSC_ScheduledTask in force
+mode.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Testing scheduled task 'DscLcmController' in
+'\DscController\'.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Getting current scheduled task values for task
+'DscLcmController' in '\DscController\'.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Task 'DscLcmController' found in
+'\DscController\'. Retrieving settings, first action, first trigger and repetition settings.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Detected schedule type 'Once' for first trigger.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Current scheduled task values for task
+'DscLcmController' in '\DscController\' retrieved.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Testing DSC parameter state.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] NOTMATCH: Value (type 'System.String') for
+property 'StartTime' does not match. Current state is '2021-07-08T17:42:17' and desired state is '2021-07-12T08:24:16'.
+ (DRC0021)
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] MATCH: Value (type 'System.String') for property
+ 'ActionExecutable' does match. Current state is 'C:\windows\system32\WindowsPowerShell\v1.0\powershell.exe' and
+desired state is 'C:\windows\system32\WindowsPowerShell\v1.0\powershell.exe'. (DRC0020)
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] MATCH: Value (type 'System.String') for property
+ 'ActionArguments' does match. Current state is '-File C:\ProgramData\Dsc\LcmController\LcmController.ps1' and desired
+state is '-File C:\ProgramData\Dsc\LcmController\LcmController.ps1'. (DRC0020)
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] MATCH: Value (type 'System.String') for property
+ 'TaskPath' does match. Current state is '\DscController\' and desired state is '\DscController\'. (DRC0020)
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] MATCH: Value (type 'System.String') for property
+ 'RepeatInterval' does match. Current state is '00:05:00' and desired state is '00:05:00'. (DRC0020)
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] MATCH: Value (type 'System.String') for property
+ 'ScheduleType' does match. Current state is 'Once' and desired state is 'Once'. (DRC0020)
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] MATCH: Value (type 'System.String') for property
+ 'LogonType' does match. Current state is 'ServiceAccount' and desired state is 'ServiceAccount'. (DRC0020)
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] MATCH: Value (type 'System.String') for property
+ 'TaskName' does match. Current state is 'DscLcmController' and desired state is 'DscLcmController'. (DRC0020)
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] MATCH: Value (type 'System.String') for property
+ 'RepetitionDuration' does match. Current state is 'Indefinitely' and desired state is 'Indefinitely'. (DRC0020)
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Test-DscParameter result is 'False'. (DRC0026)
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController]  in 2.6720 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Set      ]
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Importing the module DSC_ScheduledTask in force
+mode.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Setting scheduled task 'DscLcmController' in
+'\DscController\'.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Getting current scheduled task values for task
+'DscLcmController' in '\DscController\'.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Task 'DscLcmController' found in
+'\DscController\'. Retrieving settings, first action, first trigger and repetition settings.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Detected schedule type 'Once' for first trigger.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Current scheduled task values for task
+'DscLcmController' in '\DscController\' retrieved.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Configuring trigger repetition.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Creating MSFT_TaskRepetitionPattern CIM instance
+ to configure repetition in trigger.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Creating temporary trigger to get
+MSFT_TaskRepetitionPattern CIM instance.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Creating scheduled task principal for account
+'NT AUTHORITY\SYSTEM' using logon type 'ServiceAccount'.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Retrieving the scheduled task 'DscLcmController'
+ from '\DscController\'.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Creating new scheduled task 'DscLcmController'
+in '\DscController\'.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Setting repetition trigger settings on task
+'DscLcmController' in '\DscController\'.
+VERBOSE: [Z2626XFLEC501]:
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController] Updating scheduled task 'DscLcmController' in
+'\DscController\'.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Set      ]
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController]  in 2.3440 seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]
+[[ScheduledTask]DscControllerTask::[DscLcmController]DscLcmController]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[xRegistry]DscVersion::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[xRegistry]DscVersion::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscVersion::[DscTagging]DscTagging] Importing the
+module DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscVersion::[DscTagging]DscTagging]
+Test-TargetResource is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscVersion::[DscTagging]DscTagging] Get-TargetResource
+ is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscVersion::[DscTagging]DscTagging] The registry key
+at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging exists.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscVersion::[DscTagging]DscTagging] The registry key
+at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging has a value named Version.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscVersion::[DscTagging]DscTagging] Get-TargetResource
+ has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscVersion::[DscTagging]DscTagging] The registry key
+at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging has a value named Version.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscVersion::[DscTagging]DscTagging]
+Test-TargetResource has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[xRegistry]DscVersion::[DscTagging]DscTagging]  in 0.0940
+seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[xRegistry]DscVersion::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[xRegistry]DscVersion::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[xRegistry]DscEnvironment::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[xRegistry]DscEnvironment::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscEnvironment::[DscTagging]DscTagging] Importing the
+module DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscEnvironment::[DscTagging]DscTagging]
+Test-TargetResource is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscEnvironment::[DscTagging]DscTagging]
+Get-TargetResource is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscEnvironment::[DscTagging]DscTagging] The registry
+key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging exists.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscEnvironment::[DscTagging]DscTagging] The registry
+key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging has a value named Environment.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscEnvironment::[DscTagging]DscTagging]
+Get-TargetResource has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscEnvironment::[DscTagging]DscTagging] The registry
+key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging has a value named Environment.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscEnvironment::[DscTagging]DscTagging]
+Test-TargetResource has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[xRegistry]DscEnvironment::[DscTagging]DscTagging]  in 0.0930
+seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[xRegistry]DscEnvironment::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[xRegistry]DscEnvironment::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[xRegistry]DscGitCommitId::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[xRegistry]DscGitCommitId::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscGitCommitId::[DscTagging]DscTagging] Importing the
+module DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscGitCommitId::[DscTagging]DscTagging]
+Test-TargetResource is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscGitCommitId::[DscTagging]DscTagging]
+Get-TargetResource is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscGitCommitId::[DscTagging]DscTagging] The registry
+key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging exists.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscGitCommitId::[DscTagging]DscTagging] The registry
+key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging has a value named GitCommitId.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscGitCommitId::[DscTagging]DscTagging]
+Get-TargetResource has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscGitCommitId::[DscTagging]DscTagging] The registry
+key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging has a value named GitCommitId.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscGitCommitId::[DscTagging]DscTagging]
+Test-TargetResource has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[xRegistry]DscGitCommitId::[DscTagging]DscTagging]  in 0.1100
+seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[xRegistry]DscGitCommitId::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[xRegistry]DscGitCommitId::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[xRegistry]DscBuildDate::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[xRegistry]DscBuildDate::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging] Importing the
+module DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging]
+Test-TargetResource is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging]
+Get-TargetResource is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging] The registry key
+ at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging exists.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging] The registry key
+ at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging has a value named BuildDate.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging]
+Get-TargetResource has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging] The registry key
+ at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging has a value named BuildDate.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging] The value
+BuildDate under the registry key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging does not match the expected value.
+Expected System.String[] but was System.Object[].
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging]
+Test-TargetResource has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[xRegistry]DscBuildDate::[DscTagging]DscTagging]  in 0.1880
+seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Set      ]  [[xRegistry]DscBuildDate::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging] Importing the
+module DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging]
+Set-TargetResource is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging] The registry key
+ at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging exists.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging] Overwriting the
+value BuildDate under the registry key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging...
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildDate::[DscTagging]DscTagging]
+Set-TargetResource has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Set      ]  [[xRegistry]DscBuildDate::[DscTagging]DscTagging]  in 0.1090
+seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[xRegistry]DscBuildDate::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Resource ]  [[xRegistry]DscBuildNumber::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Start  Test     ]  [[xRegistry]DscBuildNumber::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildNumber::[DscTagging]DscTagging] Importing the
+module DSC_xRegistryResource in force mode.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildNumber::[DscTagging]DscTagging]
+Test-TargetResource is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildNumber::[DscTagging]DscTagging]
+Get-TargetResource is starting for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildNumber::[DscTagging]DscTagging] The registry
+key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging exists.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildNumber::[DscTagging]DscTagging] The registry
+key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging has a value named BuildNumber.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildNumber::[DscTagging]DscTagging]
+Get-TargetResource has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildNumber::[DscTagging]DscTagging] The registry
+key at path HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging has a value named BuildNumber.
+VERBOSE: [Z2626XFLEC501]:                            [[xRegistry]DscBuildNumber::[DscTagging]DscTagging]
+Test-TargetResource has finished for Registry resource with Key HKEY_LOCAL_MACHINE\SOFTWARE\DscTagging
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Test     ]  [[xRegistry]DscBuildNumber::[DscTagging]DscTagging]  in 0.0940
+seconds.
+VERBOSE: [Z2626XFLEC501]: LCM:  [ Skip   Set      ]  [[xRegistry]DscBuildNumber::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Resource ]  [[xRegistry]DscBuildNumber::[DscTagging]DscTagging]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Set      ]
+VERBOSE: [Z2626XFLEC501]: LCM:  [ End    Set      ]    in  59.4060 seconds.
+VERBOSE: Operation 'Invoke CimMethod' complete.
+VERBOSE: Time taken for configuration job to complete is 59.739 seconds
+ActionAfterReboot              : ContinueConfiguration
+AgentId                        : 759F8B74-DA82-11EB-9EBC-0050569E4609
+AllowModuleOverWrite           : True
+CertificateID                  :
+ConfigurationDownloadManagers  : {}
+ConfigurationID                :
+ConfigurationMode              : ApplyAndMonitor
+ConfigurationModeFrequencyMins : 30
+Credential                     :
+DebugMode                      : {All}
+DownloadManagerCustomData      :
+DownloadManagerName            :
+LCMCompatibleVersions          : {1.0, 2.0}
+LCMState                       : Idle
+LCMStateDetail                 :
+LCMVersion                     : 2.0
+StatusRetentionTimeInDays      : 10
+SignatureValidationPolicy      : NONE
+SignatureValidations           : {}
+MaximumDownloadSizeMB          : 500
+PartialConfigurations          :
+RebootNodeIfNeeded             : True
+RefreshFrequencyMins           : 30
+RefreshMode                    : Push
+ReportManagers                 : {}
+ResourceModuleManagers         : {}
+PSComputerName                 : z2626xflec501
+PSComputerName                 : z2626xflec501
+
+
+
+PS D:\DSC\try16\DscWorkshop\DSC>

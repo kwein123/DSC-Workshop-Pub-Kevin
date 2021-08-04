@@ -1,0 +1,12 @@
+NodeName: p2626xordz001
+Environment: Test
+Role: JustSmallFix
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq p2626xordz001).Description]'
+Location: COR
+
+# To create "slim DSC" to only set one setting,
+# 1. Create slim .YML, like this file
+# 2. Set role to JustSmallFix
+# 3. In Datum.yml, comment out ORDBasicServer.yml
+ComputerSettings:
+  Name: p2626xordz001

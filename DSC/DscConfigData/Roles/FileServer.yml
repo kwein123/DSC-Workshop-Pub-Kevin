@@ -1,11 +1,14 @@
 Configurations:
   #- FilesAndFolders
-  - SecurityBase
+  #- SecurityBase
   - WindowsFeatures
 
 WindowsFeatures:
   Name:
     - File-Services
+    - FS-Resource-Manager
+    - RSAT-FSRM-Mgmt
+    - FS-Data-Deduplication
 
 # FilesAndFolders:
 #   Items:
@@ -23,8 +26,10 @@ WindowsFeatures:
 #       SourcePath: \\DSCDC01\SYSVOL\contoso.com\Policies
 #       Type: Directory
 
-SecurityBase:
-  Role: FileServer
+#SecurityBase:
+#  Role: Baseline
+
+  #Role: FileServer
 
   # The parameter under Disks must match, by name, what's in Disks.schema.psm1
   # Renaming from DiskLayout to Disks worked!

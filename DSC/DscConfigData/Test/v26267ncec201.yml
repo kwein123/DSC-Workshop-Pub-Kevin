@@ -1,6 +1,7 @@
 NodeName: v26267ncec201
 Environment: Test
-Role: HardwareServer
+#Role: JustSmallFix
+Role: FileServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncec201).Description]'
 Location: RTP
 
@@ -8,6 +9,7 @@ Configurations:
   - IpConfiguration
   - WindowsFeatures
   #- PrintManagementDSC
+  - ChocolateyPackages
 
 # PrintManagementDSC:
 #   Items:
@@ -20,14 +22,21 @@ Configurations:
 
 WindowsFeatures:
   Name:
-    - Print-Services
-    - Print-Server
-    - RSAT-Print-Services
+    # - Print-Services #This causes an error that won't resolve with a reboot:
+    #VERBOSE: [V26267NCEC201]:                            [[WindowsFeature]Print-Services::[WindowsFeatures]WindowsFeatures]
+    #The operation 'Get-WindowsFeature' started: Print-Services
+    #The request to list features available on the specified server failed.
+    #The operation cannot be completed, because the server that you specified requires a restart.
+    #- Print-Server
+    #- RSAT-Print-Services
+    - FS-Resource-Manager
+    - RSAT-FSRM-Mgmt
+    - FS-Data-Deduplication
 
-# This sets up the 2nd NIC
-#Ord:
-  #IPAddress: 172.16.2.141
-  #InterfaceAlias: Ethernet1
+# # This sets up the 2nd NIC
+# #Ord:
+#   #IPAddress: 172.16.2.141
+#   #InterfaceAlias: Ethernet1
 
 
 IpConfiguration:
@@ -51,3 +60,20 @@ IpConfiguration:
 
 ComputerSettings:
   Name: v26267ncec201
+
+# ChocolateyPackages:
+#   Software:
+#     Ensure: Present
+#   Features:
+#     Name: useFipsCompliantChecksums
+#     Ensure: Present
+#   Sources:
+#     Name: ORDChoco
+#     Ensure: Present
+#     Source: '\\V26267NCSP502\ORDChoco'
+#     #Source: '\\V26265NCHH500\ORDChoco'
+#   Packages:
+#     - Name: MomAgent
+#       Ensure: Present
+#       ChocolateyOptions:
+#         Source: ORDChoco

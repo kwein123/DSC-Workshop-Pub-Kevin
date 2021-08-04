@@ -94,6 +94,10 @@ ChocolateyPackages:
       Ensure: Present
       ChocolateyOptions:
         Source: ORDChoco
+    - Name: MomAgent # Added 7/27/21, per Steven
+      Ensure: Present
+      ChocolateyOptions:
+        Source: ORDChoco
 
 #        $Clients = @(Get-NetIPConfiguration | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Get-DNSClient)
 # Disconnected NICs must be excluded from below tests, or it blows up.

@@ -1,0 +1,34 @@
+# When we need to implement one small fix across a bunch of non-DSC-configured servers, here's the process:
+# 1. Create a .YML file for those servers. You can move the other .YML files out of there to speed things up.
+# 2. Set the Role: of each server to be this file, JustSmallFix
+# 3. Comment out "- Roles\ORDBasicServer" in Datum.yml
+# 4. Build.ps1
+# 5. Push-DSCTo.ps1 -computer ...
+
+Configurations:
+  - FilesAndFolders
+  - Scripts
+
+FilesAndFolders:
+  Items:
+    - SourcePath: \\v26267ncsp502\ORDchoco\FilesToCopy\BootHole
+      DestinationPath: C:\BootHole
+      Type: Directory
+      # Recurse has to be specified as true, not $true or Enabled, or it will blow up
+      Recurse: true
+
+Scripts:
+  Items:
+    - Name: FixBootHole
+      # Successful run of _BootHole will create signature.p7
+      # If we don't Chdir \BootHole, the current dir will be \windows\system32, and the .ps1 files inside the .cmd won't be found in that folder
+      GetScript: |
+        test-path C:\BootHole\signature.p7
+      TestScript: |
+        [scriptblock]::Create($GetScript).Invoke()
+      SetScript: |
+        Chdir \BootHole
+        C:\BootHole\_BootHole.cmd
+
+PSDscAllowPlainTextPassword: True
+PSDscAllowDomainUser: True
