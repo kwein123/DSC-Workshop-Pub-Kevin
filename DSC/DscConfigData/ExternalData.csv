@@ -1,27 +1,67 @@
 ComputerName;Role;Description
+a26265rims500;SCCMServer;SCCM Server
+a26267ridz002;JustSmallFix;Mini DSC
+a26267rihh601;JustSmallFix;Mini DSC
+a2626xridz001;NetBackupServer;NetBackup Server
+cinbuild01;FileServer;Prep File Server
+f2626cokdz001;NetBackupServer;NetBackup Server
+h26265ohms500;SCCMServer;SCCM Server
+h26267ohay000;HardwareServer;Hardware Server
+h26267ohhh001;JustSmallFix;Mini DSC
+h26267ohhh601;JustSmallFix;Mini DSC
+h2626uohec505;FileServer;File Server
+l26265orms500;SCCMServer;SCCM Server
+l2626xordz001;NetBackupServer;NetBackup Server
 n26265gams500;SCCMServer;SCCM Server
-a26267rims500;SCCMServer;SCCM Server
-h26267ohms500;SCCMServer;SCCM Server
-l26267orms500;SCCMServer;SCCM Server
-n26267gams500;SCCMServer;SCCM Server
-p26267orms500;SCCMServer;SCCM Server
-q26267mnms500;SCCMServer;SCCM Server
-v26267mcms501;SCCMServer;SCCM Server
+n26267gadz002;JustSmallFix;Mini DSC
+n26267gapk001;;Generic server
+n2626ugadz003;NetBackupServer;NetBackup Server
+p26265orms500;SCCMServer;SCCM Server
+p26267orhh601;JustSmallFix;Mini DSC
+p2626xordz001;JustSmallFix;Mini DSC
+q26265mnay005;;Metasys Network Server
+q26265mnms500;SCCMServer;SCCM Server
+q26267mndz102;JustSmallFix;Mini DSC
+q2626xmndz101;NetBackupServer;NetBackup Server
+q2626xmnec001;JustSmallFix;Mini DSC
+v26265ncay502;JustSmallFix;Mini DSC
+v26265ncay504;JustSmallFix;Mini DSC
+v26267mcpk505;;Generic server
+v26267mcpk506;JustSmallFix;Mini DSC
+v26267ncay506;JustSmallFix;Mini DSC
+v26267ncay507;JustSmallFix;Mini DSC
+v26267ncay508;JustSmallFix;Mini DSC
+v26267ncay509;;Non Production LAN Server
+v26267ncay510;JustSmallFix;Mini DSC
 v26267ncay511;WebServer;Web Server
+v26267ncay516;JustSmallFix;Mini DSC
+v26267ncay520;JustSmallFix;Mini DSC
 v26267ncec201;DSCTestServer;DSC Test Server
 v26267ncec202;DSCTestServer;DSC Test Server
+v26267nchh001;JustSmallFix;Mini DSC
+v26267nchh510;JustSmallFix;Mini DSC
+v26267nchh601;;Generic server
+v26267nchh602;;Generic server
 v26267ncpk514;AppServer;STICS App Server
-n26267ncpk515;AppServer;STICS App Server
-n26267gams500;SCCMServer;SCCM Server
+v26267ncpk515;AppServer;STICS App Server
+v26267ncpk601;;Generic Server
+v26267ncpk606;JustSmallFix;Mini DSC
+v26267ncsp501;JustSmallFix;Mini DSC
 v26267ncsp502;DevAutomationServer;Dev Automation Server
 v26267ncsp503;ProdAutomationServer;Prod Automation Server
+v26267ncsp520;JustSmallFix;Mini DSC
+v26267ncsp521;JustSmallFix;Mini DSC
+v26267ncsp522;JustSmallFix;Mini DSC
+v26267ncth508;;Generic Server
 v26267ncxg005;VMwareServer;VMware View Connection Broker Server
 v26267ncxg006;VMwareServer;VMware View Connection Manager Server
 v26267ncxg007;VMwareServer;VMware View Connection Manager Server
 v26267ncxg008;VMwareServer;VMware View Connection Broker Linux non-PIV Server
-DSCFile01;FileServer;File Server in Dev
-DSCFile02;FileServer;File Server in Test
-DSCFile03;FileServer;File Server
-DSCWeb01;WebServer;Web Server in Dev
-DSCWeb02;WebServer;Web Server in Test
-DSCWeb03;WebServer;Web Server
+v2626umcay514;JustSmallFix;Mini DSC
+v2626umcay515;JustSmallFix;Mini DSC
+v2626umchh503;JustSmallFix;Mini DSC
+v2626umcms501;SCCMServer;SCCM Server
+v2626urtec102;JustSmallFix;Mini DSC
+z26267flhh501;JustSmallFix;Mini DSC
+z2626xfldz002;JustSmallFix;Mini DSC
+z2626xflec501;FileServer;File Server

@@ -1,0 +1,30 @@
+DisableNetBios: true
+ConfigureIPv6: 32
+Interfaces:
+  - IpAddress: 10.0.0.1
+    Prefix: 8
+    Gateway: 10.0.0.254
+    DnsServer:
+      - 10.1.1.1
+      - 10.1.1.2
+    DisableNetbios: true
+    DisableIPv6: true
+  - InterfaceAlias: Ethernet 2
+    IpAddress: 10.0.0.2
+    Prefix: 8
+    Gateway: 10.0.0.254
+    DnsServer:
+      - 10.1.1.1
+      - 10.1.1.2
+    DisableNetbios: true
+  - InterfaceAlias: Ethernet 3
+    IpAddress: 10.0.0.3
+    Prefix: 8
+  - InterfaceAlias: Ethernet 4
+    Gateway: 10.0.0.254
+    DnsServer:
+      - 10.1.1.1
+      - 10.1.1.2
+  - InterfaceAlias: Wi-Fi
+    EnableDhcp: true
+    DisableIPv6: true

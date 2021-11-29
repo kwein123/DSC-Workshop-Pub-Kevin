@@ -1,0 +1,24 @@
+NodeName: h2626uohec504
+Environment: Test
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq h2626uohec504).Description]'
+Location: CIN
+# This will replace H2626UOHEC504
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.64.66/24
+      GatewayAddress: 204.47.64.1
+      DnsServerAddress:
+        - 204.47.176.10
+        - 204.46.24.12
+        - 204.47.79.12
+
+ComputerSettings:
+  Name: h2626uohec504

@@ -3,12 +3,14 @@ Configurations:
   #- SecurityBase
   - WindowsFeatures
 
+# Added replication for v2626umcec505.
 WindowsFeatures:
   Name:
     - File-Services
     - FS-Resource-Manager
     - RSAT-FSRM-Mgmt
     - FS-Data-Deduplication
+    - FS-DFS-Replication
 
 # FilesAndFolders:
 #   Items:

@@ -15,6 +15,10 @@ FilesAndFolders:
     - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\NTRights.exe
       DestinationPath: 'C:\Temp\NTRights.exe'
       Type: File
+    - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\ATP
+      DestinationPath: 'C:\Temp\ATP'
+      Type: Directory
+      Recurse: True
 
 #     - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\MSS-legacy.adml
 #       DestinationPath: 'C:\Windows\PolicyDefinitions\en-US\MSS-legacy.adml'
@@ -90,11 +94,12 @@ ChocolateyPackages:
       Ensure: Present
       ChocolateyOptions:
         Source: ORDChoco
-    - Name: bigfix
-      Ensure: Present
-      ChocolateyOptions:
-        Source: ORDChoco
+    #- Name: bigfix
+    #  Ensure: Present
+    #  ChocolateyOptions:
+    #    Source: ORDChoco
     - Name: MomAgent # Added 7/27/21, per Steven
+      #Ensure: Absent
       Ensure: Present
       ChocolateyOptions:
         Source: ORDChoco
@@ -105,8 +110,19 @@ ChocolateyPackages:
 # From GetScript:        Write-Verbose "In GetScript, found: $Found"
 # From TestScript:        Write-Verbose "Hash.Result $($ReturnHash.Result)"
 
+# $Found = @(Get-ItemProperty -Path 'HKLM:\Software\Microsoft\Windows Advanced Threat Protection\Status' -Name 'OnboardingState')
+# SilentlyContinue suppresses the error so that DSC continues.
 Scripts:
   Items:
+    - Name: InstallATPDefender
+      GetScript: |
+        $Found = @(Get-ItemProperty -Path 'HKLM:\Software\Microsoft\Windows Advanced Threat Protection\Status' -Name 'OnboardingState' -ErrorAction SilentlyContinue)
+        Return @{ Result = $Found.count}
+      TestScript: |
+        $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+        $ReturnHash.Result -eq 1
+      SetScript: |
+        c:\temp\ATP\WindowsDefenderATPLocalOnboardingScript.cmd
     - Name: GiveSCOMLogonRights
       GetScript: |
         $Found = @(c:\temp\AccessChk64.exe /accepteula -q -a SeServiceLogonRight | Where-Object {$_ -match 'sv-ord-eoc-scomact'})

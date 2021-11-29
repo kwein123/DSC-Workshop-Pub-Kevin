@@ -1,0 +1,24 @@
+NodeName: l26265orms500
+Environment: Test
+Role: SCCMServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq l26265orms500).Description]'
+Location: NEW
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.137.74/27
+      GatewayAddress: 204.47.137.65
+      DnsServerAddress:
+        - 204.47.147.21
+        - 204.47.216.165
+        - 134.67.208.5
+
+ComputerSettings:
+  Name: l26265orms500

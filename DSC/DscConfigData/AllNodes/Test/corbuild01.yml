@@ -1,0 +1,26 @@
+NodeName: corbuild01
+Environment: Test
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq corbuild01).Description]'
+Location: COR
+# This will be renamed to n2626ugaec502
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  #Ensure that LAPS gets installed early
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.147.30/25
+      GatewayAddress: 204.47.147.1
+      DnsServerAddress:
+        - 204.47.147.21
+        - 204.47.216.165
+        - 134.67.208.5
+
+ComputerSettings:
+  Name: corbuild01

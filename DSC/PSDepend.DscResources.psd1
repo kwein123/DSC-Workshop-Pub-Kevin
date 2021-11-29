@@ -6,6 +6,7 @@
         Parameters     = @{
             #Repository = 'ORDPSGallery'
             Repository = 'PSGallery'
+            AllowPrerelease = $true
         }
     }
 
@@ -18,7 +19,16 @@
     xWebAdministration           = '3.2.0'
     SecurityPolicyDsc            = '2.10.0.0'
     StorageDsc                   = '5.0.1'
-    Chocolatey                   = '0.0.79'
+    # 9/10/21 - Try the 0.2 prerelease Chocolatey, which should have my extra code in it
+    Chocolatey                   = '0.2.0'
+    #Chocolatey                   = '0.2.0-preview0002'
+    #Chocolatey                   = '0.0.79'
+    #Chocolatey                   = @{
+    #    version = 'latest'
+    #    Parameters = @{
+    #        AllowPrerelease = $true
+    #    }
+    #}
     ActiveDirectoryDsc           = '6.0.1'
     DfsDsc                       = '4.4.0.0'
     WdsDsc                       = '0.11.0'
