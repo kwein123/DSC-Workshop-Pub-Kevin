@@ -1,0 +1,23 @@
+NodeName: narbuild01
+Environment: Test
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq narbuild01).Description]'
+Location: NAR
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.92.28/24
+      GatewayAddress: 204.46.92.1
+      DnsServerAddress:
+        - 204.46.32.10
+        - 161.80.76.28
+        - 204.47.79.12
+
+ComputerSettings:
+  Name: narbuild01

@@ -1,0 +1,25 @@
+NodeName: gbrbuild01
+Environment: Test
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq gbrbuild01).Description]'
+Location: GBR
+# This will replace z2626xflec003
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.158.28/27
+      GatewayAddress: 204.46.158.1
+      DnsServerAddress:
+        - 204.46.144.61
+        - 134.67.208.10
+        - 204.47.79.12
+
+ComputerSettings:
+  Name: gbrbuild01
