@@ -1,7 +1,7 @@
-NodeName: gbrbuild01
+NodeName: z2626xflec003
 Environment: Test
 Role: FileServer
-Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq gbrbuild01).Description]'
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq z2626xflec003).Description]'
 Location: GBR
 # This will replace z2626xflec003
 
@@ -14,7 +14,7 @@ IpConfiguration:
   Adapter:
     - NewName: Production
       AddressFamily: IPv4
-      IPAddress: 204.46.158.28/27
+      IPAddress: 204.46.158.12/27
       GatewayAddress: 204.46.158.1
       DnsServerAddress:
         - 204.46.144.61
@@ -22,4 +22,4 @@ IpConfiguration:
         - 204.47.79.12
 
 ComputerSettings:
-  Name: gbrbuild01
+  Name: z2626xflec003

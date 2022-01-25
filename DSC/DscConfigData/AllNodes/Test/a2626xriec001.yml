@@ -1,7 +1,7 @@
-NodeName: narbuild01
+NodeName: a2626xriec001
 Environment: Test
 Role: FileServer
-Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq narbuild01).Description]'
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq a2626xriec001).Description]'
 Location: NAR
 
 Configurations:
@@ -12,7 +12,7 @@ IpConfiguration:
   Adapter:
     - NewName: Production
       AddressFamily: IPv4
-      IPAddress: 204.46.92.28/24
+      IPAddress: 204.46.92.163/24
       GatewayAddress: 204.46.92.1
       DnsServerAddress:
         - 204.46.32.10
@@ -20,4 +20,4 @@ IpConfiguration:
         - 204.47.79.12
 
 ComputerSettings:
-  Name: narbuild01
+  Name: a2626xriec001

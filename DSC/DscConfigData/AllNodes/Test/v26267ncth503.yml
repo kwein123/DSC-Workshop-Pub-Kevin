@@ -1,8 +1,7 @@
-NodeName: v26267ncpk612
+NodeName: v26267ncth503
 Environment: Test
-# HardwareServer role is no longer needed, as BootHole is patched in the image.
-#Role: HardwareServer
-Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncpk612).Description]'
+#Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncth503).Description]'
 Location: RTP
 # This works even though the server is not pingable, as long as it is remotely accessible.
 
@@ -16,7 +15,7 @@ IpConfiguration:
   Adapter:
     - NewName: Production
       AddressFamily: IPv4
-      IPAddress: 134.67.216.161/24
+      IPAddress: 134.67.216.61/24
       GatewayAddress: 134.67.216.1
       DnsServerAddress:
        - 134.67.208.5
@@ -24,4 +23,4 @@ IpConfiguration:
        - 204.47.79.12
 
 ComputerSettings:
-  Name: v26267ncpk612
+  Name: v26267ncth503

@@ -1,0 +1,26 @@
+NodeName: ATHBuild01
+Environment: Test
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq ATHBuild01).Description]'
+Location: ATH
+# This will be renamed to n2626ugaec502
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  #Ensure that LAPS gets installed early
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.160.30/24
+      GatewayAddress: 204.46.160.1
+      DnsServerAddress:
+        - 204.46.144.61
+        - 134.67.208.10
+        - 204.47.79.12
+
+ComputerSettings:
+  Name: ATHBuild01
