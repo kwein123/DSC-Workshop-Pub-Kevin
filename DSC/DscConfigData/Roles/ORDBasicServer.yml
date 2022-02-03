@@ -24,6 +24,10 @@ FilesAndFolders:
       Type: Directory
       # Recurse has to be specified as true, not $true or Enabled, or it will blow up
       Recurse: true
+      MatchSource: true
+      # Didn't work either - CheckSum: 'SHA-256' # This ensures that newer versions of existing files are copied over, but not that deletions happen
+      # No good - CheckSum: 'createdDate' # This ensures that newer versions of existing files are copied over, but not that deletions happen
+      #CheckSum: 'modifiedDate' # This ensures that newer versions of existing files are copied over, but not that deletions happen
 
 #     - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\MSS-legacy.adml
 #       DestinationPath: 'C:\Windows\PolicyDefinitions\en-US\MSS-legacy.adml'

@@ -16,6 +16,7 @@ FilesAndFolders:
       Type: Directory
       # Recurse has to be specified as true, not $true or Enabled, or it will blow up
       Recurse: true
+      MatchSource: true
 
 Scripts:
   Items:

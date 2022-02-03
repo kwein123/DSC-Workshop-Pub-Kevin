@@ -1,0 +1,23 @@
+NodeName: p26267orec502
+Environment: Test
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq p26267orec502).Description]'
+Location: COR
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.141.9/27
+      GatewayAddress: 204.47.141.1
+      DnsServerAddress:
+        - 204.47.147.21
+        - 204.47.216.165
+        - 134.67.208.5
+
+ComputerSettings:
+  Name: p26267orec502
