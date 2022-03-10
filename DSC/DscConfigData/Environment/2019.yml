@@ -1,5 +1,5 @@
 DscTagging:
-  Environment: Test
+  Environment: 2019
 
 Scripts:
   Items:
@@ -12,8 +12,3 @@ Scripts:
         $ReturnHash.Result -eq 1
       SetScript: |
         c:\temp\ATP\WindowsDefenderATPLocalOnboardingScript.cmd
-
-#FilesAndFolders:
-#  Items:
-#    - DestinationPath: C:\Test\Test-Environment
-#      Type: Directory

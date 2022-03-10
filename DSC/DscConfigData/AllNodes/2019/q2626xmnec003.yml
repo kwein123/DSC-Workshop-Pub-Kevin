@@ -1,0 +1,25 @@
+NodeName: q2626xmnec003
+Environment: 2019
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq q2626xmnec003).Description]'
+Location: DUL
+
+# This was formerly DulBuild01, will be q2626xmnec003
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.192.33/24
+      GatewayAddress: 204.47.192.1
+      DnsServerAddress:
+        - 204.46.24.12
+        - 204.47.240.128
+        - 134.67.208.5
+
+ComputerSettings:
+  Name: q2626xmnec003

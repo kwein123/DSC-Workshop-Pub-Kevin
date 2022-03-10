@@ -1,5 +1,5 @@
 NodeName: Q2626XMNDZ101
-Environment: Test
+Environment: 2019
 Role: NetBackupServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq Q2626XMNDZ101).Description]'
 Location: DUL

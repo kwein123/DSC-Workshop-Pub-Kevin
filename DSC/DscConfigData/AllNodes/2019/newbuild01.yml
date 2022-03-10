@@ -1,0 +1,24 @@
+NodeName: newbuild01 # This will be L2626XOREC503
+Environment: 2019
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq newbuild01).Description]'
+Location: NEW
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.143.29/24
+      GatewayAddress: 204.47.143.1
+      DnsServerAddress:
+        - 204.47.147.21
+        - 204.47.216.165
+        - 134.67.208.5
+
+ComputerSettings:
+  Name: newbuild01

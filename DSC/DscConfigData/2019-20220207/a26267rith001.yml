@@ -1,0 +1,24 @@
+NodeName: a26267rith001
+Environment: 2019
+Role: SCCMServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq a26267rith001).Description]'
+Location: NAR
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.92.29/26
+      GatewayAddress: 204.46.92.1
+      DnsServerAddress:
+        - 204.46.32.10
+        - 161.80.76.28
+        - 204.47.79.12
+
+ComputerSettings:
+  Name: a26267rith001
