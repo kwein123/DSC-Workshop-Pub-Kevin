@@ -1,0 +1,26 @@
+NodeName: adabuild01
+Environment: 2019
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq adabuild01).Description]'
+Location: ADA
+
+# This will be f2626cokec001
+Configurations:
+  - IpConfiguration
+
+# When it was AdaBuild01:
+#      IPAddress: 204.46.246.30/24
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.246.30/24
+      GatewayAddress: 204.46.246.1
+      DnsServerAddress:
+        - 204.46.104.50
+        - 204.47.240.128
+        - 134.67.208.5
+
+ComputerSettings:
+  Name: adabuild01
