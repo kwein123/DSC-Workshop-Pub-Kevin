@@ -1,20 +1,20 @@
 NodeName: v26267ncec202
 Environment: Test
-#Role: SCCMServer
+#Role: FileServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncec202).Description]'
 Location: RTP
 
 Configurations:
   - IpConfiguration
-  - WindowsFeatures
+  #- WindowsFeatures
   - ChocolateyPackages
 
-WindowsFeatures:
-  Name:
-    - Print-Services
-    - Print-Server
-    - RSAT-Print-Services
-    - FS-Resource-Manager
+# WindowsFeatures:
+#   Name:
+#     - Print-Services
+#     - Print-Server
+#     - RSAT-Print-Services
+#     - FS-Resource-Manager
 
 IpConfiguration:
   #Ensure that LAPS gets installed early
@@ -45,6 +45,6 @@ ChocolateyPackages:
     #Source: '\\V26265NCHH500\ORDChoco'
   Packages:
     - Name: MomAgent
-      Ensure: Present
+      Ensure: Absent
       ChocolateyOptions:
         Source: ORDChoco

@@ -1,5 +1,5 @@
 NodeName: q2626xmnec001
-Environment: Test
+Environment: 2019
 Role: JustSmallFix
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq q2626xmnec001).Description]'
 Location: DUL

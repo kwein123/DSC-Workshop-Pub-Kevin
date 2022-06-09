@@ -1,0 +1,8 @@
+NodeName: v26267mcec511
+Environment: 2019
+Role: JustSmallFix # Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267mcec511).Description]'
+Location: RTP
+
+ComputerSettings:
+  Name: v26267mcec511

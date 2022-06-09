@@ -9,8 +9,9 @@ WindowsFeatures:
     - File-Services
     - FS-Resource-Manager
     - RSAT-FSRM-Mgmt
+    - RSAT-DFS-Mgmt-Con # Added 4/19/22
     - FS-Data-Deduplication
-    - FS-DFS-Replication
+    #- FS-DFS-Replication
 
 # FilesAndFolders:
 #   Items:

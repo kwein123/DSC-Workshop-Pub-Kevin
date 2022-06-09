@@ -1,7 +1,7 @@
 Configurations:
   - ChocolateyPackages
   - FirewallRules
-  - WindowsFeatures
+#  - WindowsFeatures
   - FilesAndFolders
   - Scripts
   - RegistryValues
@@ -15,6 +15,7 @@ FilesAndFolders:
     - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\NTRights.exe
       DestinationPath: 'C:\Temp\NTRights.exe'
       Type: File
+    # 4/19/22 - Don't comment this out - it's used, but not from this file
     - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\ATP
       DestinationPath: 'C:\Temp\ATP'
       Type: Directory
@@ -73,11 +74,23 @@ ORDRemoteDesktopAdmin:
     Ensure: 'Present'
     UserAuthentication: 'Secure'
 
-WindowsFeatures:
-  Name:
-    - RDC
+#WindowsFeatures:
+#  Name:
+    # Removed RDC, BranchCache, and NFS-Client from list
+    #- -RDC # Remove RDC, as of 4/19/22
     # Remove BranchCache, that I had installed by mistake because it was on other servers
-    #- -BranchCache
+    #- -FS-BranchCache
+    #- -FS-DFS-Replication
+    #- -FS-NFS-Service
+    #- -NFS-Client
+    #- -FS-SyncShareService
+    #- -FS-VSS-Agent
+    #- -FS-iSCSITarget-Server
+    #- -iSCSITarget-VSS-VDS
+    #- -Web-WHC
+    #- -RSAT-Feature-Tools
+    #- -RSAT-SNMP
+    #- -XPS-Viewer
 
 ChocolateyPackages:
   Software:
@@ -100,7 +113,7 @@ ChocolateyPackages:
       ChocolateyOptions:
         Source: ORDChoco
     - Name: encase
-      Ensure: Present
+      Ensure: Absent # before 4/18/22: Present
       ChocolateyOptions:
         Source: ORDChoco
     #- Name: bigfix
@@ -173,11 +186,18 @@ Scripts:
         Chdir \BootHole
         C:\BootHole\_BootHole.cmd
 
+# Added 2nd key 4/19/22, per Leigh
 RegistryValues:
   Values:
     - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
       ValueName: NtpServer
       ValueData: time.windows.com,0x9
+      ValueType: String
+      Ensure: Present
+      Force: true
+    - Key: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection\DeviceTagging
+      ValueName: Group
+      ValueData: ProgORD
       ValueType: String
       Ensure: Present
       Force: true

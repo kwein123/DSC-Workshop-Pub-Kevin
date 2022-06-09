@@ -8,6 +8,7 @@
 Configurations:
   - FilesAndFolders
   - Scripts
+  - RegistryValues
 
 FilesAndFolders:
   Items:
@@ -17,6 +18,10 @@ FilesAndFolders:
       # Recurse has to be specified as true, not $true or Enabled, or it will blow up
       Recurse: true
       MatchSource: true
+    - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\ATP
+      DestinationPath: 'C:\Temp\ATP'
+      Type: Directory
+      Recurse: True
 
 Scripts:
   Items:
@@ -30,6 +35,24 @@ Scripts:
       SetScript: |
         Chdir \BootHole
         C:\BootHole\_BootHole.cmd
+    - Name: InstallATPDefender
+      GetScript: |
+        $Found = @(Get-ItemProperty -Path 'HKLM:\Software\Microsoft\Windows Advanced Threat Protection\Status' -Name 'OnboardingState' -ErrorAction SilentlyContinue)
+        Return @{ Result = $Found.count}
+      TestScript: |
+        $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+        $ReturnHash.Result -eq 1
+      SetScript: |
+        c:\temp\ATP\WindowsDefenderATPLocalOnboardingScript.cmd
+
+RegistryValues:
+  Values:
+    - Key: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection\DeviceTagging
+      ValueName: Group
+      ValueData: ProgORD
+      ValueType: String
+      Ensure: Present
+      Force: true
 
 PSDscAllowPlainTextPassword: True
 PSDscAllowDomainUser: True

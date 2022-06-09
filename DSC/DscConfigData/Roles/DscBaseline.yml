@@ -10,13 +10,13 @@ LcmConfig:
   Settings:
     RefreshMode: Push
     RefreshFrequencyMins: 30
-    RebootNodeIfNeeded: true
+    RebootNodeIfNeeded: false # true - Changed to false 4/20/22 due to looping problems.
     ActionAfterReboot: ContinueConfiguration
     AllowModuleOverwrite: true
     #CertificateID: ...
     ConfigurationMode: ApplyAndMonitor
-    ConfigurationModeFrequencyMins: 30
-    DebugMode: All
+    ConfigurationModeFrequencyMins: 60 # 30 - updated 4/18/22
+    DebugMode: None # All
   # When we move into Pull Mode configuration instead of Push, we'll have to fill in non-dummy values here
   # What do these do? They're required, yet throw a warning if RefreshMode is set to Push above - 1/26/21
   # WARNING: A ConfigurationRepository is specified without setting the refresh mode into PULL.
@@ -58,7 +58,8 @@ DscLcmController:
   AutoCorrectIntervalOverride: false #   THESE VALUES ARE VERY LOW FOR EASY TESTING AND DEMONSTRATIONS
   RefreshInterval: 00:30:00          #
   RefreshIntervalOverride: false     #   PLEASE INCREASE THE VALUES TO PREVENT OVERLOADING THE PULL SERVER
-  ControllerInterval: 00:05:00       #   AS WELL AS THE NODES. ALSO THE SQL DATABASE GROWS PRETTY FAST IF A
+  ControllerInterval: 00:30:00       # 4/18/22 -  AS WELL AS THE NODES. ALSO THE SQL DATABASE GROWS PRETTY FAST IF A
+#  ControllerInterval: 00:05:00       #   AS WELL AS THE NODES. ALSO THE SQL DATABASE GROWS PRETTY FAST IF A
   MaintenanceWindowOverride: false   #   REPORT IS SENT EVERY 5 MINUTES.
   WriteTranscripts: true             #
   SendDscTaggingData: true           #

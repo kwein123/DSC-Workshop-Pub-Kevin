@@ -1,0 +1,45 @@
+h26267ohhh001 Thin failed. Manually created c:\Program Files\Common Files\WindowsPowerShell\Modules - didn't help.
+VERBOSE: Expanding C:\temp/*.zip to C:\Program Files\Common Files\WindowsPowerShell\Modules\xWindowsEventForwarding\1.0.0.0
+A parameter cannot be found that matches parameter name 'DestinationPath'.
+
+Same for:
+v26267ncsp521 thin failed - A parameter cannot be found that matches parameter name 'DestinationPath'.
+
+q26267mnhh601 create failed - boothole "execution policy". Files copy OK, and config starts. But PS fails with 
+PowerShell DSC resource DSC_xScriptResource  failed to execute Set-TargetResource functionality with error message:
+ System.InvalidOperationException: The set script threw an error. --->
+ System.Management.Automation.RemoteException: Set-ExecutionPolicy : Windows
+PowerShell updated your execution policy
+   --- End of inner exception stack trace ---
+
+Same for:
+v26267ncsp522 thin ATP install error - repeats
+
+
+
+h2626uohec505 thick Needs reboot, then further patching
+
+a2626xriec001 Thick done
+a2626xriec002 Thin done
+f26265okms500 create done
+h2626uohec504 Thick done
+l26267ordz002 create done
+l2626xorec501 thick done
+l26267orhh601 create done
+n26267gahh601 create done
+n2626ugaec502 thick done
+p2626xorec501 thick done
+q2626xmnay003 create done
+q2626xmnpk004 create done
+v26265ncxg005 thick error on BootHole - deleted c:\boothole, then re-pushed OK.
+v26265ncxg006 thick - ditto
+v26265ncxg007 thick - deleted old folder first, then push worked smoothly
+v26265ncxg008 thick - same as 007
+v26267mcpk505 thick done
+v26267nchh000 create done
+v26267ncpk601 thick done
+v26267ncsp503 thick done
+v26267ncth508 thick done
+q2626xmnay011 thick offline
+q2626xmnay012 thick offline
+

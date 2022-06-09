@@ -1,0 +1,181 @@
+PS E:\cvs\ordperl\KW-CheckAllServers> .\MassCheck-RunScript.ps1 -runontarget -RunOnTargetCommand '$M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate'
+OU=Prog-ORD,OU=Windows_2012,OU=Servers,OU=Devices,OU=PROGRAMS,OU=EPA,DC=aa,DC=ad,DC=epa,DC=gov
+Get-DscConfigurationStatus: No status information available for node A2626XRIHH502. Apply a configuration on the target node and try again.
+A2626XRIHH502.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node A2626XRITH006. Apply a configuration on the target node and try again.
+A2626XRITH006.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node H26267OHPK502. Apply a configuration on the target node and try again.
+H26267OHPK502.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node H26267OHTH501. Apply a configuration on the target node and try again.
+H26267OHTH501.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node L2626XORHH502. Apply a configuration on the target node and try again.
+L2626XORHH502.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node P2626XORHH502. Apply a configuration on the target node and try again.
+P2626XORHH502.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node P2626XORTH002. Apply a configuration on the target node and try again.
+P2626XORTH002.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node P2626XORTH005. Apply a configuration on the target node and try again.
+P2626XORTH005.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V26265NCPK507. Apply a configuration on the target node and try again.
+V26265NCPK507.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V26265NCPK522. Apply a configuration on the target node and try again.
+V26265NCPK510.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V26265NCPK512. Apply a configuration on the target node and try again.
+V26265NCPK512.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V26265NCPK512. Apply a configuration on the target node and try again.
+V26265NCPK513.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V26265NCPK514. Apply a configuration on the target node and try again.
+V26265NCPK514.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V26265NCPK515. Apply a configuration on the target node and try again.
+V26265NCPK515.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V26265NCPK522. Apply a configuration on the target node and try again.
+V26265NCPK522.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V26265NCTH501. Apply a configuration on the target node and try again.
+V26265NCTH501.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V26265NCTH509. Apply a configuration on the target node and try again.
+V26265NCTH509.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Skipping V26267NCPK600.aa.ad.epa.gov, Isolated: ORD-RTP-PROD-VM-ISOLATED:  Edstrom Watering System Server
+Get-DscConfigurationStatus: No status information available for node V26267NCTH502. Apply a configuration on the target node and try again.
+V26267NCTH502.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+V2626UMCEC505.aa.ad.epa.gov,04/25/2022 13:16:33
+Get-DscConfigurationStatus: No status information available for node V2626UMCEC604. Apply a configuration on the target node and try again.
+V2626UMCEC604.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V2626UMCEC704. Apply a configuration on the target node and try again.
+V2626UMCEC704.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V2626UMCPK502. Apply a configuration on the target node and try again.
+V2626UMCPK502.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V2626UMCTH001. Apply a configuration on the target node and try again.
+V2626UMCTH001.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+Get-DscConfigurationStatus: No status information available for node V2626URTTH002. Apply a configuration on the target node and try again.
+V2626URTTH002.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+OU=Prog-ORD,OU=Windows_2016,OU=Servers,OU=Devices,OU=PROGRAMS,OU=EPA,DC=aa,DC=ad,DC=epa,DC=gov
+A26267RIDZ002.aa.ad.epa.gov,04/22/2022 15:03:13
+A26267RIHH601.aa.ad.epa.gov,01/31/2022 12:02:17
+H26267OHHH601.aa.ad.epa.gov,01/31/2022 12:02:46
+L26267ORHH601.aa.ad.epa.gov,04/21/2022 13:58:28
+N26267GADZ002.aa.ad.epa.gov,01/31/2022 12:03:01
+N26267GAHH601.aa.ad.epa.gov,04/21/2022 13:58:40
+P26267ORHH601.aa.ad.epa.gov,01/31/2022 12:03:17
+P2626XORDZ001.aa.ad.epa.gov,01/31/2022 12:03:32
+Q26267MNDZ102.aa.ad.epa.gov,01/31/2022 12:03:47
+Q26267MNHH601.aa.ad.epa.gov,04/21/2022 21:58:56
+Q2626XMNPK004.aa.ad.epa.gov,04/21/2022 13:59:18
+V26265NCAY502.aa.ad.epa.gov,01/31/2022 12:04:23
+V26265NCAY504.aa.ad.epa.gov,01/31/2022 12:04:44
+V26267MCPK506.aa.ad.epa.gov,01/31/2022 12:05:26
+V26267NCAY506.aa.ad.epa.gov,01/31/2022 12:06:07
+V26267NCAY507.aa.ad.epa.gov,01/31/2022 12:06:23
+V26267NCAY508.aa.ad.epa.gov,01/31/2022 12:06:38
+V26267NCAY510.aa.ad.epa.gov,01/31/2022 12:06:53
+V26267NCAY516.aa.ad.epa.gov,01/31/2022 12:07:08
+V26267NCAY520.aa.ad.epa.gov,01/31/2022 12:07:24
+V26267NCPK526.aa.ad.epa.gov,05/09/2022 15:29:59
+V26267NCPK606.aa.ad.epa.gov,01/31/2022 12:08:38
+V26267NCSP520.aa.ad.epa.gov,04/27/2022 09:49:42
+V26267NCSP521.aa.ad.epa.gov,04/27/2022 09:49:54
+V26267NCSP522.aa.ad.epa.gov,04/27/2022 09:50:06
+V26267NCSP524.aa.ad.epa.gov,04/27/2022 09:50:17
+V2626UMCAY514.aa.ad.epa.gov,04/25/2022 13:16:22
+V2626UMCAY515.aa.ad.epa.gov,01/31/2022 12:10:30
+V2626UMCEC104.aa.ad.epa.gov,04/26/2022 09:10:27
+V2626URTEC102.aa.ad.epa.gov,01/31/2022 12:11:14
+Z26267FLHH501.aa.ad.epa.gov,01/31/2022 12:11:29
+Z2626XFLDZ002.aa.ad.epa.gov,01/31/2022 14:31:20
+OU=Prog-ORD,OU=Windows_2019,OU=Servers,OU=Devices,OU=PROGRAMS,OU=EPA,DC=aa,DC=ad,DC=epa,DC=gov
+A26265RIMS500.aa.ad.epa.gov,05/10/2022 17:44:31
+A2626XRIDZ001.aa.ad.epa.gov,06/08/2022 16:35:17
+A2626XRIEC001.aa.ad.epa.gov,04/21/2022 11:42:38
+A2626XRIEC002.aa.ad.epa.gov,04/22/2022 15:03:24
+A2626XRIEC502.aa.ad.epa.gov,04/22/2022 16:35:55
+A2626XRITH004.aa.ad.epa.gov,04/22/2022 16:36:11
+ADABUILD01.aa.ad.epa.gov,04/29/2022 16:41:49
+Get-DscConfigurationStatus: Cannot invoke the Get-DscConfigurationStatus cmdlet. The Consistency Check or Pull cmdlet is in progress and must return before Get-DscConfigurationStatus can be invoked. Use -Force option if that is available to cancel the current operation.
+F26265OKMS500.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+F26267OKHH601.aa.ad.epa.gov,04/28/2022 08:04:27
+F2626COKDZ001.aa.ad.epa.gov,04/22/2022 16:36:55
+F2626COKDZ002.aa.ad.epa.gov,04/22/2022 16:37:08
+F2626COKEC001.aa.ad.epa.gov,04/21/2022 12:43:23
+F2626COKEC501.aa.ad.epa.gov,04/25/2022 13:49:45
+H26265OHMS500.aa.ad.epa.gov,04/22/2022 16:37:47
+H26265OHXG001.aa.ad.epa.gov,04/22/2022 16:38:00
+H26267OHAY000.aa.ad.epa.gov,04/22/2022 16:38:12
+H26267OHHH001.aa.ad.epa.gov,04/26/2022 16:08:28
+H2626UOHEC002.aa.ad.epa.gov,05/09/2022 09:39:19
+H2626UOHEC005.aa.ad.epa.gov,04/22/2022 16:38:25
+H2626UOHEC504.aa.ad.epa.gov,04/21/2022 11:43:34
+H2626UOHEC505.aa.ad.epa.gov,04/25/2022 13:49:58
+L26265ORMS500.aa.ad.epa.gov,05/10/2022 17:44:45
+L2626XOREC501.aa.ad.epa.gov,04/21/2022 12:43:50
+L2626XOREC503.aa.ad.epa.gov,04/25/2022 13:50:26
+N26265GAMS500.aa.ad.epa.gov,04/25/2022 13:50:39
+Skipping N26267GAPK001.aa.ad.epa.gov, Isolated: ORD-ATH-PROD-VM-ISOLATED: ALC Server(FLAN)
+N2626UGAEC501.aa.ad.epa.gov,04/22/2022 16:39:40
+N2626UGAEC502.aa.ad.epa.gov,04/21/2022 12:44:04
+NBU-MEDIA.aa.ad.epa.gov,05/12/2022 11:49:14
+P26265ORMS500.aa.ad.epa.gov,05/10/2022 17:44:58
+P26267OREC504.aa.ad.epa.gov,04/22/2022 16:40:18
+P2626XOREC501.aa.ad.epa.gov,04/21/2022 12:44:18
+p2626xorec503.aa.ad.epa.gov,04/22/2022 16:40:31
+P2626XORTH009.aa.ad.epa.gov,04/22/2022 16:40:44
+Skipping Q26265MNAY005.aa.ad.epa.gov, Isolated: ORD-DUL-PROD-VM-ISOLATED: Metasys (Flan)
+Q26265MNMS500.aa.ad.epa.gov,05/10/2022 17:45:12
+Skipping Q26267MNHH602.aa.ad.epa.gov, Isolated: ORD-DUL-PROD-VM-ISOLATED: Metasys Jump Server
+Q2626XMNAY001.aa.ad.epa.gov,04/22/2022 16:41:09
+Q2626XMNAY002.aa.ad.epa.gov,04/22/2022 16:41:21
+Q2626XMNAY003.aa.ad.epa.gov,04/22/2022 15:03:58
+Q2626XMNDZ101.aa.ad.epa.gov,04/22/2022 16:41:33
+Q2626XMNEC001.aa.ad.epa.gov,04/27/2022 13:03:39
+Q2626XMNEC003.aa.ad.epa.gov,04/22/2022 16:41:46
+Q2626XMNTF001.aa.ad.epa.gov,04/25/2022 11:40:05
+RTPBUILD01.aa.ad.epa.gov,06/01/2022 13:18:10
+RTPBUILD02.aa.ad.epa.gov,05/31/2022 14:34:20
+V26265NCAY000.aa.ad.epa.gov,04/25/2022 13:51:31
+V26265NCBG503.aa.ad.epa.gov,04/22/2022 16:42:36
+V26265NCXG005.aa.ad.epa.gov,04/21/2022 11:45:11
+V26265NCXG006.aa.ad.epa.gov,04/21/2022 11:45:25
+V26265NCXG007.aa.ad.epa.gov,04/21/2022 11:45:42
+V26265NCXG008.aa.ad.epa.gov,04/21/2022 11:45:57
+V26267MCEC511.aa.ad.epa.gov,04/25/2022 13:14:56
+V26267MCEC512.aa.ad.epa.gov,04/25/2022 13:15:11
+V26267MCEC605.aa.ad.epa.gov,05/03/2022 15:12:27
+V26267MCPK505.aa.ad.epa.gov,04/21/2022 11:46:10
+V26267MCPK508.aa.ad.epa.gov,04/25/2022 13:51:44
+V26267NCHH000.aa.ad.epa.gov,04/22/2022 15:04:20
+V26267NCHH001.aa.ad.epa.gov,04/26/2022 16:08:39
+V26267NCHH510.aa.ad.epa.gov,04/25/2022 13:15:23
+V26267NCHH601.aa.ad.epa.gov,04/28/2022 10:21:29
+V26267NCHH602.aa.ad.epa.gov,04/22/2022 15:04:54
+V26267NCHH801.aa.ad.epa.gov,05/03/2022 09:19:33
+V26267NCHH802.aa.ad.epa.gov,05/03/2022 09:19:46
+V26267NCPK507.aa.ad.epa.gov,04/25/2022 11:00:57
+V26267NCPK514.aa.ad.epa.gov,04/22/2022 16:43:27
+V26267NCPK515.aa.ad.epa.gov,04/22/2022 16:43:39
+V26267NCPK601.aa.ad.epa.gov,04/21/2022 11:46:24
+OpenError: [V26267NCPK609.aa.ad.epa.gov] Connecting to remote server V26267NCPK609.aa.ad.epa.gov failed with the following error message : WinRM cannot process the request. The following error occurred while using Kerberos authentication: Cannot find the computer V26267NCPK609.aa.ad.epa.gov. Verify that the computer exists on the network and that the name provided is spelled correctly. For more information, see the about_Remote_Troubleshooting Help topic.
+V26267NCPK609.aa.ad.epa.gov returned null from running $M=(get-dscConfigurationStatus).MetaData; ([pscustomobject]($M -replace ": ","=" -replace "; ?","`n"|ConvertFrom-StringData)).GenerationDate
+V26267NCPK611.aa.ad.epa.gov,05/04/2022 08:58:46
+V26267NCPK612.aa.ad.epa.gov,06/08/2022 16:35:53
+V26267NCPK613.aa.ad.epa.gov,05/04/2022 08:58:46
+V26267NCSP501.aa.ad.epa.gov,04/22/2022 15:05:05
+V26267NCSP502.aa.ad.epa.gov,04/25/2022 13:51:57
+V26267NCSP503.aa.ad.epa.gov,04/25/2022 11:25:37
+V26267NCSP525.aa.ad.epa.gov,04/25/2022 11:01:23
+Skipping V26267NCTH503.aa.ad.epa.gov, Isolated: ORD-RTP-PROD-VM-ISOLATED: REDCap
+V26267NCTH504.aa.ad.epa.gov,04/22/2022 16:44:16
+V26267NCTH505.aa.ad.epa.gov,06/01/2022 08:49:59
+V26267NCTH508.aa.ad.epa.gov,04/21/2022 11:47:22
+V2626UMCEC101.aa.ad.epa.gov,04/25/2022 13:52:10
+V2626UMCEC103.aa.ad.epa.gov,05/09/2022 09:40:14
+V2626UMCEC510.aa.ad.epa.gov,04/25/2022 13:14:56
+V2626UMCEC513.aa.ad.epa.gov,04/25/2022 13:14:56
+V2626UMCEC515.aa.ad.epa.gov,04/25/2022 13:15:11
+V2626UMCMS501.aa.ad.epa.gov,05/10/2022 17:45:41
+V2626URTDZ001.aa.ad.epa.gov,04/25/2022 13:16:45
+V2626URTDZ502.aa.ad.epa.gov,04/25/2022 13:16:56
+V2626URTDZ504.aa.ad.epa.gov,04/25/2022 13:17:08
+Z26265FLMS500.aa.ad.epa.gov,04/22/2022 16:45:06
+Z2626XFLDZ001.aa.ad.epa.gov,04/21/2022 12:45:26
+Z2626XFLEC003.aa.ad.epa.gov,04/22/2022 16:45:18
+Z2626XFLEC501.aa.ad.epa.gov,04/22/2022 16:45:31
+Z2626XFLTF001.aa.ad.epa.gov,04/29/2022 09:51:45
+PS E:\cvs\ordperl\KW-CheckAllServers>

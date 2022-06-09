@@ -23,11 +23,12 @@ FilesAndFolders:
 
 WindowsFeatures:
   Name:
-    - FS-DFS-Namespace
-    - FS-DFS-Replication
-    - FS-FileServer
+    #- FS-DFS-Namespace
+    #- FS-DFS-Replication
+    #- FS-FileServer
     - Storage-Services
     - WDS
     - WDS-AdminPack
     - WDS-Deployment
     - WDS-Transport
+    - -FS-DFS-Namespace # 4/19/22 James said this was not needed on most servers that had it, including all SCCM servers.

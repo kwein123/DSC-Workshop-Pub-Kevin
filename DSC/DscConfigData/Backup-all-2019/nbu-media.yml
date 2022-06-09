@@ -1,0 +1,27 @@
+NodeName: nbu-media
+Environment: 2019
+Role: NetBackupServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq nbu-media).Description]'
+Location: CIN # Was GBR
+
+# This device moves around, and so will change its IP address - 5/12/22
+# This is only to create an adapter where it doesn't already exist
+# Configurations:
+#   - IpConfiguration
+
+# IpConfiguration:
+#   DependsOn: ChocolateyPackages
+#   Adapter:
+#     - NewName: Production
+#       AddressFamily: IPv4
+#       #IPAddress: 204.46.157.33/26
+#       #GatewayAddress: 204.46.157.1
+#       IPAddress: 204.46.158.11/27
+#       GatewayAddress: 204.46.158.1
+#       DnsServerAddress:
+#         - 204.46.144.61
+#         - 134.67.208.10
+#         - 204.47.79.12
+
+ComputerSettings:
+  Name: nbu-media

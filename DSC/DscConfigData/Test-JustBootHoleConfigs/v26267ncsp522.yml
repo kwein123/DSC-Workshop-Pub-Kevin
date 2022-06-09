@@ -1,6 +1,6 @@
 NodeName: v26267ncsp522
-Environment: Test
-Role: JustSmallFix
+Environment: 2016
+Role: NoATPSmallFix
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncsp522).Description]'
 Location: RTP
 

@@ -3,7 +3,7 @@ ResolutionPrecedence:
   - Environment\$($Node.Environment)
   - Locations\$($Node.Location)
   - Roles\$($Node.Role)
-  # Copy out ORDBasicServer to do "mini DSC configs using Role: JustSmallFix.yml"
+  # Comment out ORDBasicServer to do "mini DSC configs using Role: JustSmallFix.yml"
   - Roles\ORDBasicServer
   - Roles\DscBaseline
 
