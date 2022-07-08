@@ -1,7 +1,7 @@
-NodeName: v26265ncbg503
+NodeName: v26267nchh503
 Environment: 2019
-#Role: FileServer
-Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26265ncbg503).Description]'
+Role: TerminalServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267nchh503).Description]'
 Location: RTP
 # This works even though the server is not pingable, as long as it is remotely accessible.
 
@@ -10,12 +10,11 @@ Configurations:
   - ChocolateyPackages
 
 IpConfiguration:
-  #Ensure that LAPS gets installed early
   DependsOn: ChocolateyPackages
   Adapter:
     - NewName: Production
       AddressFamily: IPv4
-      IPAddress: 134.67.216.87/24
+      IPAddress: 134.67.216.200/24
       GatewayAddress: 134.67.216.1
       DnsServerAddress:
        - 134.67.208.5
@@ -23,4 +22,4 @@ IpConfiguration:
        - 204.47.79.12
 
 ComputerSettings:
-  Name: v26265ncbg503
+  Name: v26267nchh503

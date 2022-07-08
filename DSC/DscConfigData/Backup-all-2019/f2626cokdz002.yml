@@ -1,5 +1,6 @@
 NodeName: f2626cokdz002
 Environment: 2019
+# Leigh: DZ002 servers are not actually servers. They just run a NetBackup client. So don't use NetBackupServer role.
 #Role: NetBackupServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq f2626cokdz002).Description]'
 Location: ADA

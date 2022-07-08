@@ -1,8 +1,0 @@
-NodeName: v26267mcec512
-Environment: 2019
-Role: JustSmallFix # Should be the following, but we need to push ATP fix pronto - Role: FileServer
-Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267mcec512).Description]'
-Location: RTP
-
-ComputerSettings:
-  Name: v26267mcec512

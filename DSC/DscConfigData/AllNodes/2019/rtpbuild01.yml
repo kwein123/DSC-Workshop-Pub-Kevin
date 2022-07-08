@@ -1,9 +1,10 @@
-NodeName: v26265ncay000
-Environment: Test
-Role: HardwareServer
-Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26265ncay000).Description]'
+NodeName: rtpbuild01
+Environment: 2019
+#Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq rtpbuild01).Description]'
 Location: RTP
 # This works even though the server is not pingable, as long as it is remotely accessible.
+# This will replace v2626umcec704, which is a print, not a file, server
 
 Configurations:
   - IpConfiguration
@@ -15,7 +16,7 @@ IpConfiguration:
   Adapter:
     - NewName: Production
       AddressFamily: IPv4
-      IPAddress: 134.67.216.19/24
+      IPAddress: 134.67.216.252/24
       GatewayAddress: 134.67.216.1
       DnsServerAddress:
        - 134.67.208.5
@@ -23,4 +24,4 @@ IpConfiguration:
        - 204.47.79.12
 
 ComputerSettings:
-  Name: v26265ncay000
+  Name: rtpbuild01

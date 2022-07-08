@@ -1,0 +1,14 @@
+Configurations:
+  - WindowsFeatures
+
+WindowsFeatures:
+  Name:
+    #- Remote-Desktop-Services
+    - RDS-Gateway
+    - RDS-RD-Server
+    - RSAT-RDS-Gateway
+    - RSAT-RDS-Licensing-Diagnosis-UI
+    - RSAT-RDS-Tools
+    #- -RDS-Licensing
+    #- -RDS-Licensing-UI
+    #- -RDS-Web-Access

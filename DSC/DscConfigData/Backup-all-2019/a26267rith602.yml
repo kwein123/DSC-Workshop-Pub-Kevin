@@ -1,0 +1,21 @@
+NodeName: a26267rith602
+Environment: 2019
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq a26267rith602).Description]'
+Location: NAR
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.92.166/24
+      GatewayAddress: 204.46.92.1
+      DnsServerAddress:
+        - 204.46.32.5
+        - 204.47.20.10
+
+ComputerSettings:
+  Name: a26267rith602

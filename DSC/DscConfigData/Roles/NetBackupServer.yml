@@ -2,7 +2,29 @@ Configurations:
   - FirewallRules
   # Below is from HardwareServer
   - FilesAndFolders
+  - RegistryValues
   - Scripts
+
+RegistryValues:
+  Values:
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters
+      ValueName: MaxNegativeCacheTtl
+      ValueData: 0
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NetLogon\Parameters
+      ValueName: NegativeCachePeriod
+      ValueData: 0
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters
+      ValueName: AlwaysExpectDomainController
+      ValueData: 1
+      ValueType: DWord
+      Ensure: Present
+      Force: true
 
 FilesAndFolders:
   Items:
@@ -18,9 +40,11 @@ Scripts:
       # Successful run of _BootHole will create signature.p7
       # If we don't Chdir \BootHole, the current dir will be \windows\system32, and the .ps1 files inside the .cmd won't be found in that folder
       GetScript: |
-        test-path C:\BootHole\signature.p7
+        $Result = test-path C:\BootHole\signature.p7
+        Return @{ Result = $Result}
       TestScript: |
-        [scriptblock]::Create($GetScript).Invoke()
+        $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+        $ReturnHash.Result
       SetScript: |
         Chdir \BootHole
         C:\BootHole\_BootHole.cmd

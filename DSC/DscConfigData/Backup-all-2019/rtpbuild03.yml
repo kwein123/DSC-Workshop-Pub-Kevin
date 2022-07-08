@@ -1,7 +1,9 @@
-NodeName: v26267ncpk611
-Environment: Test
-Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncpk611).Description]'
+NodeName: rtpbuild03
+Environment: 2019
+#Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq rtpbuild03).Description]'
 Location: RTP
+# This works even though the server is not pingable, as long as it is remotely accessible.
 
 Configurations:
   - IpConfiguration
@@ -13,7 +15,7 @@ IpConfiguration:
   Adapter:
     - NewName: Production
       AddressFamily: IPv4
-      IPAddress: 134.67.216.95/24
+      IPAddress: 134.67.216.198/24
       GatewayAddress: 134.67.216.1
       DnsServerAddress:
        - 134.67.208.5
@@ -21,4 +23,4 @@ IpConfiguration:
        - 204.47.79.12
 
 ComputerSettings:
-  Name: v26267ncpk611
+  Name: rtpbuild03

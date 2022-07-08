@@ -25,9 +25,11 @@ Scripts:
       # Successful run of _BootHole will create signature.p7
       # If we don't Chdir \BootHole, the current dir will be \windows\system32, and the .ps1 files inside the .cmd won't be found in that folder
       GetScript: |
-        test-path C:\BootHole\signature.p7
+        $Result = test-path C:\BootHole\signature.p7
+        Return @{ Result = $Result}
       TestScript: |
-        [scriptblock]::Create($GetScript).Invoke()
+        $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+        $ReturnHash.Result
       SetScript: |
         Chdir \BootHole
         C:\BootHole\_BootHole.cmd

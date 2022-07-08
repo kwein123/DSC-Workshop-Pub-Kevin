@@ -1,7 +1,7 @@
-NodeName: corbuild02
+NodeName: p2626xorth005
 Environment: 2019
 #Role: FileServer
-Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq corbuild02).Description]'
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq p2626xorth005).Description]'
 Location: COR
 # Replacing P2626XORTH005
 
@@ -15,7 +15,7 @@ IpConfiguration:
   Adapter:
     - NewName: Production
       AddressFamily: IPv4
-      IPAddress: 204.47.147.31/25
+      IPAddress: 204.47.147.64/25
       GatewayAddress: 204.47.147.1
       DnsServerAddress:
         - 204.47.147.21
@@ -23,4 +23,4 @@ IpConfiguration:
         - 134.67.208.5
 
 ComputerSettings:
-  Name: corbuild02
+  Name: p2626xorth005

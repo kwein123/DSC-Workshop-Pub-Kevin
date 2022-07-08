@@ -1,6 +1,5 @@
 NodeName: f26267okhh601
 Environment: 2019
-# Role: NetBackupServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq f26267okhh601).Description]'
 Location: ADA
 
