@@ -1,0 +1,22 @@
+NodeName: n2626ugaec501
+Environment: 2019
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq n2626ugaec501).Description]'
+Location: ATH
+# This used to be named ATHBUILD01
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.160.16/24
+    # This would not maintain in non-Drift
+    # - NewName: Production
+    #   AddressFamily: IPv6
+    #   IPAddress: 2620:0117:501E:0064::f010
+
+ComputerSettings:
+  Name: n2626ugaec501

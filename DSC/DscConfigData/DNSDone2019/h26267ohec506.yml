@@ -1,0 +1,19 @@
+NodeName: h26267ohec506
+Environment: 2019
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq h26267ohec506).Description]'
+Location: CIN
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.64.57/24
+
+# This has to be here, even though it's technically not referenced above as a Configuration. 7/15/22
+ComputerSettings:
+  Name: h26267ohec506

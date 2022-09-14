@@ -1,0 +1,17 @@
+NodeName: n26267gahh601
+Environment: 2016
+Role: TerminalServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq n26267gahh601).Description]'
+Location: ATH
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.160.40/24
+
+ComputerSettings:
+  Name: n26267gahh601

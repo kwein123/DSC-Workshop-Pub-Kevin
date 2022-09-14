@@ -1,0 +1,16 @@
+NodeName: v2626umcpk502
+Environment: 2019
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v2626umcpk502).Description]'
+Location: RTP
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.216.32/24
+
+ComputerSettings:
+  Name: v2626umcpk502

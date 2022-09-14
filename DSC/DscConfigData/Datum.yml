@@ -58,7 +58,9 @@ lookup_options:
   NetworkIpConfiguration:
     merge_hash: deep
 
-  ChocolateyPackages: hash
+  ChocolateyPackages:
+    merge_hash: hash
+
   ChocolateyPackages\Packages:
     merge_hash_array: DeepTuple
     merge_options:
@@ -67,8 +69,34 @@ lookup_options:
       #  - Ensure - Commented out 7/27/21 to see if this makes ncec202 RSOP look right
       #  - ChocolateyOptions
 
-  IpConfiguration:
-    merge_hash: deep
+#  ChocolateyPackages:
+#    merge_hash: deep # hash
+  # ChocolateyPackages\Packages:
+  #   merge_hash_array: UniqueKeyValTuples     # DeepTuple
+  #   merge_options:
+  #     Tuple_Keys:
+  #       - Name
+
+  #IpConfiguration:
+  #  merge_hash: deep
+
+# This allows me to set site-specific elements like GatewayAddress and DnsServerAddress in a site-specific file, and the IP address itself in
+#  the server-specific file.
+
+  LocalGroups: hash
+  LocalGroups\Groups:
+    merge_hash_array: DeepTuple
+    merge_options:
+      Tuple_Keys:
+        - GroupName
+
+  IpConfiguration: hash
+  IPConfiguration\Adapter:
+    merge_hash_array: DeepTuple
+    merge_options:
+      Tuple_Keys:
+        - NewName
+        - AddressFamily # Needed to add this tuple_key to keep IPv4 and IPv6 addresses separate
 
   ComputerSettings:
     merge_hash: deep

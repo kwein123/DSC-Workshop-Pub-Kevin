@@ -5,7 +5,7 @@ A parameter cannot be found that matches parameter name 'DestinationPath'.
 Same for:
 v26267ncsp521 thin failed - A parameter cannot be found that matches parameter name 'DestinationPath'.
 
-q26267mnhh601 create failed - boothole "execution policy". Files copy OK, and config starts. But PS fails with 
+q26267mnhh601 create failed - boothole "execution policy". Files copy OK, and config starts. But PS fails with
 PowerShell DSC resource DSC_xScriptResource  failed to execute Set-TargetResource functionality with error message:
  System.InvalidOperationException: The set script threw an error. --->
  System.Management.Automation.RemoteException: Set-ExecutionPolicy : Windows
@@ -43,3 +43,5 @@ v26267ncth508 thick done
 q2626xmnay011 thick offline
 q2626xmnay012 thick offline
 
+8/16/22 - Ran this procedure to fix DSC on a2626xriec001:
+https://proteolytic57.rssing.com/chan-30094208/all_p11.html

@@ -1,0 +1,18 @@
+NodeName: z26265flms500
+Environment: 2019
+Role: SCCMServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq z26265flms500).Description]'
+Location: GBR
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.158.14/27
+  
+ComputerSettings:
+  Name: z26265flms500

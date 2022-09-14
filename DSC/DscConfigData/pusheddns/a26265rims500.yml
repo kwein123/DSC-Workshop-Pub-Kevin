@@ -1,0 +1,19 @@
+NodeName: a26265rims500
+Environment: 2019
+Role: SCCMServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq a26265rims500).Description]'
+Location: NAR91 # This is the subnet 91 version of Narragansett
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.91.33/26
+      GatewayAddress: 204.46.91.1
+
+ComputerSettings:
+  Name: a26265rims500

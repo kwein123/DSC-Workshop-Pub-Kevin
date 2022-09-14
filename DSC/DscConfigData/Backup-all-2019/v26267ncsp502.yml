@@ -10,14 +10,14 @@ Configurations:
 IpConfiguration:
   DependsOn: ChocolateyPackages
   Adapter:
-    - NewName: Ethernet
-      AddressFamily: IPv4
+    - NewName: Production
+      #AddressFamily: IPv4
       IPAddress: 134.67.216.100/24
-      GatewayAddress: 134.67.216.1
-      DnsServerAddress:
-       - 134.67.208.5
-       - 161.80.76.28
-       - 204.47.79.12
+      #GatewayAddress: 134.67.216.1
+      #DnsServerAddress:
+      # - 134.67.208.5
+      # - 161.80.76.28
+      # - 204.47.79.12
 
 ComputerSettings:
   Name: v26267ncsp502

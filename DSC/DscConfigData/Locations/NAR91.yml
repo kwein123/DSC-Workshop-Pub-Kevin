@@ -1,0 +1,23 @@
+# This "Configurations" line must stay here so that ComputerSettings gets included
+Configurations:
+  - ComputerSettings
+  - IpConfiguration
+
+ComputerSettings:
+  TimeZone: 'Eastern Standard Time'
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      GatewayAddress: 204.46.91.1
+      DnsServerAddress:
+        - 204.46.32.5
+        - 204.47.20.10
+    - NewName: Production
+      AddressFamily: IPv6
+      GatewayAddress: fe80:6a::c001
+      DnsServerAddress:
+        - 2620:117:5040:38::f005
+        - 2620:117:501f:23::f00a

@@ -1,0 +1,19 @@
+NodeName: cinbuild02
+Environment: 2019
+#Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq cinbuild02).Description]'
+Location: CIN
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.64.60/24
+
+# This has to be here, even though it's technically not referenced above as a Configuration. 7/15/22
+ComputerSettings:
+  Name: cinbuild02

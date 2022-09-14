@@ -5,3 +5,17 @@ DscTagging:
 #  Items:
 #    - DestinationPath: C:\Test\Test-Environment
 #      Type: Directory
+
+# Configurations:
+#   - ChocolateyPackages
+
+# ChocolateyPackages:
+#   Packages:
+#     - Name: laps
+#       Ensure: Present
+#       ChocolateyOptions:
+#         Source: ORDChoco
+#     - Name: sccm
+#       Ensure: Present
+#       ChocolateyOptions:
+#         Source: ORDChoco

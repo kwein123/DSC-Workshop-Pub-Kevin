@@ -1,0 +1,19 @@
+NodeName: h26267ohdz001
+Environment: 2019
+Role: NetBackupServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq h26267ohdz001).Description]'
+Location: CIN
+
+# This is a hardware server. It got stuck after first reboot. Larry had to allow Remote Desktop through firewall.
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.64.67/24
+
+ComputerSettings:
+  Name: h26267ohdz001

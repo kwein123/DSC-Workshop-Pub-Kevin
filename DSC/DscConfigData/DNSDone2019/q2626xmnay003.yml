@@ -1,0 +1,21 @@
+NodeName: q2626xmnay003
+Environment: 2019
+#Role: JustSmallFix
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq q2626xmnay003).Description]'
+Location: DUL
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.192.14/24
+
+# To create "slim DSC" to only set one setting,
+# 1. Create slim .YML, like this file
+# 2. Set role to JustSmallFix
+# 3. In Datum.yml, comment out ORDBasicServer.yml
+ComputerSettings:
+  Name: q2626xmnay003

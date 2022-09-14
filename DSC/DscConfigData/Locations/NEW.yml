@@ -1,6 +1,0 @@
-# This "Configurations" line must stay here so that ComputerSettings gets included
-Configurations:
-  - ComputerSettings
-
-ComputerSettings:
-  TimeZone: 'Pacific Standard Time'

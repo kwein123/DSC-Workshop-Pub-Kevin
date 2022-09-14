@@ -1,0 +1,19 @@
+NodeName: l2626xorec501
+Environment: 2019
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq l2626xorec501).Description]'
+Location: NEW
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.143.26/24
+      GatewayAddress: 204.47.143.1
+
+ComputerSettings:
+  Name: l2626xorec501

@@ -1,0 +1,17 @@
+NodeName: a2626xriec002
+Environment: 2019
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq a2626xriec002).Description]'
+Location: NAR92
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.92.245/24
+
+ComputerSettings:
+  Name: a2626xriec002

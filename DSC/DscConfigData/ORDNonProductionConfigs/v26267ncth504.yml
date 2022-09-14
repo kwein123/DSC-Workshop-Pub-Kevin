@@ -1,0 +1,17 @@
+NodeName: v26267ncth504
+Environment: 2019
+#Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncth504).Description]'
+Location: RTP
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.216.162/24
+
+ComputerSettings:
+  Name: v26267ncth504

@@ -1,0 +1,18 @@
+NodeName: l2626xorec503 # This will be L2626XOREC503
+Environment: 2019
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq l2626xorec503).Description]'
+Location: NEW
+
+# Was newbuild01
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.137.72/27
+
+ComputerSettings:
+  Name: l2626xorec503

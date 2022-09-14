@@ -1,0 +1,20 @@
+NodeName: f2626cokdz001
+Environment: 2019
+Role: NetBackupServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq f2626cokdz001).Description]'
+Location: ADA
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+# When it was AdaBuild01:
+#      IPAddress: 204.46.246.30/24
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.246.47/24
+
+ComputerSettings:
+  Name: f2626cokdz001

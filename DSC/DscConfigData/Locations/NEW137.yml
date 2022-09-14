@@ -1,0 +1,23 @@
+# This "Configurations" line must stay here so that ComputerSettings gets included
+Configurations:
+  - ComputerSettings
+  - IpConfiguration
+
+ComputerSettings:
+  TimeZone: 'Pacific Standard Time'
+
+IpConfiguration:
+  DependsOn: ChocolateyPackages
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      GatewayAddress: 204.47.137.65 # Might need to be 143.1. 137 is used by 3 ORD servers, 1 BigFix server, and printers. 143 is used for about 6 servers.
+      DnsServerAddress:
+        - 204.47.147.5
+        - 204.47.21.10
+    - NewName: Production
+      AddressFamily: IPv6
+      GatewayAddress: fe80:64::c001 #  for 137 subnet.
+      DnsServerAddress:
+        - 2620:117:5019:1d6::f005
+        - 2620:117:501f:27::f00a

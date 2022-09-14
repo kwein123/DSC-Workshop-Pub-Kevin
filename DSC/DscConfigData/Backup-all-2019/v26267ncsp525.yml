@@ -16,9 +16,11 @@ IpConfiguration:
       IPAddress: 134.67.216.172/24
       GatewayAddress: 134.67.216.1
       DnsServerAddress:
-       - 134.67.208.5
-       - 161.80.76.28
-       - 204.47.79.12
+        - 134.67.56.5
+        - 204.47.20.10
+      # - 134.67.208.5
+      # - 161.80.76.28
+      # - 204.47.79.12
 
 ComputerSettings:
   Name: v26267ncsp525

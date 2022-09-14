@@ -1,0 +1,18 @@
+NodeName: n2626ugadz003
+Environment: 2019
+Role: NetBackupServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq n2626ugadz003).Description]'
+Location: ATH
+
+# Commented out 5/25/2022 because of changes by networking on teaming NICs.
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.160.49/24
+
+ComputerSettings:
+  Name: n2626ugadz003

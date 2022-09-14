@@ -17,14 +17,21 @@
 Param(
 	[Alias("Computer","MachineName")]
 	[string]$Server = ''
+	,[switch]$All = $false
 )
 # StrictMode has to come after CmdletBinding
 Set-StrictMode -version 2
 
-if ($Server -eq '') {
-	$Servers = (Get-ChildItem .\BuildOutput\MOF\*.mof).Name -replace '.mof'
+if ($All) {
+	# Try every server for which we have a file in this folder
+	$Servers = (Get-ChildItem .\dscconfigdata\backup-dns-2019\*.yml).Name -replace '.yml'
+	$Servers += (Get-ChildItem .\dscconfigdata\backup-dns-2016\*.yml).Name -replace '.yml'
 } else {
-	$Servers = @($Server)
+	if ($Server -eq '') {
+		$Servers = (Get-ChildItem .\BuildOutput\MOF\*.mof).Name -replace '.mof'
+	} else {
+		$Servers = @($Server)
+	}
 }
 foreach ($Server in $Servers) {
 	"Checking $Server"
