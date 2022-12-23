@@ -1,0 +1,180 @@
+Configurations:
+- IpConfiguration
+- ComputerSettings
+- ChocolateyPackages
+- FirewallRules
+- FilesAndFolders
+- Scripts
+- RegistryValues
+- ORDRemoteDesktopAdmin
+- DscLcmController
+- DscTagging
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncsp520).Description]'
+Name: v26267ncsp520
+Scripts:
+  Items:
+  - Name: InstallATPDefender
+    GetScript: |
+      $Found = @(Get-ItemProperty -Path 'HKLM:\Software\Microsoft\Windows Advanced Threat Protection\Status' -Name 'OnboardingState' -ErrorAction SilentlyContinue)
+      Return @{ Result = $Found.count}
+    TestScript: |
+      $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+      $ReturnHash.Result -eq 1
+    SetScript: |
+      c:\temp\ATP\WindowsDefenderATPLocalOnboardingScript.cmd
+  - Name: GiveSCOMLogonRights
+    GetScript: |
+      $Found = @(c:\temp\AccessChk64.exe /accepteula -q -a SeServiceLogonRight | Where-Object {$_ -match 'sv-ord-eoc-scomact'})
+      Return @{ Result = $Found.count}
+    TestScript: |
+      $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+      $ReturnHash.Result -eq 1
+    SetScript: |
+      c:\temp\ntrights.exe -u sv-ord-eoc-scomact +r SeServiceLogonRight
+  - Name: FixIPv6DHCP
+    GetScript: |
+      $Found = @(Get-NetIPInterface -AddressFamily 'IPv6' | Where-Object {$_.DHCP -ne 'disabled'})
+      Return @{ Result = $Found.count}
+    TestScript: |
+      $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+      $ReturnHash.Result -eq 0
+    SetScript: |
+      Set-NetIPInterface -AddressFamily IPv6 -Dhcp Disabled
+      Set-NetIPInterface -AddressFamily IPv6 -RouterDiscovery Disabled
+  - Name: DisableDynamicDNSRegistration
+    GetScript: |
+      $Clients = @(Get-NetIPConfiguration | Where-Object {$_.NetAdapter.Status -ne "Disconnected"} | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Get-DNSClient)
+      $Found = @($Clients | Where-Object {$_.RegisterThisConnectionsAddress})
+      Return @{ Result = $Found.count}
+    TestScript: |
+      $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+      $ReturnHash.Result -eq 0
+    SetScript: |
+      $Clients = @(Get-NetIPConfiguration | Where-Object {$_.NetAdapter.Status -ne "Disconnected"} | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Get-DNSClient)
+      Get-NetIPConfiguration | Where-Object {$_.NetAdapter.Status -ne "Disconnected"} | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Set-DNSClient -RegisterThisConnectionsAddress:$false
+  - Name: FixBootHole
+    GetScript: |
+      $Result = test-path C:\BootHole\signature.p7
+      Return @{ Result = $Result}
+    TestScript: |
+      $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+      $ReturnHash.Result
+    SetScript: |
+      Chdir \BootHole
+      C:\BootHole\_BootHole.cmd
+ComputerSettings:
+  Name: v26267ncsp520
+  TimeZone: Eastern Standard Time
+DscTagging:
+  Environment: 2016
+  Version: 0.3.0
+FirewallRules:
+  Rules:
+  - Name: RemoteDesktop-UserMode-In-TCP
+    Enabled: true
+    Direction: Inbound
+    Profile: Any
+    Action: Allow
+    LocalPort: Any
+    RemotePort: Any
+    Protocol: Any
+  - Name: RemoteDesktop-UserMode-In-UDP
+    Enabled: true
+    Direction: Inbound
+    Profile: Any
+    Action: Allow
+  - Name: RemoteDesktop-Shadow-In-TCP
+    Enabled: true
+    Direction: Inbound
+    Profile: Any
+    Action: Allow
+ORDRemoteDesktopAdmin:
+  ORD_RDA:
+  - IsSingleInstance: Yes
+    Ensure: Present
+    UserAuthentication: Secure
+Location: RTP
+NodeName: v26267ncsp520
+DscLcmController:
+  MaintenanceWindowMode: Monitor
+  MonitorInterval: 00:15:00
+  AutoCorrectInterval: 00:15:00
+  AutoCorrectIntervalOverride: false
+  RefreshInterval: 00:30:00
+  RefreshIntervalOverride: false
+  ControllerInterval: 00:30:00
+  MaintenanceWindowOverride: false
+  WriteTranscripts: true
+  SendDscTaggingData: true
+  MaxLcmRuntime: 00:30:00
+RegistryValues:
+  Values:
+  - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
+    ValueName: NtpServer
+    ValueData: time.windows.com,0x9
+    ValueType: String
+    Ensure: Present
+    Force: true
+  - Key: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection\DeviceTagging
+    ValueName: Group
+    ValueData: ProgORD
+    ValueType: String
+    Ensure: Present
+    Force: true
+IpConfiguration:
+  Adapter:
+  - IPAddress: 134.67.216.107/24
+    NewName: Production
+    AddressFamily: IPv4
+    GatewayAddress: 134.67.216.1
+    DnsServerAddress:
+    - 134.67.56.5
+    - 204.47.20.10
+  - NewName: Production
+    AddressFamily: IPv6
+    GatewayAddress: fe80:d8::c001
+    DnsServerAddress:
+    - 2620:117:5040:38::f005
+    - 2620:117:501f:23::f00a
+  DependsOn: ChocolateyPackages
+ChocolateyPackages:
+  Software:
+    Ensure: Present
+  Features:
+    Name: useFipsCompliantChecksums
+    Ensure: Present
+  Sources:
+    Name: ORDChoco
+    Ensure: Present
+    Source: '\\V26267NCSP502\ORDChoco'
+  Packages:
+  - Name: laps
+    Ensure: Present
+    ChocolateyOptions:
+      Source: ORDChoco
+  - Name: sccm
+    Ensure: Present
+    ChocolateyOptions:
+      Source: ORDChoco
+  - Name: MomAgent
+    Ensure: Present
+    ChocolateyOptions:
+      Source: ORDChoco
+Environment: 2016
+FilesAndFolders:
+  Items:
+  - SourcePath: '\\v26267ncsp502\ORDChoco\FilesToCopy\accesschk64.exe'
+    DestinationPath: C:\Temp\accesschk64.exe
+    Type: File
+  - SourcePath: '\\v26267ncsp502\ORDChoco\FilesToCopy\NTRights.exe'
+    DestinationPath: C:\Temp\NTRights.exe
+    Type: File
+  - SourcePath: '\\v26267ncsp502\ORDChoco\FilesToCopy\ATP'
+    DestinationPath: C:\Temp\ATP
+    Type: Directory
+    Recurse: true
+  - SourcePath: '\\v26267ncsp502\ORDchoco\FilesToCopy\BootHole'
+    DestinationPath: C:\BootHole
+    Type: Directory
+    Recurse: true
+    MatchSource: true

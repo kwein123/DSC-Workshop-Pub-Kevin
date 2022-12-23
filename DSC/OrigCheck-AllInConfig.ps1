@@ -18,15 +18,14 @@ Param(
 	[Alias("Computer","MachineName")]
 	[string]$Server = ''
 	,[switch]$All = $false
-	,[switch]$RebootAsNeeded = $false
 )
 # StrictMode has to come after CmdletBinding
 Set-StrictMode -version 2
 
 if ($All) {
 	# Try every server for which we have a file in this folder
-	$Servers = (Get-ChildItem .\dscconfigdata\Done2019\*.yml).Name -replace '.yml'
-	$Servers += (Get-ChildItem .\dscconfigdata\backup-dns-Good2016\*.yml).Name -replace '.yml'
+	$Servers = (Get-ChildItem .\dscconfigdata\backup-dns-2019\*.yml).Name -replace '.yml'
+	$Servers += (Get-ChildItem .\dscconfigdata\backup-dns-2016\*.yml).Name -replace '.yml'
 } else {
 	if ($Server -eq '') {
 		$Servers = (Get-ChildItem .\BuildOutput\MOF\*.mof).Name -replace '.mof'
@@ -39,11 +38,6 @@ foreach ($Server in $Servers) {
 	$cim = new-CimSession $Server
 	#$cim
 	$config = Get-DscConfigurationStatus -CimSession $cim
-	write-verbose "post config"
+	#"post config"
 	$config.ResourcesNotInDesiredState
-	if ($RebootAsNeeded -and $config.RebootRequested) {
-		"Rebooting $Server"
-		Invoke-CimMethod -CimSession $cim -ClassName Win32_OperatingSystem -MethodName Win32Shutdown -Arguments @{Flags=6}
-	}
-	write-verbose "post not in desired state"
 }

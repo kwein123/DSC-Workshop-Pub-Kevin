@@ -1,0 +1,17 @@
+NodeName: v26267ncth509
+Environment: 2019
+#Role: SCCMServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncth509).Description]'
+Location: RTP
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.216.234/24
+
+ComputerSettings:
+  Name: v26267ncth509

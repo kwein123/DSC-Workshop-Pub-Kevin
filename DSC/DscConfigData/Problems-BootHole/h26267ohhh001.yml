@@ -1,8 +1,0 @@
-NodeName: h26267ohhh001
-Environment: 2019
-Role: JustSmallFix
-Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq h26267ohhh001).Description]'
-Location: CIN
-
-ComputerSettings:
-  Name: h26267ohhh001

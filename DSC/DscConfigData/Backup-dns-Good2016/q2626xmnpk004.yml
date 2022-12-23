@@ -1,0 +1,18 @@
+NodeName: q2626xmnpk004
+Environment: 2016
+# HardwareServer is now just a part of default configuration
+#Role: HardwareServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq q2626xmnpk004).Description]'
+Location: DUL
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.192.18/24
+
+ComputerSettings:
+  Name: q2626xmnpk004

@@ -1,0 +1,23 @@
+NodeName: p2626xordz001
+Environment: 2016
+Role: NetBackupServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq p2626xordz001).Description]'
+Location: COR
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.147.16/25
+
+ComputerSettings:
+  Name: p2626xordz001
+
+# SCOM servers and select others should not try to install MMA.  MMA is already installed on them
+ChocolateyPackages:
+  Packages:
+    - Name: MomAgent
+      Ensure: Absent

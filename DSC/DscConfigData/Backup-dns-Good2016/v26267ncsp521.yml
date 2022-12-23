@@ -1,0 +1,23 @@
+NodeName: v26267ncsp521
+Environment: 2016
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncsp521).Description]'
+Location: RTP
+
+Configurations:
+  - IpConfiguration
+  - ChocolateyPackages
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.216.108/24
+
+ComputerSettings:
+  Name: v26267ncsp521
+
+# SCOM servers should not try to install MMA.  MMA is already installed on SCOM servers.
+ChocolateyPackages:
+  Packages:
+    - Name: MomAgent
+      Ensure: Absent
