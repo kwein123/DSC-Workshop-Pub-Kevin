@@ -1,10 +1,9 @@
 NodeName: gbrbuild01
 Environment: 2019
-Role: FileServer
+Role: TerminalServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq gbrbuild01).Description]'
 Location: GBR
 
-# This will replace z2626xflec501
 Configurations:
   - IpConfiguration
 
@@ -13,9 +12,6 @@ IpConfiguration:
     - NewName: Production
       AddressFamily: IPv4
       IPAddress: 204.46.158.28/27
-#    - NewName: Production
-#      AddressFamily: IPv6
-#      IPAddress: 2620:0117:501D:0065::f01C
 
 ComputerSettings:
   Name: gbrbuild01

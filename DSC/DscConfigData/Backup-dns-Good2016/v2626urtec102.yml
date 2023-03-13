@@ -6,6 +6,7 @@ Location: RTP
 
 Configurations:
   - IpConfiguration
+  - ChocolateyPackages # Add this for any servers that get MomAgent installed other than through DSC/Chocolatey
 
 IpConfiguration:
   Adapter:
@@ -15,3 +16,8 @@ IpConfiguration:
 
 ComputerSettings:
   Name: v2626urtec102
+
+ChocolateyPackages:
+  Packages:
+    - Name: MomAgent
+      Ensure: Absent
