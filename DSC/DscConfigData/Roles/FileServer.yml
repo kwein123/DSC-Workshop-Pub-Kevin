@@ -10,7 +10,6 @@ WindowsFeatures:
     - FS-FileServer
     - FS-Data-Deduplication
     - FS-Resource-Manager
-    #- FS-Resource-Manager
     - RSAT-FSRM-Mgmt
     #- RSAT-DFS-Mgmt-Con # Added 4/19/22
     #- FS-Data-Deduplication

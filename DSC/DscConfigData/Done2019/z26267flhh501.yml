@@ -1,0 +1,17 @@
+NodeName: z26267flhh501
+Environment: 2019
+Role: TerminalServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq z26267flhh501).Description]'
+Location: GBR
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.158.8/27
+
+ComputerSettings:
+  Name: z26267flhh501

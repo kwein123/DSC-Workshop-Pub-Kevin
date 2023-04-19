@@ -1,0 +1,66 @@
+# Only RTP and CIN servers - h26267ohdz001 and v2626urtdz502, 503, 504
+Configurations:
+  - FirewallRules
+  - WindowsFeatures
+  - RegistryValues
+
+WindowsFeatures:
+  Name:
+    - File-Services
+    - FS-FileServer
+    - Multipath-IO
+    - -FS-NFS-Service
+    - -NFS-Client
+    - -Server-Media-Foundation
+    - -RSAT-AD-PowerShell
+    - -RSAT-AD-AdminCenter
+    - -RSAT-ADLDS
+    - -RSAT-File-Services
+    - -RSAT-NFS-Admin
+    - -SNMP-WMI-Provider
+    - -Windows-Server-Backup
+
+
+RegistryValues:
+  Values:
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters
+      ValueName: MaxNegativeCacheTtl
+      ValueData: 0
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NetLogon\Parameters
+      ValueName: NegativeCachePeriod
+      ValueData: 0
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters
+      ValueName: AlwaysExpectDomainController
+      ValueData: 1
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+
+FirewallRules:
+  Rules:
+    - Name: CustomRemoteConsoleAccessFromAnotherServer
+      DisplayName: Remote console access from another server
+      Enabled: True
+      #Description: Allow All Inbound Trafic
+      Direction: Inbound
+      Profile: Any
+      Action: Allow
+      LocalPort: 6547
+      RemotePort: 6547
+      Protocol: TCP
+    - Name: CustomUPSToCommunicateToPCNS
+      DisplayName: UPS to communicate to PCNS
+      Enabled: True
+      #Description: Allow All Inbound Trafic
+      Direction: Inbound
+      Profile: Any
+      Action: Allow
+      LocalPort: 3052
+      RemotePort: 3052
+      Protocol: UDP

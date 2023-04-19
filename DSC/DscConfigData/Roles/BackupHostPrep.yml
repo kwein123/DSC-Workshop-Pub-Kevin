@@ -1,0 +1,70 @@
+Configurations:
+  - FirewallRules
+  - RegistryValues
+  - WindowsFeatures
+  - ChocolateyPackages
+
+ChocolateyPackages:
+  Packages:
+    - Name: MomAgent
+      Ensure: Absent
+
+WindowsFeatures:
+  Name:
+    #- File-Services
+    #- FS-FileServer
+    - -FS-NFS-Service
+    - -NFS-Client
+    #- -RSAT-RoleTools
+    - -RSAT-Feature-Tools
+    - -RSAT-File-Services
+    - -RSAT-NFS-Admin
+    - -RSAT-SNMP
+    - -RSAT
+    #- -SystemDataArchiver
+    #- -Windows-Defender-Features
+    - -Windows-Defender-Gui
+
+RegistryValues:
+  Values:
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters
+      ValueName: MaxNegativeCacheTtl
+      ValueData: 0
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NetLogon\Parameters
+      ValueName: NegativeCachePeriod
+      ValueData: 0
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters
+      ValueName: AlwaysExpectDomainController
+      ValueData: 1
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+
+FirewallRules:
+  Rules:
+    - Name: CustomRemoteConsoleAccessFromAnotherServer
+      DisplayName: Remote console access from another server
+      Enabled: True
+      #Description: Allow All Inbound Trafic
+      Direction: Inbound
+      Profile: Any
+      Action: Allow
+      LocalPort: 6547
+      RemotePort: 6547
+      Protocol: TCP
+    - Name: CustomUPSToCommunicateToPCNS
+      DisplayName: UPS to communicate to PCNS
+      Enabled: True
+      #Description: Allow All Inbound Trafic
+      Direction: Inbound
+      Profile: Any
+      Action: Allow
+      LocalPort: 3052
+      RemotePort: 3052
+      Protocol: UDP
