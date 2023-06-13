@@ -1,6 +1,6 @@
 NodeName: l26267ordz002
 Environment: 2016
-#Role: JustSmallFix
+Role: BackupHost
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq l26267ordz002).Description]'
 Location: NEW143
 

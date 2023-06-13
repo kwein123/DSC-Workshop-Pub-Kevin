@@ -21,9 +21,10 @@ WindowsFeatures:
     - -RSAT-NFS-Admin
     - -RSAT-SNMP
     - -RSAT
+    - Windows-Defender
     #- -SystemDataArchiver
     #- -Windows-Defender-Features
-    - -Windows-Defender-Gui
+    #- -Windows-Defender-Gui
 
 RegistryValues:
   Values:

@@ -1,12 +1,13 @@
 NodeName: h26267ohdz001
 Environment: 2019
-Role: NetBackupServer
+Role: MediaServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq h26267ohdz001).Description]'
 Location: CIN
 
 # This is a hardware server. It got stuck after first reboot. Larry had to allow Remote Desktop through firewall.
 Configurations:
   - IpConfiguration
+  - ChocolateyPackages # Add this for any servers that get MomAgent installed other than through DSC/Chocolatey
 
 IpConfiguration:
   DependsOn: ChocolateyPackages
@@ -17,3 +18,8 @@ IpConfiguration:
 
 ComputerSettings:
   Name: h26267ohdz001
+
+ChocolateyPackages:
+  Packages:
+    - Name: MomAgent
+      Ensure: Absent

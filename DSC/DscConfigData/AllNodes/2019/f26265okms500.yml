@@ -1,0 +1,17 @@
+NodeName: f26265okms500
+Environment: 2019
+Role: SCCMServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq f26265okms500).Description]'
+Location: ADA
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.246.79/24
+
+ComputerSettings:
+  Name: f26265okms500

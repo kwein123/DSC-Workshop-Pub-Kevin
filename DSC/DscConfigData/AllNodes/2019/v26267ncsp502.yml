@@ -1,0 +1,44 @@
+NodeName: v26267ncsp502
+Environment: 2019
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncsp502).Description]'
+Location: RTP
+
+Configurations:
+  - IpConfiguration
+  - SmbShares
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.216.100/24
+
+ComputerSettings:
+  Name: v26267ncsp502
+
+#FilesAndFolders:
+#  Items:
+#    - DestinationPath: 'D:\DSC'
+#      Type: Directory
+
+SmbShares:
+  #ServerConfiguration:
+  #  EnableSMB1Protocol: false
+  #  EnableSMB2Protocol: true
+  Shares:
+    - Name: ORDPSGallery$
+      Path: D:\DSC\ORDPSGallery
+      Description: ORD Private PowerShell Module Gallery
+      # This is only share perms
+      FullAccess: 'NT Authority\Authenticated Users'
+    - Name: ORDChoco
+      Path: D:\DSC\ORDChoco
+      Description: ORD Private Choco(latey) repository
+      # This is only share perms
+      FullAccess: 'NT Authority\Authenticated Users'
+
+      # Works:
+      #FullAccess: 'aa\PRIV-D-RTP-Manage Server Data'
+      #FullAccess: SYSTEM, 'aa\PRIV-D-RTP-Manage Server Data'
+      #ChangeAccess: AdminUser1
+      #ReadAccess: 'NT Authority\Authenticated Users'

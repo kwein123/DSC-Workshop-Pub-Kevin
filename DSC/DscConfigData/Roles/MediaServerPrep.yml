@@ -1,8 +1,23 @@
 # Only RTP and CIN servers - h26267ohdz001 and v2626urtdz502, 503, 504
-# No Windows Features to add, so drop that section from this file.
 Configurations:
   - FirewallRules
+  - WindowsFeatures
   - RegistryValues
+
+WindowsFeatures:
+  Name:
+    - -File-Services
+    - -FS-FileServer
+    #- Multipath-IO
+    - -FS-NFS-Service
+    - -NFS-Client
+    - -RSAT-AD-PowerShell
+    - -RSAT-AD-AdminCenter
+    - -RSAT-ADLDS
+    - -RSAT-File-Services
+    - -RSAT-NFS-Admin
+    - -SNMP-WMI-Provider
+    - -Windows-Server-Backup
 
 RegistryValues:
   Values:

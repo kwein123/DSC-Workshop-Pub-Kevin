@@ -1,12 +1,14 @@
 DscTagging:
-  Environment: 2019
+  Environment: 2022
 
 FilesAndFolders:
   Items:
-    - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\2019\ATP
+    - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\2022\ATP
       DestinationPath: 'C:\Temp\ATP'
       Type: Directory
       Recurse: True
+
+#        c:\temp\ATP\WindowsDefenderATPLocalOnboardingScript.cmd
 
 Scripts:
   Items:

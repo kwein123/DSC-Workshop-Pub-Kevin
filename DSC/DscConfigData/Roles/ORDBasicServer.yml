@@ -17,10 +17,11 @@ FilesAndFolders:
       DestinationPath: 'C:\Temp\NTRights.exe'
       Type: File
     # 4/19/22 - Don't comment this out - it's used, but not from this file
-    - SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\ATP
-      DestinationPath: 'C:\Temp\ATP'
-      Type: Directory
-      Recurse: True
+    # Now this has been moved to the OS config file, so it's not needed here.
+    #- SourcePath: \\v26267ncsp502\ORDChoco\FilesToCopy\ATP
+    #  DestinationPath: 'C:\Temp\ATP'
+    #  Type: Directory
+    #  Recurse: True
     - SourcePath: \\v26267ncsp502\ORDchoco\FilesToCopy\BootHole
       DestinationPath: C:\BootHole
       Type: Directory
