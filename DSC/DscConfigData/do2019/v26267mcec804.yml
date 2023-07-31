@@ -1,0 +1,17 @@
+NodeName: v26267mcec804
+Environment: 2019
+#Role: FileServer - Even though this is named as a file server, it's just a print server
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267mcec804).Description]'
+Location: RTP
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.216.36/24
+
+ComputerSettings:
+  Name: v26267mcec804

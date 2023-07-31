@@ -1,5 +1,5 @@
 NodeName: q26267mnhh601
-Environment: 2016
+Environment: 2019
 Role: TerminalServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq q26267mnhh601).Description]'
 Location: DUL

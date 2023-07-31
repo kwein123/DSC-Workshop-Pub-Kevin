@@ -8,30 +8,31 @@ WindowsFeatures:
     #- File-Services
     #- FS-FileServer
     - BranchCache
-    - Multipath-IO # ? How does Leigh want this configured?
+    #- Multipath-IO # ? How does Leigh want this configured?
     #- FS-NFS-Service
     - RSAT-Feature-Tools-BitLocker
     - RSAT-Feature-Tools-BitLocker-RemoteAdminTool
-    - RSAT-Feature-Tools-BitLocker-BdeAducExt
-    - RSAT-SNMP
-    - RSAT-AD-Tools
-    - RSAT-ADDS
     - RSAT-ADDS-Tools
+    - RSAT-Feature-Tools-BitLocker-BdeAducExt # Depends on RSAT-ADDS-Tools
+    - RSAT-SNMP
+    - RSAT-AD-Tools # This forces RSAT-AD-PowerShell, RSAT-ADDS, RSAT-ADLDS - according to DSC
+    - RSAT-ADDS # This forces RSAT-AD-AdminCenter, which we were then trying to remove later
     - System-DataArchiver
-    #- Windows-Defender
+    #- Windows-Defender # Currently installed
     - -NFS-Client
     - -Server-Media-Foundation
-    - -RSAT-AD-PowerShell
-    - -RSAT-AD-AdminCenter
-    - -RSAT-RDS-Tools
-    - -UpdateServices-RSAT
-    - -UpdateServices-API
-    - -UpdateServices-UI
+    # This seems to cause problems when we try to remove it after installing RSAT-AD-Tools
+    #- -RSAT-AD-PowerShell # Depends on PowerShell, NET-Framework-45-Core - Why is this still installed when I've tried to remove it?
+    #- -RSAT-AD-AdminCenter # Depends on RSAT-AD-PowerShell, RSAT-ADDS-Tools, NET-Framework-45-Core
+    #- -RSAT-RDS-Tools - Temporary comment
+    #- -UpdateServices-RSAT - Temporary comment
+    - -UpdateServices-API # Depends on NET-Framework-45-Core
+    - -UpdateServices-UI # Depends on UpdateServices-API
     - -WDS-AdminPack
-    - -Windows-Defender-Features
-    - -Windows-Defender-Gui
+    #- -Windows-Defender-Features # Doesn't even exist when I query 2019 server
+    #- -Windows-Defender-Gui # Doesn't even exist when I query 2019 server
     - -Windows-Server-Backup
-    - -XPS-Viewer
+    - -XPS-Viewer # Removed, not "Available"
 
 RegistryValues:
   Values:
@@ -53,29 +54,6 @@ RegistryValues:
       ValueType: DWord
       Ensure: Present
       Force: true
-
-# FilesAndFolders:
-#   Items:
-#     - DestinationPath: C:\BootHole
-#       SourcePath: \\v26267ncsp502\ORDchoco\FilesToCopy\BootHole
-#       Type: Directory
-#       # Recurse has to be specified as true, not $true or Enabled, or it will blow up
-#       Recurse: true
-
-# Scripts:
-#   Items:
-#     - Name: FixBootHole
-#       # Successful run of _BootHole will create signature.p7
-#       # If we don't Chdir \BootHole, the current dir will be \windows\system32, and the .ps1 files inside the .cmd won't be found in that folder
-#       GetScript: |
-#         $Result = test-path C:\BootHole\signature.p7
-#         Return @{ Result = $Result}
-#       TestScript: |
-#         $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
-#         $ReturnHash.Result
-#       SetScript: |
-#         Chdir \BootHole
-#         C:\BootHole\_BootHole.cmd
 
 FirewallRules:
   Rules:

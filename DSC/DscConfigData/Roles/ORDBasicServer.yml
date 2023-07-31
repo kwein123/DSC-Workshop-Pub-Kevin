@@ -22,11 +22,11 @@ FilesAndFolders:
     #  DestinationPath: 'C:\Temp\ATP'
     #  Type: Directory
     #  Recurse: True
-    - SourcePath: \\v26267ncsp502\ORDchoco\FilesToCopy\BootHole
-      DestinationPath: C:\BootHole
-      Type: Directory
+    #- SourcePath: \\v26267ncsp502\ORDchoco\FilesToCopy\BootHole
+    #  DestinationPath: C:\BootHole
+    #  Type: Directory
       # Recurse has to be specified as true, not $true or Enabled, or it will blow up
-      Recurse: true
+    #  Recurse: true
       # 12/1/22 - I don't think BootHole changes any more, so eliminate MatchSource. Maybe it will run faster.
       #MatchSource: true
       # Didn't work either - CheckSum: 'SHA-256' # This ensures that newer versions of existing files are copied over, but not that deletions happen
@@ -123,11 +123,12 @@ ChocolateyPackages:
     #   Ensure: Absent
     #   ChocolateyOptions:
     #     Source: ORDChoco
-    - Name: MomAgent # Added 7/27/21, per Steven - commented out for servers that have a newer version of MomAgent - 8/3/22
+    #- Name: MomAgent # Added 7/27/21, per Steven - commented out for servers that have a newer version of MomAgent - 8/3/22
+    # As of 6/14/23, this has been moved into the image, so DSC doesn't need to apply it.
       # Comment this out for v26267ncsp520 and v26267ncpk606, since SCOM already includes MOMAgent
-      Ensure: Present
-      ChocolateyOptions:
-        Source: ORDChoco
+    #  Ensure: Present
+    #  ChocolateyOptions:
+    #    Source: ORDChoco
 
 #        $Clients = @(Get-NetIPConfiguration | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Get-DNSClient)
 # Disconnected NICs must be excluded from below tests, or it blows up.
@@ -179,19 +180,20 @@ Scripts:
       SetScript: |
         $Clients = @(Get-NetIPConfiguration | Where-Object {$_.NetAdapter.Status -ne "Disconnected"} | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Get-DNSClient)
         Get-NetIPConfiguration | Where-Object {$_.NetAdapter.Status -ne "Disconnected"} | Get-NetConnectionProfile | Where-Object IPv4Connectivity -ne "NoTraffic" | Set-DNSClient -RegisterThisConnectionsAddress:$false
-    - Name: FixBootHole
-      # Successful run of _BootHole will create signature.p7
-      # If we don't Chdir \BootHole, the current dir will be \windows\system32, and the .ps1 files inside the .cmd won't be found in that folder
-      # GetScript must return a hash, or Get-DscConfiguration will fail.
-      GetScript: |
-        $Result = test-path C:\BootHole\signature.p7
-        Return @{ Result = $Result}
-      TestScript: |
-        $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
-        $ReturnHash.Result
-      SetScript: |
-        Chdir \BootHole
-        C:\BootHole\_BootHole.cmd
+    # Now BootHole is patched and updated via pushing from MassCheck-RunScript.ps1
+    # - Name: FixBootHole
+    #   # Successful run of _BootHole will create signature.p7
+    #   # If we don't Chdir \BootHole, the current dir will be \windows\system32, and the .ps1 files inside the .cmd won't be found in that folder
+    #   # GetScript must return a hash, or Get-DscConfiguration will fail.
+    #   GetScript: |
+    #     $Result = test-path C:\BootHole\signature.p7
+    #     Return @{ Result = $Result}
+    #   TestScript: |
+    #     $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+    #     $ReturnHash.Result
+    #   SetScript: |
+    #     Chdir \BootHole
+    #     C:\BootHole\_BootHole.cmd
 
 # Added 2nd key 4/19/22, per Leigh. 3rd key added 12/13/22, per Leigh.
 RegistryValues:

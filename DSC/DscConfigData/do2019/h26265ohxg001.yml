@@ -1,0 +1,17 @@
+NodeName: h26265ohxg001
+Environment: 2019
+Role: MasterSANMediaServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq h26265ohxg001).Description]'
+Location: CIN
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.64.13/24
+
+ComputerSettings:
+  Name: h26265ohxg001

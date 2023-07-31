@@ -1,0 +1,17 @@
+NodeName: v26267gpotst22
+Environment: 2022
+Role: TerminalServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267gpotst22).Description]'
+Location: RTP217
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.217.148/24
+
+ComputerSettings:
+  Name: v26267gpotst22

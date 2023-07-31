@@ -1,0 +1,16 @@
+NodeName: h26267ohpk502
+Environment: 2019
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq h26267ohpk502).Description]'
+Location: CIN
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.64.116/24
+
+ComputerSettings:
+  Name: h26267ohpk502

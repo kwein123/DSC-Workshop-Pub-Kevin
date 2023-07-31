@@ -1,0 +1,79 @@
+# This is for Master-Media Servers in RTP, CIN, and COR, which all have SANs with Multipath-IO enabled.
+Configurations:
+  - FirewallRules
+  - RegistryValues
+  - WindowsFeatures
+
+WindowsFeatures:
+  Name:
+    #- File-Services
+    #- FS-FileServer
+    - BranchCache
+    - Multipath-IO # ? How does Leigh want this configured?
+    #- FS-NFS-Service
+    - RSAT-Feature-Tools-BitLocker
+    - RSAT-Feature-Tools-BitLocker-RemoteAdminTool
+    - RSAT-Feature-Tools-BitLocker-BdeAducExt
+    - RSAT-SNMP
+    - RSAT-AD-Tools
+    - RSAT-ADDS
+    - RSAT-ADDS-Tools
+    - System-DataArchiver
+    #- Windows-Defender
+    - -NFS-Client
+    - -Server-Media-Foundation
+    #- -RSAT-AD-PowerShell
+    #- -RSAT-AD-AdminCenter
+    #- -RSAT-RDS-Tools
+    #- -UpdateServices-RSAT
+    - -UpdateServices-API
+    - -UpdateServices-UI
+    - -WDS-AdminPack
+    #- -Windows-Defender-Features
+    #- -Windows-Defender-Gui
+    - -Windows-Server-Backup
+    - -XPS-Viewer
+
+RegistryValues:
+  Values:
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters
+      ValueName: MaxNegativeCacheTtl
+      ValueData: 0
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NetLogon\Parameters
+      ValueName: NegativeCachePeriod
+      ValueData: 0
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+    - Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters
+      ValueName: AlwaysExpectDomainController
+      ValueData: 1
+      ValueType: DWord
+      Ensure: Present
+      Force: true
+
+FirewallRules:
+  Rules:
+    - Name: CustomRemoteConsoleAccessFromAnotherServer
+      DisplayName: Remote console access from another server
+      Enabled: True
+      #Description: Allow All Inbound Trafic
+      Direction: Inbound
+      Profile: Any
+      Action: Allow
+      LocalPort: 6547
+      RemotePort: 6547
+      Protocol: TCP
+    - Name: CustomUPSToCommunicateToPCNS
+      DisplayName: UPS to communicate to PCNS
+      Enabled: True
+      #Description: Allow All Inbound Trafic
+      Direction: Inbound
+      Profile: Any
+      Action: Allow
+      LocalPort: 3052
+      RemotePort: 3052
+      Protocol: UDP

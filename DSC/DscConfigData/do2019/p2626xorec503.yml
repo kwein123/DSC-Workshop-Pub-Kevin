@@ -1,0 +1,17 @@
+NodeName: p2626xorec503
+Environment: 2019
+Role: FileServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq p2626xorec503).Description]'
+Location: COR
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.147.56/25
+
+ComputerSettings:
+  Name: p2626xorec503

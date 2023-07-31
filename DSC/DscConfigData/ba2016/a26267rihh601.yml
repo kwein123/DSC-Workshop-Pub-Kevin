@@ -1,0 +1,17 @@
+NodeName: a26267rihh601
+Environment: 2016
+Role: TerminalServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq a26267rihh601).Description]'
+Location: NAR91
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.91.46/24
+
+ComputerSettings:
+  Name: a26267rihh601

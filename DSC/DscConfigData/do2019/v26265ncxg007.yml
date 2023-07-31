@@ -1,0 +1,17 @@
+NodeName: v26265ncxg007
+Environment: 2019
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26265ncxg007).Description]'
+Location: RTP
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.216.126/24
+
+ComputerSettings:
+  Name: v26265ncxg007

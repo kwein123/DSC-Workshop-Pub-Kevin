@@ -1,0 +1,17 @@
+NodeName: a2626xridz001
+Environment: 2019
+Role: MasterMediaServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq a2626xridz001).Description]'
+Location: NAR92
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.92.15/24
+
+ComputerSettings:
+  Name: a2626xridz001
