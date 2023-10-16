@@ -10,3 +10,4 @@ WindowsFeatures:
     - Print-Server
     - Print-Services
     - RSAT-Print-Services
+    - FS-SMB1

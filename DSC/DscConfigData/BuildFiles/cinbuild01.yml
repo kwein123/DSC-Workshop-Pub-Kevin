@@ -1,6 +1,6 @@
 NodeName: cinbuild01
-Environment: 2019
-Role: NetBackupServer
+Environment: 2022
+Role: MasterSANMediaServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq cinbuild01).Description]'
 Location: CIN
 

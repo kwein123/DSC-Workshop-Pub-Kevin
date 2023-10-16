@@ -1,0 +1,12 @@
+Configurations:
+  - WindowsFeatures
+
+WindowsFeatures:
+  Name:
+    #- FS-FileServer
+    #- FS-Data-Deduplication
+    #- FS-Resource-Manager
+    #- RSAT-FSRM-Mgmt
+    - Print-Server
+    - Print-Services
+    - RSAT-Print-Services

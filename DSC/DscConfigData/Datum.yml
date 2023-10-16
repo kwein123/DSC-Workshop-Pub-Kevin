@@ -7,11 +7,15 @@ ResolutionPrecedence:
   - Roles\ORDBasicServer
   - Roles\DscBaseline
 
+# Added next line 9/21/23
+#DatumHandlersThrowOnError: true
 DatumHandlers:
   Datum.ProtectedData::ProtectedDatum:
     CommandOptions:
       PlainTextPassword: SomeSecret
   Datum.InvokeCommand::InvokeCommand:
+  #  SkipDuringLoad: true
+# Added prev line 9/21/23
 
 default_lookup_options: MostSpecific
 
@@ -24,7 +28,10 @@ lookup_options:
 
   DscTagging:
     merge_hash: deep
+  #DscTagging\Layers:
+  #  merge_basetype_array: Unique
 
+# Added previous 2 lines 9/21/23
   WindowsFeatures:
     merge_hash: deep
 

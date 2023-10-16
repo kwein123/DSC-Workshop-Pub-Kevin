@@ -1,6 +1,6 @@
 NodeName: a2626xridz001
-Environment: 2019
-Role: NetBackupServer
+Environment: 2022
+Role: MasterMediaServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq a2626xridz001).Description]'
 Location: NAR92
 

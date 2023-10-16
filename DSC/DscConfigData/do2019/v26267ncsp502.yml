@@ -6,6 +6,7 @@ Location: RTP
 Configurations:
   - IpConfiguration
   - SmbShares
+  - Scripts
 
 IpConfiguration:
   Adapter:
@@ -42,3 +43,18 @@ SmbShares:
       #FullAccess: SYSTEM, 'aa\PRIV-D-RTP-Manage Server Data'
       #ChangeAccess: AdminUser1
       #ReadAccess: 'NT Authority\Authenticated Users'
+
+Scripts:
+  Items:
+    - Name: SetIPv6AddressFromIPv4
+      GetScript: |
+        $Output = $Node | Get-Member
+        write-host "Node: $Output"
+        $Output2 = $Node.Address
+        write-host "Node.Address: $Output2"
+        Return @{ Result = 1}
+      TestScript: |
+        $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+        $ReturnHash.Result -eq 0
+      SetScript: |
+        write-host "Doing SetScript"

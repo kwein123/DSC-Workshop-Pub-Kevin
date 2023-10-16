@@ -6,6 +6,7 @@ Location: RTP
 
 Configurations:
   - IpConfiguration
+  #- WindowsFeatures
 
 IpConfiguration:
   Adapter:
@@ -15,3 +16,11 @@ IpConfiguration:
 
 ComputerSettings:
   Name: v26267nchh100
+
+# WindowsFeatures:
+#   Name:
+#     - -RDS-Gateway
+#     - -RDS-RD-Server
+#     - -RSAT-RDS-Gateway
+#     - -RSAT-RDS-Licensing-Diagnosis-UI
+#     - -RSAT-RDS-Tools

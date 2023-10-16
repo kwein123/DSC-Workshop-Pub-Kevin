@@ -1,6 +1,6 @@
 NodeName: gbrbuild01
-Environment: 2019
-Role: TerminalServer
+Environment: 2022
+Role: MasterMediaServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq gbrbuild01).Description]'
 Location: GBR
 

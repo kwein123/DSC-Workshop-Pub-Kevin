@@ -1,0 +1,40 @@
+NodeName: p26267orhh602
+Environment: 2022
+Role: TerminalServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq p26267orhh602).Description]'
+Location: COR
+
+Configurations:
+  - IpConfiguration
+  #- Scripts
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.147.59/25
+    #- NewName: Productionv6
+      #AddressFamily: IPv6
+      #IPAddress: [x={"2620:0117:5019:01D6::f03B"}]
+      #IPAddress: [x={2620:0117:5019:01D6::f03B}]
+
+      #IPAddress: [x={2620:0117:5019:01D6::f03B} =]
+      #IPAddress: [x={ $Node.IpConfiguration.Adapter.Where{$_.NewName -eq 'Production'}.IPAddress | ConvertTo-CorpIpv6.ps1} =]
+
+ComputerSettings:
+  Name: p26267orhh602
+
+# Scripts:
+#   Items:
+#     - Name: SetIPv6AddressFromIPv4
+#       GetScript: |
+#         $Output = $Node | Get-Member
+#         write-host "Node: $Output"
+#         $Output2 = $Node.Address
+#         write-host "Node.Address: $Output2"
+#         Return @{ Result = 1}
+#       TestScript: |
+#         $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+#         $ReturnHash.Result -eq 0
+#       SetScript: |
+#         write-host "Doing SetScript"

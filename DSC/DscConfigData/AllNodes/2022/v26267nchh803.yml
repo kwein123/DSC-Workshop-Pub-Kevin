@@ -1,0 +1,18 @@
+NodeName: v26267nchh803
+Environment: 2022
+Role: TerminalServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267nchh803).Description]'
+Location: RTP
+# This works even though the server is not pingable, as long as it is remotely accessible.
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.216.241/24
+
+ComputerSettings:
+  Name: v26267nchh803
