@@ -6,12 +6,28 @@ Location: RTP
 Configurations:
   - IpConfiguration
   - SmbShares
+  #- Scripts
 
 IpConfiguration:
   Adapter:
     - NewName: Production
       AddressFamily: IPv4
       IPAddress: 134.67.216.100/24
+    - NewName: Production
+      AddressFamily: IPv6
+      IPAddress: "[x={'2620:117:503f:d8::f064/64'}=]"
+
+      #IPAddress: "[x={ $Node.IpConfiguration.Adapter.Where{$_.NewName -eq 'Production' -and $_.AddressFamily -eq 'IPv6'}.IPAddress}=]"
+
+#      IPAddress: "[x={return(2620:117:503f:d8::f064/64)}=]"
+#      IPAddress: "[x={2620:117:503f:d8::f064}=]"
+#      IPAddress: "[x={'2620:117:503f:d8::f064/64'}=]" # error message: Address '[x={'2620:117:503f:d8::f064' is not in the correct format
+#      IPAddress: "[x={2620:117:503f:d8::f064/64}=]"
+
+#      IPAddress: 2620:117:503f:d8::f064/64 # This worked!
+#      IPAddress: "[x={'2620:117:503f:d8::f064/64'}=]"
+#      IPAddress: [x={ $Node.IpConfiguration.Adapter.Where{$_.NewName -eq 'Production' -and $_.AddressFamily -eq 'IPv4'}.IPAddress | ConvertTo-CorpIpv6}=]
+      # 2620:117:503f:d8::f064/64
 
 ComputerSettings:
   Name: v26267ncsp502
@@ -42,3 +58,18 @@ SmbShares:
       #FullAccess: SYSTEM, 'aa\PRIV-D-RTP-Manage Server Data'
       #ChangeAccess: AdminUser1
       #ReadAccess: 'NT Authority\Authenticated Users'
+
+# Scripts:
+#   Items:
+#     - Name: SetIPv6AddressFromIPv4
+#       GetScript: |
+#         $Output = $Node | Get-Member
+#         write-host "Node: $Output"
+#         $Output2 = $Node.Address
+#         write-host "Node.Address: $Output2"
+#         Return @{ Result = 1}
+#       TestScript: |
+#         $ReturnHash = [scriptblock]::Create($GetScript).Invoke()
+#         $ReturnHash.Result -eq 0
+#       SetScript: |
+#         write-host "Doing SetScript"

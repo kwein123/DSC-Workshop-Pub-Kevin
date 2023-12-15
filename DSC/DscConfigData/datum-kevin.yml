@@ -3,13 +3,12 @@ ResolutionPrecedence:
   - Environment\$($Node.Environment)
   - Locations\$($Node.Location)
   - Roles\$($Node.Role)
-  - Baselines\Security
-  - Baselines\$($Node.Baseline)
-  - Baselines\DscLcm
-  # Added these two lines 12/14/23:
+  # Comment out ORDBasicServer to do "mini DSC configs using Role: JustSmallFix.yml"
   - Roles\ORDBasicServer
   - Roles\DscBaseline
 
+# Added next line 9/21/23
+# Uncommented next line 12/14/23:
 DatumHandlersThrowOnError: true
 DatumHandlers:
   Datum.ProtectedData::ProtectedDatum:
@@ -17,8 +16,8 @@ DatumHandlers:
       PlainTextPassword: SomeSecret
   Datum.InvokeCommand::InvokeCommand:
     SkipDuringLoad: true
-
-DscLocalConfigurationManagerKeyName: LcmConfig
+# Uncommented previous line 12/14/23
+# Added prev line 9/21/23
 
 default_lookup_options: MostSpecific
 
@@ -31,40 +30,74 @@ lookup_options:
 
   DscTagging:
     merge_hash: deep
-  # Commented out these two 12/14/23:
   #DscTagging\Layers:
   #  merge_basetype_array: Unique
 
+# Added previous 2 lines 9/21/23
   WindowsFeatures:
     merge_hash: deep
 
-  WindowsFeatures\Names:
+  FirewallRules:
+    merge_hash: deep
+  FirewallRules\Rules:
+    merge_hash_array: UniqueKeyValTuples
+    merge_options:
+      tuple_keys:
+        - Name
+
+  WindowsFeatures\Name:
     merge_basetype_array: Unique
 
-  FileSystemObjects:
+  Scripts:
     merge_hash: deep
-  FileSystemObjects\Items:
+  Scripts\Items:
+    merge_hash_array: UniqueKeyValTuples
+    merge_options:
+      tuple_keys:
+        - Name
+
+  FilesAndFolders:
+    merge_hash: deep
+  FilesAndFolders\Items:
     merge_hash_array: UniqueKeyValTuples
     merge_options:
       tuple_keys:
         - DestinationPath
 
-  RegistryValues:
+  NetworkIpConfiguration:
     merge_hash: deep
-  RegistryValues\Values:
-    merge_hash_array: UniqueKeyValTuples
-    merge_options:
-      tuple_keys:
-        - Key
 
-  #NetworkIpConfiguration:
+  ChocolateyPackages:
+    merge_hash: hash
+
+  ChocolateyPackages\Packages:
+    merge_hash_array: DeepTuple
+    merge_options:
+      Tuple_Keys:
+        - Name
+      #  - Ensure - Commented out 7/27/21 to see if this makes ncec202 RSOP look right
+      #  - ChocolateyOptions
+
+#  ChocolateyPackages:
+#    merge_hash: deep # hash
+  # ChocolateyPackages\Packages:
+  #   merge_hash_array: UniqueKeyValTuples     # DeepTuple
+  #   merge_options:
+  #     Tuple_Keys:
+  #       - Name
+
+  #IpConfiguration:
   #  merge_hash: deep
-  #NetworkIpConfiguration\Interfaces:
-  #  #merge_basetype_array: Deep
-  #  merge_hash_array: DeepTuple
-  #  merge_options:
-  #    tuple_keys:
-  #      - InterfaceAlias
+
+# This allows me to set site-specific elements like GatewayAddress and DnsServerAddress in a site-specific file, and the IP address itself in
+#  the server-specific file.
+
+  LocalGroups: hash
+  LocalGroups\Groups:
+    merge_hash_array: DeepTuple
+    merge_options:
+      Tuple_Keys:
+        - GroupName
 
   IpConfiguration: hash
   IPConfiguration\Adapter:
@@ -78,7 +111,7 @@ lookup_options:
     merge_hash: deep
 
   LcmConfig:
-    merge_hash: deep
+    merge_hash: hash
   LcmConfig\Settings:
     merge_hash: deep
   LcmConfig\ReportServerWeb: deep

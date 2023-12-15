@@ -1,14 +1,12 @@
 NodeName: l2626xordz001
 Environment: 2019
-Role: NetBackupServer
+Role: MasterMediaServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq l2626xordz001).Description]'
 Location: NEW137
 
-# This is only to create an adapter where it doesn't already exist
 Configurations:
   - IpConfiguration
 
-# From NewBuild01
 IpConfiguration:
   Adapter:
     - NewName: Production

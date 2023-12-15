@@ -60,6 +60,8 @@ param (
 )
 
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
+# Added DebugPreference 12/13/23 to see more output when problem develops
+#$global:DebugPreference = "Continue"
 
 $env:BHBuildStartTime = Get-Date
 Write-Host "Current Process ID is '$PID'"

@@ -10,6 +10,10 @@ FilesAndFolders:
 
 #        c:\temp\ATP\WindowsDefenderATPLocalOnboardingScript.cmd
 
+WindowsFeatures:
+  Name:
+    - -AzureArcSetup
+
 Scripts:
   Items:
     - Name: InstallATPDefender
