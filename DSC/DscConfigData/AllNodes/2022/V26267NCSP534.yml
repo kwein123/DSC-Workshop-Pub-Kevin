@@ -1,0 +1,17 @@
+NodeName: V26267NCSP534
+Environment: 2022
+# Role: TerminalServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq V26267NCSP534).Description]'
+Location: RTP216
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 134.67.216.115/24
+
+ComputerSettings:
+  Name: V26267NCSP534

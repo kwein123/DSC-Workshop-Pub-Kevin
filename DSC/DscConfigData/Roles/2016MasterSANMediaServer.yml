@@ -24,7 +24,7 @@ WindowsFeatures:
     - -Server-Media-Foundation
     #- -RSAT-AD-PowerShell
     #- -RSAT-AD-AdminCenter
-    - -RSAT-RDS-Tools
+    #- -RSAT-RDS-Tools
     #- -UpdateServices-RSAT # This keeps getting reinstalled by something
     - -UpdateServices-API
     - -UpdateServices-UI
@@ -32,7 +32,6 @@ WindowsFeatures:
     #- -Windows-Defender-Features
     - -Windows-Defender-Gui
     - -Windows-Server-Backup
-    - -XPS-Viewer
 
 RegistryValues:
   Values:

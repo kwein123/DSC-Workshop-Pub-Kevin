@@ -1,0 +1,18 @@
+NodeName: cinbuild01
+Environment: 2022
+Role: MasterSANMediaServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq cinbuild01).Description]'
+Location: CIN
+
+# This is only to create an adapter where it doesn't already exist
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.64.73/24
+
+ComputerSettings:
+  Name: cinbuild01

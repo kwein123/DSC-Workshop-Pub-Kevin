@@ -32,7 +32,6 @@ WindowsFeatures:
     #- -Windows-Defender-Features # Doesn't even exist when I query 2019 server
     #- -Windows-Defender-Gui # Doesn't even exist when I query 2019 server
     - -Windows-Server-Backup
-    - -XPS-Viewer # Removed, not "Available"
 
 RegistryValues:
   Values:

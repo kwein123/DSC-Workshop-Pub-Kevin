@@ -1,7 +1,7 @@
 NodeName: v26267ncsp503
 Environment: 2019
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncsp503).Description]'
-Location: RTP
+Location: RTP216
 
 Configurations:
   - IpConfiguration

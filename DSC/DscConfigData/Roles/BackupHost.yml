@@ -1,12 +1,6 @@
 Configurations:
   - FirewallRules
   - RegistryValues
-  - ChocolateyPackages
-
-ChocolateyPackages:
-  Packages:
-    - Name: MomAgent
-      Ensure: Absent
 
 RegistryValues:
   Values:

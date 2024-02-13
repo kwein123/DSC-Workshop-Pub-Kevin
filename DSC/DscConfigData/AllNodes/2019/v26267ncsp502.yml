@@ -1,19 +1,29 @@
 NodeName: v26267ncsp502
 Environment: 2019
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v26267ncsp502).Description]'
-Location: RTP
+Location: RTP216
 
 Configurations:
   - IpConfiguration
 
 IpConfiguration:
   Adapter:
-    - NewName: Production
-      AddressFamily: IPv4
-      IPAddress: 134.67.216.100/24
+    #- NewName: Production
+    #  AddressFamily: IPv4
+    #  IPAddress: 134.67.216.100/24
     - NewName: Production
       AddressFamily: IPv6
       IPAddress: "[x={'2620:117:503f:d8::f064/64'}=]"
+
+    # This:  IPAddress: "[x={'2620:117:503f:d8::f064/64'}=]"
+    # gives:
+    #PowerShell DSC resource DSC_IPAddress  failed to execute Test-TargetResource functionality with error message: Address '[x={'2620:117:503f:d8::f064' is not in the correct format.
+    #Please correct the Address parameter in the configuration and try again. (DRC0011)
+
+    # This:  IPAddress: "[x={'2620:117:503f:d8::f064'}=]"
+    # gives:
+    #PowerShell DSC resource DSC_IPAddress  failed to execute Test-TargetResource functionality with error message: Address '[x={'2620:117:503f:d8::f064'}=]' is not in the correct format.
+    #Please correct the Address parameter in the configuration and try again. (DRC0011)
 
       #IPAddress: "[x={ $Node.IpConfiguration.Adapter.Where{$_.NewName -eq 'Production' -and $_.AddressFamily -eq 'IPv6'}.IPAddress}=]"
 

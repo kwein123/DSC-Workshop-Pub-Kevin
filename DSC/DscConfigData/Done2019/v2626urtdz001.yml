@@ -1,12 +1,11 @@
 NodeName: v2626urtdz001
 Environment: 2019
-Role: NetBackupServer
+Role: MasterSANMediaServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v2626urtdz001).Description]'
 Location: RTP
 
 Configurations:
   - IpConfiguration
-  - ChocolateyPackages # Add this for any servers that get MomAgent installed other than through DSC/Chocolatey
 
 IpConfiguration:
   Adapter:
@@ -16,8 +15,3 @@ IpConfiguration:
 
 ComputerSettings:
   Name: v2626urtdz001
-
-ChocolateyPackages:
-  Packages:
-    - Name: MomAgent
-      Ensure: Absent

@@ -95,6 +95,7 @@ WindowsFeatures:
     #- -RSAT-SNMP
     # Per Steven Jarrard, 11/29/22 - Remove this feature.
     - SNMP-Service # Added 10/6/23 per Leigh - may be needed for 2022 servers
+    - Windows-Defender # Added 1/30/24 per Rick Pulley
     - -XPS-Viewer
 
 ChocolateyPackages:

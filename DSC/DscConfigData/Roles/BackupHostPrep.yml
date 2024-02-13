@@ -2,12 +2,6 @@ Configurations:
   - FirewallRules
   - RegistryValues
   - WindowsFeatures
-  - ChocolateyPackages
-
-ChocolateyPackages:
-  Packages:
-    - Name: MomAgent
-      Ensure: Absent
 
 WindowsFeatures:
   Name:
@@ -21,7 +15,7 @@ WindowsFeatures:
     - -RSAT-NFS-Admin
     - -RSAT-SNMP
     - -RSAT
-    - Windows-Defender
+    # - Windows-Defender
     #- -SystemDataArchiver
     #- -Windows-Defender-Features
     #- -Windows-Defender-Gui

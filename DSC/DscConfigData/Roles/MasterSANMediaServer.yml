@@ -32,7 +32,6 @@ WindowsFeatures:
     #- -Windows-Defender-Features
     #- -Windows-Defender-Gui
     - -Windows-Server-Backup
-    - -XPS-Viewer
 
 RegistryValues:
   Values:
