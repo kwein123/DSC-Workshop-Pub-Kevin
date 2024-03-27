@@ -1,0 +1,17 @@
+NodeName: z2626xfldz002
+Environment: 2022
+Role: BackupHost
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq z2626xfldz002).Description]'
+Location: GBR
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.46.158.13/27
+
+ComputerSettings:
+  Name: z2626xfldz002

@@ -2,7 +2,7 @@ NodeName: rtpbuild01
 Environment: 2022
 Role: MasterMediaServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq rtpbuild01).Description]'
-Location: RTP
+Location: RTP216
 # This works even though the server is not pingable, as long as it is remotely accessible.
 
 Configurations:

@@ -1,8 +1,8 @@
 NodeName: v2626umcec104
-Environment: 2016
+Environment: 2022
 Role: FileServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v2626umcec104).Description]'
-Location: RTP
+Location: RTP216
 
 Configurations:
   - IpConfiguration

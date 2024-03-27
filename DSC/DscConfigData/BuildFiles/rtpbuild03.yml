@@ -1,8 +1,8 @@
 NodeName: rtpbuild03
 Environment: 2022
-Role: NetbackupMedia
+Role: BackupHost
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq rtpbuild03).Description]'
-Location: RTP
+Location: RTP216
 # This works even though the server is not pingable, as long as it is remotely accessible.
 
 Configurations:

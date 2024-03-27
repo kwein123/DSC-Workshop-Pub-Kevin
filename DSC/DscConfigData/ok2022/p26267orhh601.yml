@@ -1,0 +1,17 @@
+NodeName: p26267orhh601
+Environment: 2022
+Role: TerminalServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq p26267orhh601).Description]'
+Location: COR
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.147.60/25
+
+ComputerSettings:
+  Name: p26267orhh601

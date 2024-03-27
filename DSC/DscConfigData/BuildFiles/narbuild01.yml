@@ -1,6 +1,6 @@
 NodeName: narbuild01
 Environment: 2022
-#Role: TerminalServer
+# Role: BackupHostPrep
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq narbuild01).Description]'
 Location: NAR92
 

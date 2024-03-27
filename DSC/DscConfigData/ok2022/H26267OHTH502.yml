@@ -1,0 +1,17 @@
+NodeName: H26267OHTH502
+Environment: 2022
+# Role: TerminalServer
+Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq H26267OHTH502).Description]'
+Location: CIN
+
+Configurations:
+  - IpConfiguration
+
+IpConfiguration:
+  Adapter:
+    - NewName: Production
+      AddressFamily: IPv4
+      IPAddress: 204.47.64.118/24
+
+ComputerSettings:
+  Name: H26267OHTH502

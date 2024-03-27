@@ -1,6 +1,6 @@
 NodeName: dulbuild01
-Environment: 2019
-Role: TerminalServer
+Environment: 2022
+Role: BackupHost
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq dulbuild01).Description]'
 Location: DUL
 

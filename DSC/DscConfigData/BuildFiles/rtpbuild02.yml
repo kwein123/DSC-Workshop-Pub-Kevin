@@ -2,7 +2,7 @@ NodeName: rtpbuild02
 Environment: 2022
 Role: MasterSANMediaServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq rtpbuild02).Description]'
-Location: RTP
+Location: RTP216
 
 Configurations:
   - IpConfiguration

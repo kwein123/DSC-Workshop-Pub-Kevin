@@ -2,7 +2,7 @@ NodeName: v2626umcec101
 Environment: 2019
 Role: FileServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v2626umcec101).Description]'
-Location: RTP
+Location: RTP216
 
 Configurations:
   - IpConfiguration

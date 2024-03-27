@@ -22,7 +22,7 @@ ComputerSettings:
   Name: p2626xordz001
 
 # SCOM servers and select others should not try to install MMA.  MMA is already installed on them
-ChocolateyPackages:
-  Packages:
-    - Name: MomAgent
-      Ensure: Absent
+#ChocolateyPackages:
+#  Packages:
+#    - Name: MomAgent
+#      Ensure: Absent

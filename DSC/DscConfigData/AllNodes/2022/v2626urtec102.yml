@@ -1,12 +1,12 @@
 NodeName: v2626urtec102
-Environment: 2016
-Role: FileServer
+Environment: 2022
+Role: LabLANFileServer
 Description: '[Command=(Import-Csv -Path $env:BHProjectPath\DscConfigData\ExternalData.csv -Delimiter ";" | Where-Object ComputerName -eq v2626urtec102).Description]'
-Location: RTP
+Location: RTP216
 
 Configurations:
   - IpConfiguration
-  - ChocolateyPackages # Add this for any servers that get MomAgent installed other than through DSC/Chocolatey
+  # - ChocolateyPackages # Add this for any servers that get MomAgent installed other than through DSC/Chocolatey
 
 IpConfiguration:
   Adapter:
@@ -17,7 +17,7 @@ IpConfiguration:
 ComputerSettings:
   Name: v2626urtec102
 
-ChocolateyPackages:
-  Packages:
-    - Name: MomAgent
-      Ensure: Absent
+# ChocolateyPackages:
+#   Packages:
+#     - Name: MomAgent
+#       Ensure: Absent
